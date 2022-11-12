@@ -1,0 +1,19 @@
+<p>Dear Savvly Administrators,</p>
+<p>A new client has signed a contract with Savvly.</p>
+<p>The following is the user information:</p>
+<ul>
+    <li>Name: {{ firstname|default('Unknown name', true) }} {{ lastname|default('there', true) }} </li>
+    <li>eMail: {{ email|default('Unknown email', true) }}</li>
+    <li>Age: {{ age|default('Unknown Age', true) }}</li>
+    <li>User ID: {{ idx|default('Unknown Age', true) }}</li>
+    <li>Payout Age: {{ payout_ages|default('Unknown Age', true) }}</li>
+    <li>Fund: {{ funding|default('Unknown Fund', true) }}$</li>
+    <li>Start date: {{ investment_start_date|default('Unknown Date', true) }}</li>
+    <li>Signed date: {{ signed_date|default('Unknown Date', true) }}</li>
+    <li>Contract ID: {{ contract_id|default('Unknown Date', true) }}</li>
+    <li>Advisor ID: {{ advisor_id|default('Unknown Date', true) }}</li>
+</ul>
+
+<p>Savvly Administration</p>
+<p><a href="http://v2.savvly.com">Savvly</a></p>
+<img src='cid:0'>

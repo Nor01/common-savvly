@@ -1,0 +1,11 @@
+.customers-slider .carousel-cell {
+    width: 33.333%;
+}
+
+#in_numbers .in_numbers-slider .carousel-cell{
+    max-width: unset;
+}
+#in_numbers .in_numbers-slider .carousel-cell > *{
+    max-width: 350px;
+    margin: auto;
+}

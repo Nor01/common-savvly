@@ -1,0 +1,10 @@
+@media all and (min-width: 1200px) {
+    .hidden__xlg {
+        display: none;
+    }
+    .visible__xlg {
+        display: inherit;
+    }
+    @import "xlg/main";
+    @import "xlg/carousel";
+}

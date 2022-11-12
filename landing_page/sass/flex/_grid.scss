@@ -1,0 +1,8 @@
+.grid {
+    display: grid;
+
+    &.has-col-6 {
+        grid-template-columns: minmax(300px, 350px) repeat(5, .5fr);
+        padding-left: 20px;
+    }
+}

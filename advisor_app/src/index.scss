@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+$SavvlyGreen: #0e6e7b;
+$SavvlyYellow: #fbd26e;
+
+$yellow: $SavvlyYellow;
+$primary: $SavvlyGreen;
+$warning: $SavvlyYellow;
+
+$input-focus-border-color: #31a1af;
+$input-focus-color:$SavvlyGreen;
+
+@import "../node_modules/bulma/bulma.sass";
+@import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap";
+@import "https://kit.fontawesome.com/313dc4a437.js";
+
+body {
+    font-family: Roboto, sans-serif;
+    min-height: 100%;
+}
+
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+@import "./global.scss";
+@import "./pages/ContractCreation/ContractCreation.scss";
+@import "./pages/Dashboard/Dashboard.scss";
+@import "./pages/Contracts/Contracts.scss";

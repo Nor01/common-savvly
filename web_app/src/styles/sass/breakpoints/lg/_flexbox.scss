@@ -1,0 +1,14 @@
+.grid--6 {
+    flex-direction: row;
+
+    .grid-item-6 {
+        width: 50%;
+    }
+}
+.grid--4 {
+    flex-direction: row;
+
+    .grid-item-4 {
+        width: 33.333%;
+    }
+}

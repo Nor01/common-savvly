@@ -1,0 +1,8 @@
+body {
+
+    .site {
+        &.site-bg {
+            min-height: calc(100vh - 270px);
+        }
+    }
+}

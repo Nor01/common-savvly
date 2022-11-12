@@ -1,0 +1,1658 @@
+{
+  "openapi" : "3.0.0",
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/Savvly/SavvlyAPI/1.0.0"
+  }, {
+    "description" : "SwaggerHub API local dev",
+    "url" : "http://localhost:5000/"
+  }, {
+    "description" : "Azure",
+    "url" : "https://savvly-dev-api.azurewebsites.net/"
+  } ],
+  "info" : {
+    "description" : "Savvly API",
+    "version" : "1.0.0",
+    "title" : "Savvly API",
+    "contact" : {
+      "email" : "yuval@savvly.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags" : [ {
+    "name" : "All",
+    "description" : "APIs to all user types (Clients/RIAs/Admins)"
+  }, {
+    "name" : "admins",
+    "description" : "Secured Admin-only calls"
+  }, {
+    "name" : "users",
+    "description" : "Operations available to regular users (clients)"
+  }, {
+    "name" : "RIA",
+    "description" : "Operations available to RIAs"
+  }, {
+    "name" : "admins-tables",
+    "description" : "Admin Operations directly on tables"
+  }, {
+    "name" : "potential-clients",
+    "description" : "Contracts / Potential Clients Management"
+  }, {
+    "name" : "User Management",
+    "description" : "User management by (Active Directory) Microsoft Graph API"
+  }, {
+    "name" : "simulator",
+    "description" : "Simulator for calculator"
+  }, {
+    "name" : "docusign",
+    "description" : "Docusign helper APIs"
+  } ],
+  "paths" : {
+    "/login" : {
+      "get" : {
+        "tags" : [ "All" ],
+        "summary" : "Login to the system",
+        "operationId" : "login",
+        "description" : "Login to the system. All users of all types (Clients, RIAs, Admins) should log in to the system prior to use any API \n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/logout" : {
+      "get" : {
+        "tags" : [ "All" ],
+        "summary" : "Logout from the system",
+        "operationId" : "logout",
+        "description" : "Logout from the system.  \n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/addnewuser" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Add a new client",
+        "operationId" : "addNewUser",
+        "description" : "Add a New Client to the users databse. The client must have registered in\nActive Directory first.  \n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID (OID from Active Directory)",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "userinfo",
+          "description" : "Dictionary of information (same as addpotentialclient)",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : {
+            "firstname" : "Johnny",
+            "lastname" : "Dept",
+            "address" : "NYC",
+            "sex" : "M",
+            "birthdate" : "1972-01-31",
+            "ssn" : "123-45-7800",
+            "is_married" : "Y",
+            "is_US_citizen" : "Y",
+            "funding" : 11,
+            "payout_ages" : [ 80, 65, 70, 100 ],
+            "ETF" : "default",
+            "spouse_firstname" : "Mary",
+            "spouse_lastname" : "Jane",
+            "spouse_sex" : "F",
+            "spouse_birthdate" : "1980-12-22",
+            "spouse_ssn" : "121-45-7777",
+            "spouse_email" : "mary.mail@gmail.com",
+            "passport_data" : "passport data",
+            "alien_id_or_visa" : "123123123"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getuserpii" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Get User Private Information",
+        "description" : "Get User Private Information\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/activateuser" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Activate an existing User. When an user is added, it is in pending state until this api is called",
+        "description" : "Activate User\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/deactivateuser" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Deactivate an existing User",
+        "description" : "Deactivate User\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getmychildren" : {
+      "get" : {
+        "tags" : [ "RIA" ],
+        "summary" : "getmychildren",
+        "description" : "This API returns the Clients (children ) of an existing RIA (advisor))\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getinfo" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "getinfo",
+        "description" : "getinfo\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getaccountid" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "getaccountid",
+        "description" : "Get Account ID\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/userdata" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "userdata",
+        "description" : "Get User Data\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/updateuserdata" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Update User Data",
+        "description" : "Update User Data\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "table",
+          "description" : "Table",
+          "required" : true,
+          "example" : "userdata",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "data",
+          "description" : "Data",
+          "required" : true,
+          "example" : {
+            "statusflag" : "statusflag-lksw",
+            "transferamount" : "transferamount-lksw"
+          },
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/depoistmoney" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Deposit Money",
+        "description" : "Deposit Money\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "amount",
+          "description" : "Amount",
+          "required" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 100
+          }
+        }, {
+          "in" : "query",
+          "name" : "tranid",
+          "description" : "Transaction ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "book_11h68d999t7bez"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/withdrawalmoney" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Withdraw Money",
+        "description" : "Withdraw Money\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "amount",
+          "description" : "Amount",
+          "required" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : -100
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/depositcomplete" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Deposite Complete",
+        "description" : "Set Deposite Complete\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/withdrawalpending" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Set Withdrawal Pending",
+        "description" : "Set Withdrawal Pending\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/withdrawalcomplete" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Set Withdrawal Complete",
+        "description" : "Set Withdrawal Complete\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/usertablesdiag" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Get User Tables Diag",
+        "description" : "Get User Tables Diag\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/alltablenames" : {
+      "get" : {
+        "tags" : [ "admins", "admins-tables" ],
+        "summary" : "Get Table Names",
+        "description" : "Get Table Names\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/deleteusertables" : {
+      "get" : {
+        "tags" : [ "admins", "admins-tables" ],
+        "summary" : "Delete All Tables",
+        "description" : "Delete All Tables\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/deleteuser" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Delete User",
+        "description" : "Delete User\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/users" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Users List",
+        "description" : "Users List\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/accountids" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "User Account IDs",
+        "description" : "Account IDs\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/statuses" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "User Status",
+        "description" : "User Status\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/fmvs" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "User FMVS",
+        "description" : "User FMVS\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/usersdata" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "All Users Data",
+        "description" : "All Users Data\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getallkv" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "All KV",
+        "description" : "All KV\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/delallkv" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Del All KV",
+        "description" : "Del All KV\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/environment" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Set Environment",
+        "description" : "Set Environment\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "dev",
+          "description" : "dev 0 or 1",
+          "required" : true,
+          "schema" : {
+            "type" : "number",
+            "minimum" : 0,
+            "maximum" : 1
+          }
+        }, {
+          "in" : "query",
+          "name" : "debug",
+          "description" : "debug 0 or 1",
+          "required" : true,
+          "schema" : {
+            "type" : "number",
+            "minimum" : 0,
+            "maximum" : 1
+          }
+        }, {
+          "in" : "query",
+          "name" : "logcmd",
+          "description" : "logcmd 0 or 1",
+          "required" : true,
+          "schema" : {
+            "type" : "number",
+            "minimum" : 0,
+            "maximum" : 1
+          }
+        }, {
+          "in" : "query",
+          "name" : "admin",
+          "description" : "admin 0 or 1",
+          "required" : true,
+          "schema" : {
+            "type" : "number",
+            "minimum" : 0,
+            "maximum" : 1
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/addnewadvisor" : {
+      "get" : {
+        "tags" : [ "RIA" ],
+        "summary" : "Add a New advisor to the database. The advisor must have registered in Active Directory first.",
+        "description" : "Add new Advisor \nThe advisor must have at least one CRD number (individual or firm)\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "Advisor ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "crdindvidual",
+          "description" : "Advisor individual CRD",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "crdfirm",
+          "description" : "Advisor firm/company CRD",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "associated",
+          "description" : "Associated RIA",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "advisorinfo",
+          "description" : "Advisor info",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : {
+            "firstname" : "John",
+            "lastname" : "Doe",
+            "middlename" : "III",
+            "address" : "Boston",
+            "email" : "advisor@consult.me",
+            "phone" : "+1 (347) 678-1010"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getallassociatedrias" : {
+      "get" : {
+        "tags" : [ "RIA" ],
+        "summary" : "Get all advisors associated with 'associated' firm",
+        "description" : "Get all advisors associated with 'associated' firm\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "associated",
+          "description" : "Associated RIA, or '*' for all.",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "*"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/isadvisor" : {
+      "get" : {
+        "tags" : [ "RIA" ],
+        "summary" : "Check if a userid is a registered advisor",
+        "description" : "Check if a userid is a registered advisor\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "userid of the advisor",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getadvisorinfo" : {
+      "get" : {
+        "tags" : [ "RIA" ],
+        "summary" : "Get Advisor Info",
+        "description" : "Get Advisor info\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "userid of the advisor",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/addchild" : {
+      "get" : {
+        "tags" : [ "RIA" ],
+        "summary" : "Associate a client to an advisor",
+        "description" : "Associate a client to an advisor\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "userid of the client",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "advisorid",
+          "description" : "userid of the advisor",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getadvisorchildren" : {
+      "get" : {
+        "tags" : [ "RIA" ],
+        "summary" : "Get all clients associated with an advisor",
+        "description" : "Get all clients associated with an advisor\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "userid of the advisor",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/delchild" : {
+      "get" : {
+        "tags" : [ "RIA" ],
+        "summary" : "Remove association of a client from an Advisor",
+        "description" : "Remove association of client from RIA (set client's parent to null)\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "userid of the client",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getriachildrenstatus" : {
+      "get" : {
+        "tags" : [ "RIA" ],
+        "summary" : "Remove association of a client from RIA",
+        "description" : "Remove association of client from advisor (set client's parent to null)\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "userid of the advisor",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "status",
+          "description" : "status to search",
+          "required" : true,
+          "example" : "Active",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/updateriadata" : {
+      "get" : {
+        "tags" : [ "admins", "admins-tables" ],
+        "summary" : "Update RIA Data",
+        "description" : "Update RIA Data\ncolumns:\n  - crd - the CRD number of the RIA\n  - associated - the associated company of the RIA\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID of the RIA",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "data",
+          "description" : "Data",
+          "required" : true,
+          "example" : {
+            "crd" : 98764444,
+            "associated" : "Savvly"
+          },
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/updateuserdata2" : {
+      "get" : {
+        "tags" : [ "admins", "admins-tables" ],
+        "summary" : "Update User Data (*not implemented*)",
+        "description" : "Update User Data\ncolumns:\n  - mothername : User's mother maiden name\n  - sex : User Gender (Female (F) or Male (M)\n  - parentid : User Parent ID (the parent is also a user)\n  - statusflag : Status flag \n      - \"Active\"  : Active/Idle\n      - \"Pending\" : just signed up. no KYC (Know your Customer)\n      - \"Transfer\" : incoming $ pending\n      - \"Transfer-Complete\" : transfer compelete (in our bank account)\n      - \"Purchase-Pending\" : Pending to purchase  shares\n      - \"Withdrawal\" : $ leaving\n      - \"Withdrawal-Pending\" :  $ money in our bank account from a sell\n      - \"Deceased\" : dead\n      - \"Closed\" : No activity allowed\n      - \"Transfer-Cancel\" : Transfer_cancel (timeout)\n  - fmv : Fair Market Value (user's assets)\n  - fund : The base fund of the user - Should be updated upon deposit/withdraw\n  - dayprofit :\n  - totprofit :\n  - numshares_inheritence : Number of shares from inheritence\n  - transferamount :\n  - transferid : The ID of the transaction done by the user\n  - numshares : Number of shares\n  - shareprice : Share price\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "User ID of the RIA",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "data",
+          "description" : "Data",
+          "required" : true,
+          "example" : {
+            "numshares" : 100,
+            "transferid" : 1234000
+          },
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/updatedailydata" : {
+      "get" : {
+        "tags" : [ "admins", "admins-tables" ],
+        "summary" : "Update daily Data",
+        "description" : "Update Daily Data\ncolumns:\n  - date : The date\n  - share_cost: Share cost\n  - tot_protfolio: Total Protfolio\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "date",
+          "description" : "Date",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "data",
+          "description" : "Data",
+          "required" : true,
+          "example" : {
+            "share_cost" : 100,
+            "tot_protfolio" : 1000
+          },
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/userschangefeed" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Get the changes feed in the users table from a specific date&time",
+        "description" : "Get Database changes in the Users table\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "start",
+          "description" : "The start date and time in format yyyy-mm-dd hh:mm:ss (2022-08-05 12:11:10)",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/advisorschangefeed" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Get the changes feed in the Advisors table from a specific date&time",
+        "description" : "Get Database changes in the Advisors table\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "start",
+          "description" : "The start date and time in format yyyy-mm-dd hh:mm:ss (2022-08-05 12:11:10)",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getsignedcontracts" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Get the list of the signed contracts from the clients database",
+        "description" : "Get the list of the signed contracts from the database\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getoldpotentials" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Get the list of the potentials records by status",
+        "description" : "Get the list of the potentials records by status, Retrieving records older than 'days' days.\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "status",
+          "description" : "status of contract for query (Draft/Sent/Signed)",
+          "example" : "Draft",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "days",
+          "description" : "find records older or equal to 'days' in days",
+          "example" : 3,
+          "schema" : {
+            "type" : "number"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/deloldpotentials" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Delete list of potentials records by status and days threshold",
+        "description" : "Delete the list of the potentials records by status, Retrieving records older than 'days' days.\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "status",
+          "description" : "status of contract for query (Draft/Sent/Signed)",
+          "example" : "Draft",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "days",
+          "description" : "find records older or equal to 'days' in days",
+          "example" : 60,
+          "schema" : {
+            "type" : "number"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/addpotentialclient" : {
+      "get" : {
+        "tags" : [ "RIA", "potential-clients" ],
+        "summary" : "Add new potential client (new contract)",
+        "description" : "# Add New Potential Client (new contract):\n  - userid: Advisor ID\n  - email: E-mail of potential client\n  - clientinfo: dictionary of info\n    # mandtory\n    - firstname: str\n    - lastname: str\n    - middlename: Optional[str]\n    - address: str\n    - sex: Literal['M', 'F']\n    - birthdate: date\n    - ssn: constr(regex=r'^(?!000|.+0{4})(?:\\d{9}|\\d{3}-\\d{2}-\\d{4})$')\n    - is_married: Literal['Y', 'N']\n    - is_US_citizen: Literal['Y', 'N']\n    - funding: confloat(gt=0)\n    - payout_ages: conlist(int, min_items=1)\n    - ETF: str = 'VOO Vanguard'\n    - purchaser_type: Literal['Accredited Investor', 'Qualified Purchaser']\n    # optional fields\n    - phone: Optional[str]  # = '+1 (000) 000-0000'\n    - zip_code: Optional[constr(regex=r'^\\d{5}(?:[-\\s]\\d{4})?$')] = '00000'\n    - city: Optional[str]\n    - state: Optional[str]\n    - country: Optional[str]\n    - investment_start_date: Optional[date]\n    # email: Optional[str]  # the email field is stored outside the dictionary,\n\n    # optional spouse\n    - spouse_firstname: Optional[str]\n    - spouse_lastname: Optional[str]\n    - spouse_middlename: Optional[str]\n    - spouse_address: Optional[str]\n    - spouse_sex: Optional[Literal['F', 'M']]\n    - spouse_birthdate: Optional[date]\n    - spouse_ssn: Optional[constr(regex=r'^(?!000|.+0{4})(?:\\d{9}|\\d{3}-\\d{2}-\\d{4})$')]\n    - spouse_email: Optional[EmailStr]\n    - spouse_zip_code: Optional[constr(regex=r'^\\d{5}(?:[-\\s]\\d{4})?$')] = '00000'\n    - spouse_city: Optional[str]\n    - spouse_state: Optional[str]\n    - spouse_country: Optional[str]\n\n    # must in case of non US citizen\n    - is_green_card: Optional[Literal['Y', 'N']]\n    - passport_data: Optional[str]\n    - passport_expiration: Optional[date]\n    - passport_country: Optional[str]\n    - alien_id_or_visa: Optional[str]\n    - alien_id_or_visa_expiration: Optional[date]\n\n    # must in case of non US citizen\n    - spouse_is_green_card: Optional[Literal['Y', 'N']]\n    - spouse_passport_data: Optional[str]\n    - spouse_passport_expiration: Optional[date]\n    - spouse_passport_country: Optional[str]\n    - spouse_alien_id_or_visa: Optional[str]\n    - spouse_alien_id_or_visa_expiration: Optional[date]\n    - spouse_is_US_citizen: Optional[Literal['Y', 'N']]\n\n    # additional contract fields\n    - advisor_fee: Optional[int] # must be between 0 and 100\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "Advisor ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "email",
+          "description" : "Potential Client's E-mail",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "clientinfo",
+          "description" : "Dictionary of Client info for contract",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : {
+              "firstname" : "John",
+              "lastname" : "Doe",
+              "address" : "NYC",
+              "sex" : "F",
+              "birthdate" : "1965-01-31",
+              "ssn" : "123-45-7899",
+              "is_married" : "Y",
+              "is_US_citizen" : "N",
+              "funding" : 11,
+              "payout_ages" : [ 111, 65, 70, 100 ],
+              "ETF" : "VOO Vanguard",
+              "purchaser_type" : "Accredited Investor",
+              "investment_start_date" : "2023-02-01",
+              "spouse_firstname" : "Mary",
+              "spouse_lastname" : "Jane",
+              "spouse_sex" : "F",
+              "spouse_birthdate" : "1980-12-22",
+              "spouse_ssn" : "121-45-7777",
+              "spouse_email" : "mail@gmail.com",
+              "spouse_address" : "Boston MA",
+              "passport_data" : "passport data",
+              "passport_expiration" : "2020-01-02",
+              "passport_country" : "GE",
+              "alien_id_or_visa" : "123123123",
+              "alien_id_or_visa_expiration" : "2030-12-31"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getpotentialclients" : {
+      "get" : {
+        "tags" : [ "RIA", "potential-clients" ],
+        "summary" : "Get all Contracts (Potential Clients) by Contract Status",
+        "description" : "# Get all Potential Clients by Status\n  - advisorid: Advisor ID\n  - status: Status of contract\n    - \\* : All statuses\n    - 'Draft' : New Draft Contract\n    - 'Sent' : Contract sent to client's email\n    - 'Signed': Contract signed\n    - 'Rejected': Client rejected contract\n    - 'Paid': Client paid\n    - 'PaymentConfirmed': Payment confirmed\n    \n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "Advisor ID",
+          "required" : true,
+          "example" : "Advisor1",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "status",
+          "description" : "Status",
+          "required" : true,
+          "example" : "*",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/updatecontractstatus" : {
+      "get" : {
+        "tags" : [ "RIA", "potential-clients" ],
+        "summary" : "Update Potential Client's Contract Status",
+        "description" : "# Update Potential Client's Contract Status\n  - advisorid: Advisor ID\n  - email: Potential Client's Email\n  - status: Status of contract\n    - 'Signed': Contract signed\n    - 'Rejected': Client rejected contract\n    - 'Paid': Client paid\n    - 'PaymentConfirmed': Payment confirmed\n    \n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "Advisor ID",
+          "required" : true,
+          "example" : "Advisor1",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "email",
+          "description" : "Potential Client's Email",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "jon@gmail.com"
+        }, {
+          "in" : "query",
+          "name" : "status",
+          "description" : "Status",
+          "required" : true,
+          "example" : "*",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/sendcontract" : {
+      "get" : {
+        "tags" : [ "RIA", "potential-clients" ],
+        "summary" : "Email contract to a potential client",
+        "description" : "# Email contract to a potential client\n  - advisorid: Advisor ID\n  - email: Potential Client's Email\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "Advisor ID",
+          "required" : true,
+          "example" : "Advisor1",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "email",
+          "description" : "Potential Client's Email",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "jon@gmail.com"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/previewcontract" : {
+      "get" : {
+        "tags" : [ "RIA", "potential-clients" ],
+        "summary" : "Preview contract of a potential client",
+        "description" : "# preview contract  of a potential client\n  - advisorid: Advisor ID\n  - email: Potential Client's Email\n  - clientinfo: client info (same as addpotentialclient)\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "Advisor ID",
+          "required" : true,
+          "example" : "Advisor1",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "email",
+          "description" : "Potential Client's Email",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "jon@gmail.com"
+        }, {
+          "in" : "query",
+          "name" : "clientinfo",
+          "description" : "Dictionary of Client info for contract",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "content of contract as pdf file"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/docusignretrieve" : {
+      "get" : {
+        "tags" : [ "RIA", "potential-clients", "docusign" ],
+        "summary" : "Preview contract of a potential client contract from DocuSign",
+        "description" : "# Preview contract of a potential client contract from DocuSign\n  - userid: Advisor ID\n  - contractid: Contract ID (the envelope ID of docusign)\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "Advisor ID",
+          "required" : true,
+          "example" : "Advisor1",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contractid",
+          "description" : "Contract ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "d2ad719b-65cf-4514-a9f2-db7fd8d9596c"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "content of contract as pdf file"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/docusigninfo" : {
+      "get" : {
+        "tags" : [ "RIA", "potential-clients", "docusign" ],
+        "summary" : "Get contract info  from DocuSign",
+        "description" : "# Get contract info  from DocuSign\n  - userid: Advisor ID\n  - contractid: Contract ID (the envelope ID of docusign)\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "userid",
+          "description" : "Advisor ID",
+          "required" : true,
+          "example" : "Advisor1",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contractid",
+          "description" : "Contract ID",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "d2ad719b-65cf-4514-a9f2-db7fd8d9596c"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "content of contract as pdf file"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/createuser" : {
+      "get" : {
+        "tags" : [ "User Management" ],
+        "summary" : "Create a new user in the Active Directory",
+        "description" : "Create a new user in the Active Directory\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "firstname",
+          "description" : "First Name of the user",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "lastname",
+          "description" : "Last Name of the user",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "email",
+          "description" : "The email of the user. It must be inique in the system",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "street",
+          "description" : "The address (street) of the user",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "city",
+          "description" : "The city name",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "zip",
+          "description" : "The postal code of the address of the user",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getusersinfo" : {
+      "get" : {
+        "tags" : [ "User Management" ],
+        "summary" : "Get the list of the Users with full inormation",
+        "description" : "Returns the list of the users and full details\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getusersemail" : {
+      "get" : {
+        "tags" : [ "User Management" ],
+        "summary" : "Get the list of the Users with their emails",
+        "description" : "Returns the list of the user IDs and their emails\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/emailexists" : {
+      "get" : {
+        "tags" : [ "User Management" ],
+        "summary" : "Does an specified email (user) exist in the Active Directory",
+        "description" : "Checks if an email (user) exists in the Active Directory. Returns True or False\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/simulate-prospect-planner" : {
+      "get" : {
+        "tags" : [ "simulator for payouts" ],
+        "summary" : "Simulate Payouts Calculator.\n",
+        "description" : "Simulates payout with three fixed ages of 80,85,90.\nBased on an average return. The answer depends on the gender and age of the person, as well as their current and future age.  \\\nreturns forcast for payout with Savvly, without Savvly and the multiplier index\n",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "gender",
+          "description" : "Gender (M/F)",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "F"
+          }
+        }, {
+          "in" : "query",
+          "name" : "current_age",
+          "description" : "Current age of client",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "example" : 75
+          }
+        }, {
+          "in" : "query",
+          "name" : "average_return",
+          "description" : "Average Return Percentage",
+          "required" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 6
+          }
+        }, {
+          "in" : "query",
+          "name" : "funding_amount",
+          "description" : "Funding amount",
+          "required" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 10000
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    }
+  }
+}

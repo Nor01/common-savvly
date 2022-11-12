@@ -1,0 +1,40 @@
+
+.main-input-container {
+    position: relative;
+}
+input {
+
+    &.main-input {
+        height: $input-main-height;
+        width: 100%;
+        border-radius: 7px;
+        padding: 10px;
+        background-color: transparent;
+        margin-top: 5px;
+    }
+}
+.input-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $input-main-height;
+    width: 100%;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+.sidebar.sidebar-black {
+    .main-input-container {
+        position: relative;
+    }
+    input {
+
+        color: $white;
+    
+        &.main-input {
+            border: 1px solid #fff;
+        }
+    }
+    .input-layer {
+        background-color: rgba(51, 49, 47, .3);
+    }
+}

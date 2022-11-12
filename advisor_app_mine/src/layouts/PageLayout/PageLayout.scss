@@ -1,0 +1,62 @@
+#savvlyDashboard {
+  height: 100%;
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .background-pattern {
+    background-image: url("../../assets/images/BlackPatternBlock.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .is-fullheight {
+    height: 100% !important;
+  }
+
+  .sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border-bottom: 1px solid #fff;
+  }
+
+  .nav-links {
+    margin-top: 1em;
+  }
+
+  .nav-link {
+    padding: 1em;
+    z-index: 1;
+    color: #fff;
+    transition: 0.3s ease all;
+    cursor: pointer;
+  }
+
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .sidebar-footer {
+    background: #000000;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 1em;
+  }
+
+  .sidebar-footer .footer-link {
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease-in all;
+  }
+
+  .sidebar-footer .footer-link:hover {
+    color: #F2E177;
+  }
+}

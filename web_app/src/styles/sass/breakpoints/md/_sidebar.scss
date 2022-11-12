@@ -1,0 +1,9 @@
+.divider {
+
+    @include sidebar( 1, 370px, 3);
+
+    .sidebar.sidebar-signup {
+        margin-top: -90px;
+        order: unset;        
+    }
+}

@@ -1,0 +1,64 @@
+
+  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docusign-integration
+  labels:
+    app: docusign-integration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docusign-integration
+  template:
+    metadata:
+      labels:
+        app: docusign-integration
+    spec:
+      containers:
+      - name: docusign-integration
+        image: savvlydeveastus.azurecr.io/docusign-integration:20220530084712
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: docusign-integration-service
+spec:
+  type: ClusterIP
+  selector:
+    app: docusign-integration
+  ports:
+    - name: http-docusign-integration
+      protocol: TCP
+      port: 6002
+      targetPort: 8000
+      
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: docusign-integration-ingress
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+  - host: docusign-integration.2f0d5af8eca54c96b6ae.eastus.aksapp.io
+    http:
+      paths:
+      - path: /signup
+        pathType: Prefix
+        backend:
+          service:
+            name: docusign-integration-service
+            port:
+              number: 6002
+      - path: /docusign
+        pathType: Prefix
+        backend:
+          service:
+            name: docusign-integration-service
+            port:
+              number: 6002

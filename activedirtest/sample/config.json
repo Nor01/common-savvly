@@ -1,0 +1,10 @@
+{
+    "authority": "https://savvlyb2c.b2clogin.com/savvlyb2c.onmicrosoft.com/B2C_1_Savvly_signin",
+    "client_id": "0984e165-6270-4caf-b5a1-06124ca123f0",
+    "_scope": [ "https://savvlyb2c.onmicrosoft.com/api/Accounts.Read", "https://savvlyb2c.onmicrosoft.com/api/Accounts.Write" ],
+    "scope": ["User.ReadBasic.All"],
+    "secret": "KiY8Q~.1WkyqXPXMCdZod9hFh815Qz.1SbNhBbNW",
+    "username": "dan.zadok@gmail.com",
+    "password": "Dz01jun2021$",
+    "endpoint": "https://graph.microsoft.com/v1.0/users"
+}

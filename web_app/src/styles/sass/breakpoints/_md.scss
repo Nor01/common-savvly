@@ -1,0 +1,11 @@
+@media all and (min-width: 992px) {
+    .hidden__md {
+        display: none;
+    }
+    .visible__md {
+        display: inherit;
+    }
+    
+    @import "md/carousel";
+    @import "md/sidebar";
+}

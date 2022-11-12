@@ -1,0 +1,25 @@
+.slogan {
+    font-size: $text-normal;
+}
+.main-title {
+    font-size: $title-normal;
+}
+.sub-title {
+    font-size: $text-larger;
+}
+.title {
+    font-size: $title-regular;
+    line-height: 58px;
+}
+.xl-title {
+    font-size: $title-xxl;
+}
+.desc {
+    font-size: $text-normal;
+}
+.container {
+
+    &.spacing-double {
+        padding: 4em;
+    }
+}

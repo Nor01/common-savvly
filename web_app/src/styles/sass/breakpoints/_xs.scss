@@ -1,0 +1,11 @@
+@media all and (min-width: 505px) {
+    .hidden__xs {
+        display: none;
+    }
+    .visible__xs {
+        display: inherit;
+    }
+    @import "xs/buttons";
+    @import "xs/main";
+    @import "xs/carousel";
+}

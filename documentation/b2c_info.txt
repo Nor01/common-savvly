@@ -1,0 +1,22 @@
+Tenenat info:
+
+Tenant name: savvlyb2c.onmicrosoft.com
+
+
+
+application id: 0984e165-6270-4caf-b5a1-06124ca123f0
+tenant: 7d9e372e-1567-4212-8abb-f5395ba779f7
+subscription id: 6684ee99-767f-433f-a086-89cf2dafbaea
+Secret: O~57Q~qU7Bp9txhmw5zM2r~.4P6UHyKYp2XKu    (i will change this.  for dev, this is fine)
+
+
+Flows:
+B2C_1_Savvly_edit_profile             Profile editing 
+	
+B2C_1_Savvly_password_reset           Password reset 
+	
+B2C_1_Savvly_signup_signin            Sign up and Sign in (for both regualar and MFA)
+
+
+MSAL REACT APP ID:
+REACT_APP_MSAL_CLIENTID=e41831ff-9f6c-466d-bb12-e1f39cba16b8

@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css");
+
+:root{
+  --green-color:#176A78;
+  --white1-color:#F2F7FC;
+  --white2-color:#FFFFFF;
+  --white3-color:#FAFAFA;
+  --yellow-color:#F2E177;
+}
+
+/* Mines for Index Page*/
+
+body {
+  font-family: Roboto;
+}
+
+.logo-login-section{
+  padding: 0 0 3rem 0;
+}
+
+.fa-lock{
+color:var(--green-color);
+}
+
+a{
+  color:var(--green-color);
+}
+
+.is-login-button-remember-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type=checkbox] {
+  accent-color: var(--green-color);
+}
+
+.is-background-white{
+  background-color: var(--white3-color);
+}
+
+.button-primary {
+  background-color: var(--green-color);
+  color: var(--white1-color);
+}
+
+.has-background-img-blackpattern{
+  background: url('../images/BlackPatternBlock.jpg');
+}
+
+.is-text-color-white1{
+  color:var(--white1-color);
+}
+
+.is-text-color-white2{
+  color:var(--white2-color);
+}
+
+.is-text-color-green{
+  color:var(--green-color);
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: #CCCCCC;
+  height: 1px;
+  margin: 0 0;
+}
+
+.mysection {
+  padding: 0rem 3rem;
+}
+
+.has-background-img-airplane {
+  background: url('../images/airplane.jpg');
+  background-size:cover;
+}
+
+.background-mobile {
+  background-position: 0px -45px;
+  background-repeat: no-repeat; 
+}
+
+.background-text{
+  position: absolute;
+  bottom:5%;
+  color:#f2f7fc;
+  letter-spacing: 1.5px;
+}
+
+.is-text-color-yellow{
+  color:var(--yellow-color);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+.has-background-img-yate{
+  background: url('../images/hero-2.png');
+  background-size:cover;
+  
+}
+
+.hero-login-button{
+  position: absolute;
+  z-index: 1;
+  right: 2%;
+  top:5%
+}
+
+.mybtn-blue {
+  color: #ffffff;
+  background: #176A78;
+  border-color: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.mybtn-blue:hover{
+  background: #ffffff;
+  color: #176A78;
+  border-color: #176A78;
+}
+
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+
+
+#app {
+  min-height: 100%;
+}
+
+.footer {
+  margin-top: -12px;
+}
+
+@media screen and (max-width: 768px) {
+  #menu-toggle:checked + .nav-menu {
+    display: block;
+  }
+}
+
+.fullheight {
+  height: 100%;
+}

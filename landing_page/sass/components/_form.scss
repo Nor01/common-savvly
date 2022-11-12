@@ -1,0 +1,131 @@
+.default-form {
+    input {
+        border: 1px solid $black-bg;
+        border-radius: 7px;
+        min-height: $input-main-height;
+        display: block;
+        margin-top: 10px;
+        width: 100%;
+        padding-left: 15px;
+    
+        &::-webkit-input-placeholder {
+            font-size: $text-normal;
+            font-weight: 400;
+        }
+        &::-moz-placeholder {
+            font-size: $text-normal;
+            font-weight: 400;
+        }
+        &:-ms-input-placeholder {
+            font-size: $text-normal;
+            font-weight: 400;
+        }
+        &:-moz-placeholder {
+            font-size: $text-normal;
+            font-weight: 400;
+        }
+    }
+    label {
+        text-transform: capitalize;
+        font-size: $text-normal;
+        font-weight: 400;
+    }
+    .sign-up-form {
+        width: 100%;
+        height: 100%;
+    }
+    .group {
+        margin-top: 15px;
+    
+        &.grid_flex span {
+            margin-right: 27px;
+            flex: 1;
+    
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+    .state {
+        max-width: 85px;
+    }
+    .zipcode {
+        max-width: 185px;
+    }
+    input[type="number"]#zipcode::-webkit-inner-spin-button {
+        display: none;
+    }
+    select {
+        display: block;
+        height: $input-main-height;
+        width: 100%;
+        border-radius: 7px;
+        margin-top: 10px;
+        padding-left: 15px;
+        font-size: $text-normal;
+        color: $black-bg;
+    }
+}
+
+// registration form
+#registration_form {
+    fieldset {
+        border: unset;
+        padding: unset;
+    }
+    .form-header {
+        @include flex( flex-start, center, row );
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $gray;
+        button {
+            margin-right: 20px;
+        }
+        a.default-link {
+            margin-top: 5px;
+        }
+    }
+    .submit-form {
+        button {
+            margin-top: 30px;
+            text-align: right;
+        }
+    }
+
+    &[data-step="step_2"] {
+        @include flex( space-between, inherit, column );
+        height: 100%;
+        input {
+            margin-bottom: 25px;
+        }
+    }
+}
+.submit-form {
+    button {
+        @include flex( center, center, row );
+        margin-left: auto;
+        padding-left: 60px;
+
+        .arrow-right {
+            margin-left: 40px;
+            display: flex;
+            align-items: flex-end;
+            margin-top: 2px;
+        }
+        &:hover {
+            svg path {
+                fill: $blue-green;
+            }
+        }
+    }
+}
+.descriptive-form-title {
+    font-size: $text-huge;
+    font-weight: 300;
+    color: $white-3;
+    line-height: 27px;
+    @include flex( center, flex-start, row );
+    p {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,44 @@
+// content on pages without header
+body.no-header {
+    &.login {
+        .bg-container {
+            min-height: 100vh;
+        }
+    }
+    .site {
+        &.site-bg {
+            min-height: 100vh;
+            height: auto;
+        }
+    }
+} 
+
+body {
+    &.login {
+        .bg-container {
+            aspect-ratio: unset;
+        }
+    }
+
+    .site {
+        width: 100%;
+
+        &.site-bg {
+            flex: 1;
+            // min-height: calc(100vh - 270px);
+            position: relative;
+            width: 100%;
+            @include flex( left, flex-end, row );
+
+            .bottom-caption-container {
+                .bottom-caption {
+
+                    p {
+                        font-size: $text-huge;
+                    }
+                }
+            }
+        }
+    }
+    
+}

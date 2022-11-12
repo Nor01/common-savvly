@@ -1,0 +1,19 @@
+.divider {
+
+    display: flex;
+    .sidebar:not(.sidebar-signup) {
+        min-height: 100vh;
+        flex-direction: column;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        order: unset;
+        flex: unset;
+
+        &.sidebar-signup {
+            min-height: unset;
+            height: auto;
+            position: inherit;
+        }
+    }
+}

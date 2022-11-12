@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<script>
+    //-------------------------------------------------------
+    // Global Variables
+    //-------------------------------------------------------
+    let g_is_local = true
+	let g_logged_userid = "742b5de4-4f66-486d-8d9a-92aec7e7d2e2"
+
+    //--------------------------------------------
+    // Get Server URL
+    //--------------------------------------------
+	function GetServerUrl() {
+		if (g_is_local) {
+			server_url = "http://localhost:5000/";
+		}
+		else {
+		    server_url = "https://savvly-dev-api.azurewebsites.net/";
+	    }
+		return server_url
+	}
+
+
+    //--------------------------------------------
+    // Add Style
+    //--------------------------------------------
+	function AddStyle() {
+		document.write('<style>');
+		document.write('table {font-family: arial, sans-serif; border-collapse: collapse; width: 100%;}');
+		document.write('td, th {border: 2px solid #dddddd; text-align: left; padding: 6px; }');
+		document.write('tr:nth-child(even) {background-color: #dddddd; }');
+		document.write('</style>');
+	}
+
+	//--------------------------------------------
+    // Add Scripts
+    //--------------------------------------------
+	function AddScripts() {
+	/*
+		document.write('<__script type=\"text/javascript\">');
+		document.write('function ClickHandler($event) {');
+		document.write('console.log(\"ClickHandler called with event\" + $event)');
+		document.write('$event.preventDefault();');
+		document.write('var linkname = $event.target.href;');
+		document.write('$http.get(linkname, {responseType: \"arraybuffer\"})');
+		document.write('.success(function (data) {');
+		document.write('alert(data);');
+		document.write('});');
+		document.write('}');
+		document.write('</script__>');
+     */
+    }
+
+    //--------------------------------------------
+    // Disable Cache
+    //--------------------------------------------
+	function DisableCache() {
+	    document.write('<meta http-equiv=\"Cache-Control\" content=\"no-cache, no-store, must-revalidate\" />')
+        document.write('<meta http-equiv=\"Pragma\" content=\"no-cache\" />')
+        document.write('<meta http-equiv=\"Expires\" content=\"0\" />')
+	}
+
+	//--------------------------------------------
+    // A function that is called upon a link click
+    //--------------------------------------------
+    function ClickHandler($event) {
+        console.log("ClickHandler called with event" + $event)
+        $event.preventDefault(); // Prevent default behavior when clicking a link
+        var linkname = $event.target.href; // Get filename from href
+
+        $http.get(linkname, {responseType: 'arraybuffer'})
+        .success(function (data) {
+            alert(data);
+        });
+    }
+
+	//--------------------------------------------
+    // Add Half Row
+    //--------------------------------------------	
+	function BuildUrl(baseurl, apiname, parameter) {
+	   var url;
+	   url = '<td><a href=\"' + baseurl + apiname;
+	   if (parameter != null){
+	       url = url + '?' + parameter;
+	   }
+	   url = url + '\"';
+	   url = url + ' onClick=\"return ClickHandler($event);\">';
+	   //url = url + '\">';
+	   console.log(url);
+	   url = url + apiname + '</a></td>';
+	   console.log(url);
+	   return url;
+	}
+	
+    //--------------------------------------------
+    // Add Half Row
+    //--------------------------------------------	
+	function AddHalfRow(title, apiname, parameter) {
+	  document.write('  <td>' + title + '</td>');
+	  document.write(BuildUrl(GetServerUrl(), apiname, parameter));
+	}
+
+    //--------------------------------------------
+    // Add Row
+    //--------------------------------------------	
+	function AddRow(title1, apiname1, parameter1, title2, apiname2, parameter2) {
+	  document.write('<tr>');
+	  AddHalfRow(title1, apiname1, parameter1);
+	  document.write('<td></td>');
+	  AddHalfRow(title2, apiname2, parameter2)
+	  document.write('</tr>');
+	  //alert('Added');
+	}
+
+    //--------------------------------------------
+    // Add Table Header
+    //--------------------------------------------	
+	function AddTableHeader() {
+		document.write('<tr><th>Description</th><th>API</th><th></th><th>Description</th><th>API</th></tr>');
+	}
+	
+	//--------------------------------------------
+    // Generate a random number
+    //--------------------------------------------
+	function get_random_num(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min) + min);
+	}
+    //--------------------------------------------
+    // Add Entire Table
+    //--------------------------------------------	
+	function AddTable() {
+        var client_info="{\'firstname\':\'Wil%2B1\',\'lastname\':\'Paiz1\',\'email\':\'x%2B1@leupus.com\',\'address\':\'st 100 fefaf\',\'zip_code\':\'21121\',\'birthdate\':\'1998-07-03\',\'sex\':\'M\',\'is_US_citizen\':\'Y\',\'is_married\':\'Y\',\'ssn\':\'123-12-3123\',\'spouse_firstname\':\'jess\',\'spouse_lastname\':\'violl\',\'spouse_birthdate\':\'1999-07-11\',\'spouse_sex\':\'F\',\'spouse_ssn\':\'123-12-3123\',\'spouse_is_US_citizen\':\'Y\',\'spouse_address\':\'st 100 fefaf 222\',\'spouse_email\':\'xorayac911@leupus.com\',\'investment_start_date\':\'2022-07-11\',\'payout_ages\':\[70\],\'ETF\':\'VOO Vanguard\',\'funding\':\'100000\',\'purchaser_type\':\'Qualified Purchaser\'}"
+	    //var client_info="%7B%0A%20%20%22firstname%22%3A%20%22John%22%2C%0A%20%20%22lastname%22%3A%20%22Doe%22%2C%0A%20%20%22address%22%3A%20%22NYC%22%2C%0A%20%20%22sex%22%3A%20%22F%22%2C%0A%20%20%22birthdate%22%3A%20%221965-01-31%22%2C%0A%20%20%22ssn%22%3A%20%22123-45-7899%22%2C%0A%20%20%22is_married%22%3A%20%22Y%22%2C%0A%20%20%22is_US_citizen%22%3A%20%22N%22%2C%0A%20%20%22funding%22%3A%2011%2C%0A%20%20%22payout_ages%22%3A%20%5B%0A%20%20%20%20111%2C%0A%20%20%20%2065%2C%0A%20%20%20%2070%2C%0A%20%20%20%20100%0A%20%20%5D%2C%0A%20%20%22ETF%22%3A%20%22VOO%20Vanguard%22%2C%0A%20%20%22purchaser_type%22%3A%20%22Accredited%20Investor%22%2C%0A%20%20%22investment_start_date%22%3A%20%222023-02-01%22%2C%0A%20%20%22spouse_firstname%22%3A%20%22Mary%22%2C%0A%20%20%22spouse_lastname%22%3A%20%22Jane%22%2C%0A%20%20%22spouse_sex%22%3A%20%22F%22%2C%0A%20%20%22spouse_birthdate%22%3A%20%221980-12-22%22%2C%0A%20%20%22spouse_ssn%22%3A%20%22121-45-7777%22%2C%0A%20%20%22spouse_email%22%3A%20%22mail%40gmail.com%22%2C%0A%20%20%22spouse_address%22%3A%20%22Boston%20MA%22%2C%0A%20%20%22passport_data%22%3A%20%22passport%20data%22%2C%0A%20%20%22passport_expiration%22%3A%20%222020-01-02%22%2C%0A%20%20%22passport_country%22%3A%20%22GE%22%2C%0A%20%20%22alien_id_or_visa%22%3A%20%22123123123%22%2C%0A%20%20%22alien_id_or_visa_expiration%22%3A%20%222030-12-31%22%0A%7D"
+
+	    var p_userid   = "userid=2ccaf7c1-1157-4475-a4fa-9f2e62e2b907"
+	    var p_test_userid   = "userid=*"
+	    var p_test_add_contract = p_test_userid + "&contract=" + client_info
+	    var p_adminid   = "admin=2ee8811a-9367-48f2-ba3e-a647a4dc413f"
+	    var p_env       = "dev=1&debug=1&logcmd=0&logres=0&admin=1&logsess=0&logreq=0";
+	    var p_separent  = "userid=Usr1&parentid=Usr5";
+		var p_newuser   = "userid=Usr20&userinfo="+client_info;
+		var p_deposit   = "userid=Usr1&amount=101.0&tranid=book_11h68d999t7bez";
+		var p_withdraw  = "userid=Usr1&amount=-90.0";
+		var p_deductfee = "userid=Usr1&amount=1.0&share=0.5";
+		var p_addnewadvisor = "userid=Advisor2&crdindividual=123123&crdfirm=101010&associated=Savvly&advisorinfo=%7B%0A%20%20%22firstname%22%3A%20%22John%22%2C%0A%20%20%22lastname%22%3A%20%22Doe%22%2C%0A%20%20%22address%22%3A%20%22Boston%22%2C%0A%20%20%22email%22%3A%20%22advisor%40consult.me%22%2C%0A%20%20%22phone%22%3A%20%22%2B1%20%28347%29%20678-1010%22%0A%7D";
+        var p_associated= "associated=*";
+        var p_addchild  = "userid=Usr2&advisorid=Advisor1";
+        var p_advisorid     = "userid=bff00284-e1df-40dc-835f-52dfda5b48ba";
+        var p_advisorstatus = "advisorid=Advisor1&status=Active";
+        var p_userid2   = "userid=Usr2";
+        var p_createuser="firstname=Danny4&lastname=Zadok4&email=Danny4@gmail.com&street=Alrozorov 5&city=Telaviv&zip=12345"
+        var p_pot_client= "userid=4b48cdfd-86c1-4309-8008-5370da7a8493&email=yuval%2Btesthtml4@savvly.com&clientinfo="+client_info
+        var p_getpot    = "userid=37460132-4597-4cd3-8424-237ef753a939&status=%2A";
+        var p_send_contract = "userid=Advisor1&email=yuval%2Btesthtml2@savvly.com";
+        var p_updated_contract_status = "userid=Advisor1&email=yuval%2Btesthtml2@savvly.com&status=Paid";
+        var p_urltype="type=login";
+        var p_email="email=tinewi3881@leupus.com"
+        //var p_calc="gender=M&current_age=40&average_return=1000&funding_amount=20000&payout_age=70"
+        var p_calc="gender=Male&current_age=45&average_return=6&funding_amount=100000&payout_age=65"
+        var p_docusign_ret="userid=Advisor1&contractid=d2ad719b-65cf-4514-a9f2-db7fd8d9596c"
+        var p_deladvisor="userid=e083dcfc-bd59-4a85-a0c7-4f843f29867e"
+        var p_deluser="userid=Usr1"
+        p_invalidate = "userid=39c63350-7e77-42eb-81ca-1c2ecede36a1&validated=false"
+        p_validate = "userid=39c63350-7e77-42eb-81ca-1c2ecede36a1&validated=true"
+        p_datetime = 'start=2022-08-05 00:00:00'
+        p_getoldpot = 'status=Draft&days=25'
+        p_deloldpot = 'status=Draft&days=60'
+        p_file      = 'file=app_log.txt'
+        p_delfile   = 'file=20220817_105300.jpg'
+
+		document.write('<table>');
+		AddTableHeader();
+		AddRow('Login'                   , 'login'                    , null           , 'Get all from  KV'            , 'getallkv'            , null        );
+		AddRow('Logout'                  , 'logout'                   , null           , 'Initialze the KV'            , 'initkv'              , null        );
+		AddRow('Register a user'         , 'registeruser'             , null           , 'Register a RIA'              , 'registerria'         , null        );
+		AddRow('Set Environment'         , 'environment'              , p_env          , 'Get all admins'              , 'getadmins'           , null        );
+		AddRow('Get General Info'        , 'getinfo'                  , null           , 'Add an admin'                , 'addadmin'            , p_adminid   );
+		AddRow('Get User Private Info'   , 'getuserpii'               , p_userid       , 'Delete an Admin'             , 'deladmin'            , p_adminid   );
+		AddRow('Get User Account ID'     , 'getaccountid'             , p_userid       , 'Get all Uesrs'               , 'users'               , null        );
+		AddRow('Activate User'           , 'activateuser'             , p_userid       , 'Get all Table Names'         , 'alltablenames'       , null        );
+		AddRow('Deactivate User'         , 'deactivateuser'           , p_userid       , 'Download Log File'           , 'downloadlogfile'     , null        );
+		AddRow('Get My Children'         , 'getmychildren'            , p_userid       , 'Set User Parent'             , 'setparent'           , p_separent  );
+		AddRow('Get User Data'           , 'userdata'                 , p_userid       , 'Add New User'                , 'addnewuser'          , p_newuser   );
+		AddRow('Set Deposit Completed'   , 'depositcomplete'          , p_userid       , 'Deposit Money'               , 'depoistmoney'        , p_deposit   );
+		AddRow('Set Withdrawal pending'  , 'withdrawalpending'        , p_userid       , 'Witdrawal Money'             , 'withdrawalmoney'     , p_withdraw  );
+		AddRow('Set Withdrawal Completed', 'withdrawalcomplete'       , p_userid       , 'Delete a User'               , 'deleteuser'          , p_deluser   );
+		AddRow('Get all Statuses'        , 'statuses'                 , null           , 'Get all Firm Market Values'  , 'fmvs'                , null        );
+		AddRow('Get all Users Data'      , 'usersdata'                , null           , 'Delete the user Tables'      , 'deleteusertables'    , null        );
+		AddRow('Deduct Management Fee'   , 'deductmngfee'             , p_deductfee    , 'Get User transactions '      , 'transactions'        , p_userid    );
+		AddRow('Deduct Signup Fee'       , 'deductsignfee'            , p_deductfee    , 'Get User Balance'            , 'userbalance'         , p_userid    );
+		AddRow('Deduct Misc Fee'         , 'deductmiscfee'            , p_deductfee    , 'Create a new user in AAD'    , 'createuser'          , p_createuser);
+    	AddRow('Does email exist?'       , 'emailexists'              , p_email        , 'Get Login/Regster URL'       , 'geturl'              , p_urltype   );
+		AddRow('Get my children'         , 'getmychildren'            , p_advisorid    , 'Add new advisor'             , 'addnewadvisor'       , p_addnewadvisor  );
+		AddRow('Get associated RIAs'     , 'getallassociatedrias'     , p_associated   , 'Get advisor info'            , 'getadvisorinfo'      , p_advisorid  );
+		AddRow('Is advisor'              , 'isadvisor'                , p_advisorid    , 'Add child'                   , 'addchild'            , p_addchild  );
+		AddRow('Get my children'         , 'getadvisorchildren'       , p_advisorid    , 'Del child'                   , 'delchild'            , p_userid2    );
+		AddRow('advisor children status' , 'getadvisorchildrenstatus' , p_advisorstatus, 'Get (AAD) Users Info'        , 'getusersinfo'        , null        );
+		AddRow('Add Potential Client'    , 'addpotentialclient'       , p_pot_client   , 'Get All Potential Clients'   , 'getpotentialclients' , p_getpot );
+    	AddRow('Send Contract'           , 'sendcontract'             , p_send_contract, 'Update contract status'      , 'updatecontractstatus', p_updated_contract_status );
+    	AddRow('Get Users emails (AD)'   , 'getusersemail'            , null           , 'Preview contract'            , 'previewcontract'     , p_pot_client );
+        AddRow('Calculate payout'        , 'simulate-prospect-planner', p_calc         , 'Docusign retrieve contract'  , 'docusignretrieve'    , p_docusign_ret );
+        AddRow('Delete Advisor'          , 'deleteadvisor'            , p_deladvisor   , 'Docusign contract info'      , 'docusigninfo'        , p_docusign_ret );
+        AddRow('Diag of User Tables'     , 'usertablesdiag'           , null           , 'Delete all the DB tables'    , 'deletealltables'     , null );
+        AddRow('Validate Advisor'        , 'validateadvisor'          , p_validate     , 'Invalidate Advisor'          , 'validateadvisor'     , p_invalidate );
+        AddRow('Users Changes Feed'      , 'userschangefeed'          , p_datetime     , 'Advisors  Changes Feed'      , 'advisorschangefeed'  , p_datetime );
+        AddRow('Potential Changes Feed'  , 'potentialschangefeed'     , p_datetime     , 'Get all Signed Contracts'    , 'getsignedcontracts'  , null );
+        AddRow('Get old potentials'      , 'getoldpotentials'         , p_getoldpot    , 'Del old potentials'          , 'deloldpotentials'    , p_deloldpot );
+        AddRow('Get user contracts'      , 'getusercontracts'         , p_test_userid  , 'Add user contract'           , 'addusercontract'     , p_test_add_contract );
+        AddRow('Show the files on server', 'listfsfiles'              , null           , 'Delete the files from server', 'deletefsfile'        , null );
+        AddRow('Download file from server','downloadfsfile'           , p_file         , 'Upload Log File to Storage'  , 'uploadlogfile'       , null );
+        AddRow('Show files stored in DB'  ,'listdbfiles'              , null           , 'Delete a file form the DB'   , 'deletedbfile'        , p_delfile );
+
+		document.write('</table>');
+	}
+	
+    //----------------------------------------------------
+    // Do a transaction, Send a URL and get reponse back
+    //----------------------------------------------------
+	function _do_http_transaction(url, callback) {
+	  url = "https://savvlyb2c.b2clogin.com/savvlyb2c.onmicrosoft.com/b2c_1_savvly_signin/oauth2/v2.0/authorize?client_id=0984e165-6270-4caf-b5a1-06124ca123f0&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2FgetAToken&scope=https%3A%2F%2Fsavvlyb2c.onmicrosoft.com%2Fapi%2FAccounts.Read+https%3A%2F%2Fsavvlyb2c.onmicrosoft.com%2Fapi%2FAccounts.Write+offline_access+openid+profile&state=aec9cae9-8957-43f6-8335-99bb757ff340"
+	  console.log(url);
+	  var xhr = new XMLHttpRequest();
+	  access_token = "xxx";
+	  xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
+	  //xhr.withCredentials = true;
+	  xhr.onreadystatechange = function() {
+		//if (this.readyState == 4 && this.status == 200) {
+		//  //console.log(xhr.response);
+		//  callback(xhr.response);
+		//}
+		// return if not ready state 4
+		console.log(`Ready Code: ${this.readyState}`);
+		console.log(`Staus Code: ${this.status}`);
+        if (this.readyState !== 4) {
+          return;
+        }
+		// check for redirect
+        if (this.status === 302 /* or may any other redirect? */) {
+		    console.log(`Staus Code: ${this.status}`);
+			var location = this.getResponseHeader("Location");
+			console.log(location);
+			return _do_http_transaction(location, callback)
+			//return ajax.call(this, location /*params*/, callback);
+		} 
+		// return data
+		callback(this.responseText)
+		//var jsonPretty = JSON.stringify(JSON.parse(xhr.response),null,'\t');
+		//var jsonPretty = JSON.stringify(xhr.response, null,'\t');
+		//callback(jsonPretty);
+		//var data = JSON.parse(this.responseText);
+		//callback(data);
+	  }
+	  console.log(`Open and send ${url}.`);
+	  xhr.open('GET', url, true);
+	  xhr.send();
+	}
+	function do_http_transaction(apiname) {
+		var parameter = null;
+		switch (apiname) {
+			case 'test':
+				parameter = 'userid=' + get_user_id();
+				break;
+		  default:
+			console.log(`No parameter for ${apiname}.`);
+		}
+	    url = GetServerUrl() + apiname;
+	    if (parameter != null){
+	       url = url + '?' + parameter;
+	    }
+		//url = //"https://savvlyb2c.b2clogin.com/savvlyb2c.onmicrosoft.com/b2c_1_savvly_signin/oauth2/v2.0/authorize?client_id=0984e165-6270-4caf-b5a1-06124ca123f0&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2FgetAToke//n&scope=https%3A%2F%2Fsavvlyb2c.onmicrosoft.com%2Fapi%2FAccounts.Read+https%3A%2F%2Fsavvlyb2c.onmicrosoft.com%2Fapi%2FAccounts.Write+offline_access+openid+profile&state=82e0c20b-bbe6-4e54-b69b-5bbb41cfbe60"
+	    _do_http_transaction(url, http_transaction_callback);
+	}
+	//----------------------------------------------------
+    // A callback function after transaction
+    //----------------------------------------------------
+	function http_transaction_callback(response){
+		console.log(response);
+        
+		document.getElementById("outputarea").innerHTML = response;
+	}
+	
+	//--------------------------------------------
+    // Create the buttons
+    //--------------------------------------------	
+	function create_buttons() {	
+		document.write('<div class="w3-show-inline-block">');
+	    document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_http_transaction(\"login\")>Login as user/ria/admin</button>');
+		document.write('</div>');
+		document.write('<br />');
+	}
+	
+	//--------------------------------------------
+    // Create output area
+    //--------------------------------------------	
+	function create_output_area() {
+	    //document.write('<input type="text" id="outputarea" value="Some text...">');
+		document.write('<p id="outputarea"></p>');
+		//document.write('<div id=\'outputarea\'>');
+	}
+
+	//--------------------------------------------
+    // Add the upload form
+    //--------------------------------------------
+	function add_upload_image_form(url, label) {
+		document.write('<form action = \"' + url + 'uploadimage\" method = \"POST\"  enctype = \"multipart/form-data\">');
+		document.write('<input type = \"file\" name = \"file\" />');
+		document.write('<input type = \"submit\" value=\"' + label + '\"/>');
+		document.write('</form>');
+	}
+
+    //--------------------------------------------
+    // Create entire HTML
+    //--------------------------------------------	
+	function CreateAll() {
+	    document.write('<html><head>');
+		DisableCache();
+		AddStyle();
+		AddScripts();
+		AddTable();
+		create_buttons();
+		create_output_area();
+		document.write('</html></head>');
+	}
+</script>
+<body onload="CreateAll()">
+
+

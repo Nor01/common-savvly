@@ -1,0 +1,291 @@
+.container__estimator {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px 20px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "client Funds Funds"
+    "client Funds Funds"
+    "share Funds Funds";
+
+  width: 1300px;
+  height: 650px;
+}
+.estimator__card__container {
+  height: 100%;
+}
+.client__estimator {
+  grid-area: client;
+  width: 375px;
+  height: 460px;
+}
+
+.share__estimator {
+  grid-area: share;
+  width: 375px;
+  height: 170px;
+}
+
+.funds__estimator {
+  grid-area: Funds;
+  min-width: 500px;
+  width: 900px;
+  height: 650px;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0e6e7b;
+  cursor: pointer;
+}
+.tabs.is-toggle li.is-active a {
+  background-color: #0e6e7b !important;
+  border: 0;
+}
+.box__container {
+  min-height: 40vh;
+}
+
+.payout__age__input {
+  width: 7rem;
+}
+
+.IconLumpSum {
+  width: 13%;
+  padding: 1px 1px 0 0;
+}
+.tab__list {
+  width: 45%;
+}
+
+.tabs a {
+  padding: 0.5em 1em;
+}
+
+.IconMultiplePayouts {
+  width: 13%;
+  padding: 1px 1px 0 0;
+}
+
+.genderSelect {
+  background: #eeeeee;
+  border-radius: 50px;
+  padding: 10px 10px;
+}
+
+.strongGenderSelect {
+  display: flex;
+  justify-content: space-between;
+}
+
+.IconInfoEstimator {
+  height: 10%;
+  margin-right: 5px;
+  width: 4%;
+}
+
+.infoEstimatorDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.averageReturnSelect {
+  background: #eeeeee;
+  border-radius: 50px;
+  padding: 10px 10px;
+}
+
+.investment__details {
+  overflow: hidden;
+}
+
+.payout__container > div {
+  height: 40px;
+  width: 110px;
+  background-color: #0e6e7b;
+  border-radius: 7px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 90px;
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+.labels__container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.label__container {
+  height: 100%;
+  width: 120px;
+  text-align: center;
+}
+
+.card__payout {
+  background-color: white;
+  z-index: 11;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+  margin-top: 5rem;
+  height: 60px;
+  width: 123px;
+  border-radius: 72px;
+  padding: 3px 5px;
+}
+
+.card__payout > span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0e6e7b;
+}
+
+.card__payout > p {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.payout__container {
+  position: absolute;
+  bottom: -2.5rem;
+}
+
+.payout__age,
+.payout__age-lump {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 2.8rem 0rem;
+}
+
+.payout__age-lump {
+  position: absolute;
+  padding: 0 2.8rem 0rem;
+  bottom: -2.5rem;
+}
+.payout__age > div {
+  padding-bottom: rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.payout__age:nth-child(1) {
+  margin-left: -2rem;
+}
+
+.card__payout-age {
+  background-color: white;
+  z-index: 11;
+  box-shadow: #d3d3d3 0px 0px 10px;
+
+  width: 115px;
+  height: 40px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__payout-age > span {
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content h1 {
+  font-weight: 400;
+}
+
+.marginSelectGender {
+  margin-right: 10px;
+}
+
+.IconGender1 {
+  width: 47px;
+}
+
+.IconDownArrow {
+  width: 15px;
+}
+
+.cardStyleBackground {
+  width: 208px;
+  background: #eeeeee;
+}
+
+.fieldSelectAge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdownSelectGender {
+  left: -52px;
+}
+
+.cardStyleBackground2 {
+  width: 208px;
+  border: 1px dashed #d7d7d7;
+}
+
+.IconAddSpouse {
+  width: 45px;
+}
+
+.field.is-grouped {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-header-title {
+  color: #0e6e7b;
+}
+
+.modalHeightAverageReturn {
+  min-height: 30vh;
+}
+
+.title {
+  color: #0e6e7b;
+}
+
+hr {
+  background-color: #d7d7d7;
+}
+
+@media screen and (min-width: 769px) {
+  .modal-content,
+  .modal-card {
+    width: 578px;
+  }
+}

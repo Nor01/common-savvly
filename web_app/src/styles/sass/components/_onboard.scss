@@ -1,0 +1,75 @@
+body.onboard {
+    background: url(../images/BlackPatternBlock-2.jpg) no-repeat;
+    background-size: cover;
+
+    main {
+        min-height: calc(100vh - 225px);
+    }
+
+    .sub-title-dark {
+        font-size: $text-normal;
+        font-weight: 400;
+        color: $white-3;
+    }
+    h1 {
+        font-size: $text-huge;
+        font-weight: 300;
+    }
+    .row {
+        text-align: center;
+    }
+
+    footer {
+        background-color: unset;
+
+        .skip-intro {
+            width: 400px;
+            max-width: 100%;
+            border-top: 1px solid $gray-2;
+            padding-top: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 979px) {
+    body.onboard {
+        .container {
+            // padding-left: unset;
+            // padding-right: unset;
+        }
+        header {
+            text-align: center;
+
+            .site-logo {
+                order: 1;
+            }
+            button {
+                order: 2;
+                margin-top: 40px;
+                max-width: 240px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .steps-container {
+                order: 3;
+                margin-top: 40px;
+                .step:nth-child(1) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body.onboard {
+        .steps-container {
+            .step {
+                min-width: unset;
+            }
+            .step-title {
+                font-size: $text-small-sm;
+            }
+        }
+    }
+}

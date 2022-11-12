@@ -1,0 +1,190 @@
+.horizontal-bars.active {
+    svg rect {
+        stroke: rgb(85, 196, 203);
+    }
+}
+.vertical-bars {
+    svg rect {
+        stroke: none;
+    }
+    &.active {
+        svg rect {
+            stroke: rgb(85, 196, 203);
+        }
+    }
+}
+.calculate-statistics-container {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.calculate-main-footer {
+    .button-wide {
+        margin-left: unset;
+        margin-right: auto;
+    }
+}
+
+.vr-look {
+
+    &.container {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 800px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .calculate-statistics-container {
+        flex-direction: unset;
+    }
+
+    .fundings-wrapper {
+        height: 100%;
+
+        .amount-title {
+            display: none;
+        }
+
+        .grid_flex.ai-center {
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+        }
+    }
+
+    .calculate-main-body {
+        flex: 1;
+        margin-bottom: -80px;
+        margin-left: 60px;
+        max-width: 500px;
+        display: flex;
+        justify-content: space-between;
+
+        .payout-title {
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 28px;
+        }
+    }
+    .calculate-main-compare {
+        display: flex;
+        height: 100%;
+        align-items: flex-end;
+        justify-content: space-around;
+        flex: 1;
+
+        .custom-funding-amount-y {
+            margin-bottom: 18px;
+            .compare-option {
+                margin-top: 14px;
+            }
+        }
+    }
+    .calculate-main-compare > .grid_flex {
+        /* flex-direction: column-reverse; */
+        /* justify-content: center; */
+        /* max-width: 150px; */
+        position: relative;
+    }
+    .compare-bars {
+        transform: rotate(-90deg);
+        transform-origin: 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .compare-meanings {
+        position: relative;
+        margin-bottom: 15px;
+    }
+    .meanings-bars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(-90deg);
+        transform-origin: 0 0;
+    }
+    .calculate-main-footer {
+        margin-right: 80px;
+        margin-top: 90px;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    .vr-look {
+        &.container {
+            min-height: calc(#{$bar-savvly-large-width}*2.2);
+        }
+        .calculate-statistics-container {
+            flex-direction: column;
+
+            .fundings-wrapper {
+
+                .grid_flex.ai-center {
+                    flex-direction: row;
+                }
+            }
+
+            .calculate-main-compare {
+                height: unset;
+            }
+        }
+
+        .calculate-main-body {
+            margin-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .calculate-main {
+        .vr-look {
+            &.container {
+                padding-left: .5em;
+                padding-right: .5em;
+                min-height: calc(#{$bar-savvly-large-width}*1.5);
+            }
+            .calculate-main-body {
+                .compare-option {
+                    font-size: 16px;
+                    line-height: 44px;
+                    margin-right: 0;
+                }
+                .compare-bars {
+                    .compare-bar-savvly {
+                        height: 12px;
+                        border-radius: 3px;
+                    }
+                    .compare-bar-noSavvly {
+                        height: 12px;
+                        border-radius: 3px;
+                    }
+                }
+                .custom-funding-amount-y {
+                    .compare-option {
+                        margin-top: 26px;
+                    }
+                    .compare-bars {
+                        padding-top: 6px;
+                    }
+                }
+                p.payout-title {
+                    padding-bottom: 31px;
+                    font-size: $text-smaller;
+                }
+            }
+    
+            .fundings-wrapper {
+                #custom-amount {
+                    width: 120px;
+                }
+                p {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

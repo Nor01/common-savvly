@@ -1,0 +1,24 @@
+1. how do we cancel a pending $ transfer?
+
+2. Withdraw money process.  money in our bank, has to be moved to the client's bank
+
+3. what marks a transfer out complete?
+
+4. where do we keep account id?
+
+5. how do we retrieve an account?  what information is needed?  (someone calls, and wants to know information about their account)
+
+6. Integration tests checks - how do we ensure the system in a valid state?
+
+7. admin console features:
+    - change from pending to active (after KYC)
+    - change flag to deceased
+    
+
+8. logging of events
+
+9. allocations to more than one fund?
+
+10. cosmos - journal.  saving it for audit purposes
+
+11. 

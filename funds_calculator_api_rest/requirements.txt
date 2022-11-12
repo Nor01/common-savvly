@@ -1,0 +1,7 @@
+fastapi==0.75.2
+pydantic==1.9.0
+docutils==0.17.1
+mysql-connector-python==8.0.15
+typing_extensions==4.2.0
+uvicorn==0.17.6
+random2==1.0.1

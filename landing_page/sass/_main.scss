@@ -1,0 +1,207 @@
+html {
+    font-family:  'Neue Haas Unica', sans-serif;
+}
+div, input {
+    box-sizing: border-box;
+}
+.container {
+    padding-bottom: 3em;
+    padding: 2em;
+    height: 100%;
+
+    &.spacing-double {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    &.container-clear-right {
+        padding-right: 0;
+    }
+    &.container-clear-left {
+        padding-left: 0;
+    }
+}
+
+.center {
+    text-align: center;
+}
+.vr-line-small {
+    width: 2px;
+    height: 15px;
+    background: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.full-width {
+    width: 100%;
+}
+.full-height {
+    height: 100%;
+}
+.full-size {
+    height: 100%;
+    width: 100%;
+}
+
+/*================================================================
+    Colors
+==================================================================*/
+.yellow {
+    color: $yellow;
+}
+.blue-green {
+    color: $blue-green;
+}
+a.default-link {
+    color: $blue-green;
+    transition: all .2s;
+    &:hover {
+        opacity: .7;
+    }
+}
+
+/*================================================================
+    Typos
+==================================================================*/
+.bold {
+    font-weight: 700;
+}
+.slogan {
+    font-size: $text-normal-sm;
+    font-weight: 800;
+    line-height: 20px;
+    text-transform: uppercase;
+
+    &.yellow {
+        margin-bottom: 50px;
+    }
+}
+.slogan-2 {
+    font-size: $text-normal;
+    font-weight: 700;
+    line-height: 28px;
+}
+.text-huge {
+    font-size: $text-huge-sm;
+}
+.main-title {
+    font-size: $title-normal-sm;
+    font-weight: 300;
+}
+.sub-title {
+    font-size: $text-larger-sm;
+    font-weight: 300;
+    line-height: 27px;
+}
+.title-small {
+    font-size: $text-normal-sm;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.title {
+    font-size: $title-regular-sm;
+    font-weight: 300;
+    line-height: 38px;
+}
+.xl-title {
+    font-size: $title-xxl-sm;
+    line-height: 100px;
+    font-weight: 700;
+}
+.desc {
+    font-size: $text-normal-sm;
+    color: $gray-transparent;
+    line-height: 30px;
+}
+.desc-2 {
+    font-size: $text-normal-sm;
+    color: $gray;
+    line-height: 28px;
+    font-weight: 400;
+}
+.password-reminder {
+    color: $yellow;
+    text-decoration: underline;
+    font-size: $text-normal;
+
+    a {
+        color: $yellow;
+        text-decoration: underline;
+    }
+}
+.link-yellow {
+    color: $yellow;
+    text-decoration: underline;
+    font-size: $text-normal;
+    transition: opacity .2s;
+
+    &:hover {
+        opacity: .7;
+    }
+}
+.hide {
+    display: none;
+}
+.regular {
+    font-weight: 400;
+}
+a.secondary {
+    color: $yellow;
+    font-weight: 400;
+    transition: opacity .2s;
+
+    &:hover {
+        opacity: .7;
+    }
+}
+section {
+    img {
+        width: 100%;
+        height: auto;
+    }
+    &.what-we-do img {
+        height: 100%;
+    }
+}
+.site-logo {
+    min-width: 150px;
+}
+.site.darker-bg {
+    background-color: $white-3;
+}
+
+/*================================================================
+    margin & padding
+==================================================================*/
+.margin-top {
+    margin-top: $medium_spacing;
+}
+.margin-top-double {
+    margin-top: $medium_spacing * 2;
+}
+.margin-left {
+    margin-left: $medium_spacing;
+}
+.margin-left-double {
+    margin-left: $medium_spacing * 2;
+}
+.margin-right {
+    margin-right: $medium_spacing;
+}
+.margin-right-double {
+    margin-left: $medium_spacing * 2;
+}
+.margin-bottom {
+    margin-bottom: $medium_spacing;
+}
+.margin-bottom-double {
+    margin-bottom: $medium_spacing * 2;
+}
+.padding-bottom-double {
+    padding-bottom: $medium_spacing * 2;
+}
+.centered {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

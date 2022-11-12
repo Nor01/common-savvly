@@ -1,0 +1,30 @@
+ul.tabs-list {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    margin: 0;
+
+    li {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+        padding-left: 40px;
+        margin-right: 20px;
+        font-size: $text-normal;
+        font-weight: 400;
+        box-sizing: border-box;
+        height: 100%;
+        border-bottom: 10px solid transparent;
+        cursor: pointer;
+
+        &.selected {
+            color: $blue-green;
+            border-bottom: 10px solid $blue-green;
+        }
+    }
+}
+.tab-panel[aria-expanded="false"],
+.tab-panel[data-expanded="false"] {
+    display: none;
+}

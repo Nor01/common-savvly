@@ -1,0 +1,8 @@
+.header {
+    &.header--type1 {
+        height: $header--1;
+        background: url(../images/sidebar-bg.png) no-repeat;
+        background-size: cover;
+        background-color: $black-bg;
+    }
+}

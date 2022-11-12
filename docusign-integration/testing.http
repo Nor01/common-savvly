@@ -1,0 +1,61 @@
+
+POST http://docusign-integration.2f0d5af8eca54c96b6ae.eastus.aksapp.io/signup/senddoc
+Content-Type: application/json
+
+{
+	"documents": [{
+		"name": "Savvly New Subscriber Contract",
+		"doc_id": "NEW_SUBSCRIBER_CONTRACT",
+		"document_data": {
+			"phone": "+1 (555) 555-5555",
+			"spouse_firstname": "Suzie",
+			"state": "CO",
+			"zip_code": "12345-1234",
+			"email": "sly.investor@invesco.com",
+			"is_US_citizen": "Y",
+			"purchaser_type": "Qualified Purchaser",
+			"investor_accredited_gt_1mm": "Y",
+			"firstname": "Sylvester",
+			"ssn": "111-22-3333",
+			"birthdate": "1/2/34",
+			"payout_ages": [65, 68, 70],
+			"citizenship": "US",
+			"address": "123 Main St",
+			"is_qualified_purchaser": "N",
+			"funding": "100000",
+			"investor_sufficient_knowledge": "Y",
+			"spouse_lastname": "Spouse",
+			"lastname": "Investor",
+			"investor_accredit_gt_200k": "Y",
+			"city": "Denver"
+		}
+	}],
+	
+	"signers": [
+		{
+			"signer_email": "david.spadea@gmail.com",
+			"signer_name": "Dave Spadea",
+			"sign_here_marker": "CLIENT_SIGN_HERE",
+            "sign_date_marker": "CLIENT_DATE_SIGNED"
+		},
+        {
+			"signer_email": "dave@spadea.tech",
+			"signer_name": "Dave Spadea (Spouse)",
+			"sign_here_marker": "CLIENT_SPOUSE_SIGN_HERE",
+            "sign_date_marker": "CLIENT_SPOUSE_DATE_SIGNED"
+		},
+        {
+			"signer_email": "dave@savvly.com",
+			"signer_name": "Dave Spadea (Savvly)",
+			"sign_here_marker": "SAVVLY_SIGN_HERE",
+            "sign_date_marker": "SAVVLY_DATE_SIGNED"
+		}
+	],
+	"cc": [
+		{
+			"cc_email": "dave@savvly.com",
+			"cc_name": "Dave Spadea (CC)"	
+		}
+	]
+	
+}

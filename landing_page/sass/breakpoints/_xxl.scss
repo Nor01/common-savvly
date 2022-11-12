@@ -1,0 +1,10 @@
+@media all and (min-width: 1700px) {
+    .hidden__xxl {
+        display: none;
+    }
+    .visible__xxl {
+        display: inherit;
+    }
+    @import "xxl/main-bg-images";
+    @import "xxl/signup";
+}

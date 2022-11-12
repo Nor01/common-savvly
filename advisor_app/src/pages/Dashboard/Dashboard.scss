@@ -1,0 +1,36 @@
+#mainDash {
+    .dashLink .linkTitle {
+        color: $SavvlyGreen;
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 5px!important;
+    }
+
+    .dashLink .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .button {
+            margin-top: 1em;
+            width: 100%;
+        }
+    }
+
+    .meeting {
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px dashed #0e6e7b;
+
+        .meetingTitle {
+            font-size: 20px;
+            color: $SavvlyGreen;
+        }
+    }
+
+}

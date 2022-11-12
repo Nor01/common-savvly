@@ -1,0 +1,738 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Savvly API",
+    "description" : "Savvly API",
+    "contact" : {
+      "email" : "yuval@savvly.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/Savvly/SavvlyAPI/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  }, {
+    "url" : "http://localhost:5000/",
+    "description" : "SwaggerHub API local dev"
+  } ],
+  "tags" : [ {
+    "name" : "admins",
+    "description" : "Secured Admin-only calls"
+  }, {
+    "name" : "users",
+    "description" : "Operations available to regular users (clients)"
+  } ],
+  "paths" : {
+    "/addnewuser" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Add a New Client to the databse. The client must have registered in Active Directory first.",
+        "description" : "Add new client \n",
+        "operationId" : "addNewUser",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "social",
+          "in" : "query",
+          "description" : "Social Security number",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "minimum" : 1000,
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }, {
+          "name" : "dob",
+          "in" : "query",
+          "description" : "Date of Birth",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "date-time"
+          }
+        }, {
+          "name" : "address",
+          "in" : "query",
+          "description" : "Address",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "sex",
+          "in" : "query",
+          "description" : "Sex 'F' or 'M'",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "F"
+        }, {
+          "name" : "mother",
+          "in" : "query",
+          "description" : "Mother's Name",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getuserpii" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Get User Private Information",
+        "description" : "Get User Private Information\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/activateuser" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Activate User",
+        "description" : "Activate User\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/deactivateuser" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Deactivate User",
+        "description" : "Deactivate User\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getmychildren" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "getmychildren",
+        "description" : "getmychildren\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getinfo" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "getinfo",
+        "description" : "getinfo\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getaccountid" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "getaccountid",
+        "description" : "Get Account ID\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/userdata" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "userdata",
+        "description" : "Get User Data\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/updateuserdata" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Update User Data",
+        "description" : "Update User Data\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "table",
+          "in" : "query",
+          "description" : "Table",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "userdata"
+        }, {
+          "name" : "data",
+          "in" : "query",
+          "description" : "Data",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : {
+            "statusflag" : "statusflag-lksw",
+            "transferamount" : "transferamount-lksw"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/depoistmoney" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Deposit Money",
+        "description" : "Deposit Money\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "amount",
+          "in" : "query",
+          "description" : "Amount",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : 100.0
+          }
+        }, {
+          "name" : "tranid",
+          "in" : "query",
+          "description" : "Transaction ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "book_11h68d999t7bez"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/withdrawalmoney" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Withdraw Money",
+        "description" : "Withdraw Money\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "amount",
+          "in" : "query",
+          "description" : "Amount",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "example" : -100.0
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/depositcomplete" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Deposite Complete",
+        "description" : "Set Deposite Complete\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/withdrawalpending" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Set Withdrawal Pending",
+        "description" : "Set Withdrawal Pending\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/withdrawalcomplete" : {
+      "get" : {
+        "tags" : [ "users" ],
+        "summary" : "Set Withdrawal Complete",
+        "description" : "Set Withdrawal Complete\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/usertablesdiag" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Get User Tables Diag",
+        "description" : "Get User Tables Diag\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/alltablenames" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Get Table Names",
+        "description" : "Get Table Names\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/deleteusertables" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Delete All Tables",
+        "description" : "Delete All Tables\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/deleteuser" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Delete User",
+        "description" : "Delete User\n",
+        "parameters" : [ {
+          "name" : "userid",
+          "in" : "query",
+          "description" : "User ID",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/users" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Users List",
+        "description" : "Users List\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/accountids" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "User Account IDs",
+        "description" : "Account IDs\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/statuses" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "User Status",
+        "description" : "User Status\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/fmvs" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "User FMVS",
+        "description" : "User FMVS\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/usersdata" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "All Users Data",
+        "description" : "All Users Data\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/getallkv" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "All KV",
+        "description" : "All KV\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/delallkv" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Del All KV",
+        "description" : "Del All KV\n",
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    },
+    "/environment" : {
+      "get" : {
+        "tags" : [ "admins" ],
+        "summary" : "Set Environment",
+        "description" : "Set Environment\n",
+        "parameters" : [ {
+          "name" : "dev",
+          "in" : "query",
+          "description" : "dev 0 or 1",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "maximum" : 1,
+            "minimum" : 0,
+            "type" : "number"
+          }
+        }, {
+          "name" : "debug",
+          "in" : "query",
+          "description" : "debug 0 or 1",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "maximum" : 1,
+            "minimum" : 0,
+            "type" : "number"
+          }
+        }, {
+          "name" : "logcmd",
+          "in" : "query",
+          "description" : "logcmd 0 or 1",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "maximum" : 1,
+            "minimum" : 0,
+            "type" : "number"
+          }
+        }, {
+          "name" : "admin",
+          "in" : "query",
+          "description" : "admin 0 or 1",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "maximum" : 1,
+            "minimum" : 0,
+            "type" : "number"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    }
+  },
+  "components" : { }
+}

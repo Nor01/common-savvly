@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- styles import -->
+    <link rel="stylesheet" href="../sass/style.css">
+    <link rel="stylesheet" href="../fonts/font/stylesheet.css">
+
+</head>
+<body class="login">
+
+    <header class="header header--type1">
+        <div class="container">
+            <div class="flex-between">
+                <div class="site-logo">
+                    <img src="../images/logo-white.png" alt="logo savvly">
+                    <p  class="main-sub-title">Live more. Earn more.</p>
+                </div>
+<!--                <nav class="side-navigation grid_flex">
+                    <p>Need to Login Instead?</p>
+                    <span class="vr-line-small"></span>
+                    <a href="#" class="link-yellow">Advisor Registration</a>
+                </nav> -->
+            </div>
+        </div>
+    </header>
+    <div class="divider flex-md-column">
+        <div class="sidebar sidebar-white sidebar-signup">
+            <div class="container">
+                <div class="sign-up-form default-form">
+                    <form id="registration_form" class="js-registration-form" action="" data-step="step_1">
+                        <div class="form-header fd-column">
+                            <h2>Advisor</h2>
+<!--                            <a href="#" class="default-link">Not your RIA</a>-->
+                        </div>
+                        <label for="company-name">Name</label>
+                        <input type="text" id="company-name" placeholder="i.e. John Doe">
+                        <div class="group">
+                            <label for="company-name">Email</label>
+                            <input type="text" id="email" placeholder="i.e. john@savvly.com">
+                        </div>
+                        <div class="group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" placeholder="i.e. 123 Main St.">
+                            <label for="address-description" class="screen-reader-text">Address Description</label>
+                            <input type="text" id="address-description" placeholder="i.e. Suite 200">
+                        </div>
+                        <div class="group grid_flex">
+                            <span class="city">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" placeholder="i.e. Maintown">
+                            </span>
+                            <span class="state">
+                                <label for="state">state</label>
+                                <input type="text" id="state" name="state" placeholder="i.e. NY">
+                            </span>
+                            <span class="zipcode">
+                                <label for="zipcode">zipcode</label>
+                                <input type="number" id="zipcode" name="zipcode" placeholder="i.e. 92831">
+                            </span>
+                        </div>
+                        <div class="group">
+                            <label for="finra-number">Advisor Registration Number</label>
+                            <input type="text" id="finra-number" placeholder="i.e. T0017112">
+                        </div>
+                        <div class="group">
+                            <label for="company-name">Company Name</label>
+                            <input type="text" id="company-name" placeholder="i.e. Savvly Advisors">
+                        </div>
+                        <div class="group">
+                            <label for="finra-number">Company Registration Number</label>
+                            <input type="text" id="finra-number" placeholder="i.e. T0017112">
+                        </div>
+                        <div class="submit-form">
+                            <button class="button-normal btn-blue-bg" type="button">Register
+                                <a href="#">
+                                    <span class="arrow-right">
+                                        <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.08533 0.000252474C0.523498 -0.0121479 0.0575308 0.433788 0.0456074 0.99562C0.0389303 1.30706 0.175334 1.60467 0.415711 1.80307L6.64165 7.13666L0.415234 12.4683C-0.0378565 12.8012 -0.135152 13.438 0.19775 13.891C0.530652 14.3441 1.16736 14.4414 1.62045 14.1085C1.66195 14.078 1.70058 14.0446 1.73683 14.0084L8.86513 7.90977C9.29246 7.54492 9.34349 6.90296 8.97864 6.47515C8.94382 6.43461 8.90614 6.39645 8.86513 6.36164L1.73683 0.256845C1.55702 0.0970707 1.32571 0.00597572 1.08533 0.000252474Z" fill="white"/>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="sign-up-main-container advisor">
+            <div class="sign-up-nav flex-between">
+
+                <div class="descriptive-form-title flex-end">
+                    <p>Advisor Registration</p>
+                </div>
+            </div>
+            <div class="site site-bg">
+                <div class="bg-container"></div>
+<!--                <div class="container full-width">-->
+<!--                    <div class="bottom-caption-container">-->
+<!--                        <div class="bottom-caption">-->
+<!--                            <a href="#" class="support" title="support">-->
+<!--                                <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                    <path d="M39 26.3935C39 21.5536 36.2235 17.2346 32.0653 15.1338C31.9358 24.413 24.413 31.9365 15.1338 32.0653C17.2346 36.2235 21.5543 39 26.3935 39C28.6627 39 30.8694 38.3959 32.808 37.2472L38.9451 38.9451L37.2472 32.808C38.3952 30.8694 39 28.6627 39 26.3935Z" fill="white"/>-->
+<!--                                    <path d="M29.7832 14.8916C29.7832 6.68027 23.1029 0 14.8916 0C6.68027 0 0 6.68027 0 14.8916C0 17.5675 0.712207 20.1734 2.06502 22.4608L0.0548438 29.7284L7.3224 27.7182C9.60984 29.071 12.2157 29.7832 14.8916 29.7832C23.1029 29.7832 29.7832 23.1029 29.7832 14.8916ZM12.6064 11.4258H10.3213C10.3213 8.90525 12.3711 6.85547 14.8916 6.85547C17.4121 6.85547 19.4619 8.90525 19.4619 11.4258C19.4619 12.7047 18.9203 13.9341 17.9758 14.7987L16.0342 16.5758V18.3574H13.749V15.5688L16.4326 13.1122C16.9124 12.6735 17.1768 12.0748 17.1768 11.4258C17.1768 10.1659 16.1515 9.14063 14.8916 9.14063C13.6317 9.14063 12.6064 10.1659 12.6064 11.4258ZM13.749 20.6426H16.0342V22.9277H13.749V20.6426Z" fill="white"/>-->
+<!--                                </svg>     -->
+<!--                            </a>                        -->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/form_steps.js"></script>
+
+</body>
+</html>

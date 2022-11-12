@@ -1,0 +1,21 @@
+.footer {
+
+    .content {
+        max-width: 700px;
+        margin: auto;
+        text-align: center;
+
+        h3 {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    }
+    p.content {
+        line-height: 42px;
+        font-size: $text-normal;
+        color: rgba(51, 49, 47, .52 );
+        margin-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

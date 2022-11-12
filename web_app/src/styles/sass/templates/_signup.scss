@@ -1,0 +1,27 @@
+.sign-up-main-container {
+    width: 100%;
+    // min-height: calc(100vh - 270px);
+    margin-top: -90px;
+    display: flex;
+    flex-direction: column;
+    .sign-up-nav {
+        height: 90px;
+        color: $white;
+        padding-right: 50px;
+    }
+}
+.bottom-caption {
+    a.support {
+        svg {
+            transition: all .2s;
+        }
+        &:hover svg {
+            width: 42px;
+            height: 42px;
+        }
+    }
+}
+.side-navigation > p:nth-child(1) {
+    color: #fff;
+    margin-top: 3px;
+}

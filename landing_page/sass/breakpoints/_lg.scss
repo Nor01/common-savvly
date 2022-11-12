@@ -1,0 +1,15 @@
+@media all and (min-width: 1200px) {
+    .hidden__lg {
+        display: none;
+    }
+    .visible__lg {
+        display: inherit;
+    }
+    @import "lg/hero";
+    @import "lg/main";
+    @import "lg/flexbox";
+    @import "lg/what-we-do";
+    @import "lg/clearings";
+    @import "lg/black-patern";
+    @import "lg/carousel";
+}

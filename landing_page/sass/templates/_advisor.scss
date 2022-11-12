@@ -1,0 +1,179 @@
+
+%blue-green-input {
+    border: 1px solid $light-blue;
+    background-color: $blue-green-bg;
+    color: $white;
+}
+.calculate {
+    background-color: $blue-green;
+    color: $white;
+
+    h2 {
+        margin: 0;
+        font-weight: 350;
+    }
+    .description {
+        font-size: $text-normal;
+        font-weight: 400;
+        margin-top: 0;
+    }
+    .custom-switch-container {
+        p {
+            font-size: $text-larger;
+            font-weight: 350;
+            line-height: 18px;
+        }
+        label {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .input-type p {
+            font-size: $text-normal;
+            font-weight: 350;
+            color: $white-3;
+        }
+    }
+
+    .avg-return {
+
+        margin-left: 80px;
+
+        p {
+            font-size: $text-normal;
+            font-weight: 350;
+            color: $white-3;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        label {
+            margin-left: 10px;
+            font-size: $text-normal;
+            font-weight: 350;
+            color: $white-3;
+            width: 110px;
+            height: $input-main-height;
+            position: relative;
+            display: block;
+
+            .percentage {
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translate( 0, -50%);
+                font-size: $text-huge;
+                color: rgba(255,255,255,0.5);
+            }
+            input[type="number"]::-webkit-inner-spin-button, 
+            input[type="number"]::-webkit-outer-spin-button {
+                display: none;
+            }
+
+
+        }
+        input {
+            @extend %blue-green-input;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 7px;
+            display: block;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: $text-huge;
+            padding-right: 45px;
+
+            &:focus-visible {
+                border: 1px solid $light-blue;
+                outline: none;
+            }
+        }
+    }
+    .funding {
+        input {
+            @extend %blue-green-input;
+            height: $input-main-height;
+            border-radius: 7px;
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: $text-huge;
+            text-align: left;
+            &:focus-visible {
+                outline: none;
+            }
+        }
+        label {
+            font-size: $text-normal;
+            font-weight: 350;
+            color: $white-3;
+        }
+    }
+}
+
+// prospects
+.tab-header {
+    background-color: $white;
+    border-bottom: 1px solid $black;
+
+    .btn-add {
+        margin: 20px 40px;
+    }
+}
+.grid-title {
+    .col-title {
+        font-size: $text-normal-sm;
+        font-weight: 700;
+        color: $black-bg;
+        line-height: 24px;
+        text-transform: uppercase;
+    }
+}
+.prospect-item {
+    padding: 20px 10px;
+    background-color: $white;
+    border-radius: 11px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 6px rgba(0,  0,  0, .25);
+    line-height: 27px;
+
+    .row-title {
+        font-size: $text-normal;
+        font-weight: 700;
+        line-height: 27px;
+        border-right: 1px solid $light_gray;
+    }
+
+    .col-title {
+        font-size: $text-normal;
+        font-weight: 400;
+        color: $light_gray;
+        margin: 0;
+        line-height: 27px;
+    }
+    .col-desc {
+        font-size: $text-normal;
+        font-weight: 400;
+        color: $black-bg;
+        margin: 0;
+        line-height: 27px;
+    }
+}
+.grid-item {
+    margin-right: 30px;
+    &:last-of-type {
+        margin-right: 0;
+    }
+    align-self: center;
+    &.grid-title {
+        .col-title {
+            display: inline;
+        }
+        .arrow-down {
+            display: inline;
+            margin-left: 5px;
+        }
+    }
+}

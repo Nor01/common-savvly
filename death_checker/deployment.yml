@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: death-checker
+  labels:
+    app: death-checker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: death-checker
+  template:
+    metadata:
+      labels:
+        app: death-checker
+    spec:
+      containers:
+      - name: death-checker
+        image: savvlydeveastus.azurecr.io/death-checker:latest

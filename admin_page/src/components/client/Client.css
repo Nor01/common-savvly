@@ -1,0 +1,9 @@
+.clientFilterTab {
+    padding: 10px 1em;
+    background-color: #f2f2f2;
+}
+
+.clientFilterTab:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}

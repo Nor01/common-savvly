@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fmv
+  labels:
+    app: fmv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fmv
+  template:
+    metadata:
+      labels:
+        app: fmv
+    spec:
+      containers:
+      - name: fmv
+        image: savvlydeveastus.azurecr.io/fmv:latest

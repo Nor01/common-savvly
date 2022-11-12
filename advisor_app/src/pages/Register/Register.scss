@@ -1,0 +1,173 @@
+#registerApp {
+  height: 100%;
+  
+  $registerGreen: #176a78;
+  $registerWhite1: #f2f7fc;
+  $registerWhite2: #ffffff;
+  $registerWhite3: #fafafa;
+  $registerYellow: #f2e177;
+
+  /* Mines for Index Page*/
+
+  body {
+    font-family: Roboto;
+  }
+
+  .logo-login-section {
+    padding: 0 0 3rem 0;
+  }
+
+  .is-background-white {
+    background-color: $registerWhite3;
+  }
+
+  .button-primary {
+    background-color: $registerGreen;
+    color: $registerWhite1;
+  }
+
+  .has-background-img-blackpattern {
+    background: url("../../assets/images/BlackPatternBlock.jpg");
+  }
+
+  .is-text-color-white1 {
+    color: $registerWhite1;
+  }
+
+  .is-text-color-white2 {
+    color: $registerWhite2;
+  }
+
+  .is-text-color-green {
+    color: $registerGreen;
+  }
+
+  .is-fullwidth {
+    max-width: 2000px !important;
+  }
+
+  .mylabel {
+    margin-bottom: 8px;
+  }
+
+  .button-primary:hover {
+    background: #fff;
+    color: #176a78;
+    border: 2px solid #176a78;
+  }
+
+  /* for switch buttton */
+
+  .switch input {
+    height: 0;
+    opacity: 0;
+    width: 0;
+  }
+
+  .default-form input {
+    border: 1px solid #16110d;
+    border-radius: 7px;
+    display: block;
+    margin-top: 10px;
+    min-height: 65px;
+    padding-left: 15px;
+    width: 100%;
+  }
+
+  .default-form .group {
+    margin-top: 15px;
+  }
+
+  .fd-column {
+    align-items: flex-start !important;
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .switch .slider:before {
+    background-color: #fff;
+    border: 1px solid #999;
+    bottom: 50%;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
+    content: "";
+    height: 22px;
+    left: 0;
+    position: absolute;
+    transform: translateY(50%);
+    transition: 0.4s;
+    width: 22px;
+  }
+
+  .switch .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .switch input:checked + .slider:before {
+    margin-left: 27px;
+  }
+  .margin-right {
+    margin-right: 20px;
+  }
+
+  .switch {
+    height: 18px;
+    width: 51px;
+  }
+  .switch {
+    display: inline-block;
+    position: relative;
+  }
+
+  .default-form label {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+  .switch .slider.round {
+    border-radius: 34px;
+  }
+  .switch .slider {
+    background-color: #176a78;
+    transition: all 0.4s;
+  }
+
+  .switch .slider {
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  /* END for switch buttton */
+
+  hr {
+    border: 0;
+    clear: both;
+    display: block;
+    width: 100%;
+    background-color: #cccccc;
+    height: 1px;
+    margin: 0 0;
+  }
+
+  .has-background-img-advisor {
+    background: url("../../assets/images/signup-bg-advisor.jpg");
+    background-size: cover;
+  }
+
+  .is-text-color-yellow {
+    color: $registerYellow;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .advisor-registration-link:hover {
+    text-decoration: underline;
+    color: $registerWhite1;
+    transition: 0.3s ease all;
+  }
+
+  .fullheight {
+    height: 100%;
+  }
+}

@@ -1,0 +1,2913 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Savvly API</title>
+    <style type="text/css">
+      body {
+      	font-family: Trebuchet MS, sans-serif;
+      	font-size: 15px;
+      	color: #444;
+      	margin-right: 24px;
+      }
+      
+      h1	{
+      	font-size: 25px;
+      }
+      h2	{
+      	font-size: 20px;
+      }
+      h3	{
+      	font-size: 16px;
+      	font-weight: bold;
+      }
+      hr	{
+      	height: 1px;
+      	border: 0;
+      	color: #ddd;
+      	background-color: #ddd;
+      }
+      
+      .app-desc {
+        clear: both;
+        margin-left: 20px;
+      }
+      .param-name {
+        width: 100%;
+      }
+      .license-info {
+        margin-left: 20px;
+      }
+      
+      .license-url {
+        margin-left: 20px;
+      }
+      
+      .model {
+        margin: 0 0 0px 20px;
+      }
+      
+      .method {
+        margin-left: 20px;
+      }
+      
+      .method-notes	{
+      	margin: 10px 0 20px 0;
+      	font-size: 90%;
+      	color: #555;
+      }
+      
+      pre {
+        padding: 10px;
+        margin-bottom: 2px;
+      }
+      
+      .http-method {
+       text-transform: uppercase;
+      }
+      
+      pre.get {
+        background-color: #0f6ab4;
+      }
+      
+      pre.post {
+        background-color: #10a54a;
+      }
+      
+      pre.put {
+        background-color: #c5862b;
+      }
+      
+      pre.delete {
+        background-color: #a41e22;
+      }
+      
+      .huge	{
+      	color: #fff;
+      }
+      
+      pre.example {
+        background-color: #f3f3f3;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      
+      code {
+        white-space: pre;
+      }
+      
+      .nickname {
+        font-weight: bold;
+      }
+      
+      .method-path {
+        font-size: 1.5em;
+        background-color: #0f6ab4;
+      }
+      
+      .up {
+        float:right;
+      }
+      
+      .parameter {
+        width: 500px;
+      }
+      
+      .param {
+        width: 500px;
+        padding: 10px 0 0 20px;
+        font-weight: bold;
+      }
+      
+      .param-desc {
+        width: 700px;
+        padding: 0 0 0 20px;
+        color: #777;
+      }
+      
+      .param-type {
+        font-style: italic;
+      }
+      
+      .param-enum-header {
+      width: 700px;
+      padding: 0 0 0 60px;
+      color: #777;
+      font-weight: bold;
+      }
+      
+      .param-enum {
+      width: 700px;
+      padding: 0 0 0 80px;
+      color: #777;
+      font-style: italic;
+      }
+      
+      .field-label {
+        padding: 0;
+        margin: 0;
+        clear: both;
+      }
+      
+      .field-items	{
+      	padding: 0 0 15px 0;
+      	margin-bottom: 15px;
+      }
+      
+      .return-type {
+        clear: both;
+        padding-bottom: 10px;
+      }
+      
+      .param-header {
+        font-weight: bold;
+      }
+      
+      .method-tags {
+        text-align: right;
+      }
+      
+      .method-tag {
+        background: none repeat scroll 0% 0% #24A600;
+        border-radius: 3px;
+        padding: 2px 10px;
+        margin: 2px;
+        color: #FFF;
+        display: inline-block;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>Savvly API</h1>
+    <div class="app-desc">Savvly API</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="yuval@savvly.com">yuval@savvly.com</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="app-desc">BasePath:/Savvly/SavvlyAPI/1.0.0</div>
+    <div class="license-info">Apache 2.0</div>
+    <div class="license-url">http://www.apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Admins">Admins</a></h4>
+  <ul>
+  <li><a href="#accountidsGet"><code><span class="http-method">get</span> /accountids</code></a></li>
+  <li><a href="#addNewUser"><code><span class="http-method">get</span> /addnewuser</code></a></li>
+  <li><a href="#advisorschangefeedGet"><code><span class="http-method">get</span> /advisorschangefeed</code></a></li>
+  <li><a href="#alltablenamesGet"><code><span class="http-method">get</span> /alltablenames</code></a></li>
+  <li><a href="#delallkvGet"><code><span class="http-method">get</span> /delallkv</code></a></li>
+  <li><a href="#deleteuserGet"><code><span class="http-method">get</span> /deleteuser</code></a></li>
+  <li><a href="#deleteusertablesGet"><code><span class="http-method">get</span> /deleteusertables</code></a></li>
+  <li><a href="#deloldpotentialsGet"><code><span class="http-method">get</span> /deloldpotentials</code></a></li>
+  <li><a href="#environmentGet"><code><span class="http-method">get</span> /environment</code></a></li>
+  <li><a href="#fmvsGet"><code><span class="http-method">get</span> /fmvs</code></a></li>
+  <li><a href="#getallkvGet"><code><span class="http-method">get</span> /getallkv</code></a></li>
+  <li><a href="#getoldpotentialsGet"><code><span class="http-method">get</span> /getoldpotentials</code></a></li>
+  <li><a href="#getsignedcontractsGet"><code><span class="http-method">get</span> /getsignedcontracts</code></a></li>
+  <li><a href="#statusesGet"><code><span class="http-method">get</span> /statuses</code></a></li>
+  <li><a href="#updatedailydataGet"><code><span class="http-method">get</span> /updatedailydata</code></a></li>
+  <li><a href="#updateriadataGet"><code><span class="http-method">get</span> /updateriadata</code></a></li>
+  <li><a href="#updateuserdata2Get"><code><span class="http-method">get</span> /updateuserdata2</code></a></li>
+  <li><a href="#usersGet"><code><span class="http-method">get</span> /users</code></a></li>
+  <li><a href="#userschangefeedGet"><code><span class="http-method">get</span> /userschangefeed</code></a></li>
+  <li><a href="#usersdataGet"><code><span class="http-method">get</span> /usersdata</code></a></li>
+  <li><a href="#usertablesdiagGet"><code><span class="http-method">get</span> /usertablesdiag</code></a></li>
+  </ul>
+  <h4><a href="#AdminsTables">AdminsTables</a></h4>
+  <ul>
+  <li><a href="#alltablenamesGet"><code><span class="http-method">get</span> /alltablenames</code></a></li>
+  <li><a href="#deleteusertablesGet"><code><span class="http-method">get</span> /deleteusertables</code></a></li>
+  <li><a href="#updatedailydataGet"><code><span class="http-method">get</span> /updatedailydata</code></a></li>
+  <li><a href="#updateriadataGet"><code><span class="http-method">get</span> /updateriadata</code></a></li>
+  <li><a href="#updateuserdata2Get"><code><span class="http-method">get</span> /updateuserdata2</code></a></li>
+  </ul>
+  <h4><a href="#All">All</a></h4>
+  <ul>
+  <li><a href="#login"><code><span class="http-method">get</span> /login</code></a></li>
+  <li><a href="#logout"><code><span class="http-method">get</span> /logout</code></a></li>
+  </ul>
+  <h4><a href="#Docusign">Docusign</a></h4>
+  <ul>
+  <li><a href="#docusigninfoGet"><code><span class="http-method">get</span> /docusigninfo</code></a></li>
+  <li><a href="#docusignretrieveGet"><code><span class="http-method">get</span> /docusignretrieve</code></a></li>
+  </ul>
+  <h4><a href="#PotentialClients">PotentialClients</a></h4>
+  <ul>
+  <li><a href="#addpotentialclientGet"><code><span class="http-method">get</span> /addpotentialclient</code></a></li>
+  <li><a href="#docusigninfoGet"><code><span class="http-method">get</span> /docusigninfo</code></a></li>
+  <li><a href="#docusignretrieveGet"><code><span class="http-method">get</span> /docusignretrieve</code></a></li>
+  <li><a href="#getpotentialclientsGet"><code><span class="http-method">get</span> /getpotentialclients</code></a></li>
+  <li><a href="#previewcontractGet"><code><span class="http-method">get</span> /previewcontract</code></a></li>
+  <li><a href="#sendcontractGet"><code><span class="http-method">get</span> /sendcontract</code></a></li>
+  <li><a href="#updatecontractstatusGet"><code><span class="http-method">get</span> /updatecontractstatus</code></a></li>
+  </ul>
+  <h4><a href="#RIA">RIA</a></h4>
+  <ul>
+  <li><a href="#addchildGet"><code><span class="http-method">get</span> /addchild</code></a></li>
+  <li><a href="#addnewadvisorGet"><code><span class="http-method">get</span> /addnewadvisor</code></a></li>
+  <li><a href="#addpotentialclientGet"><code><span class="http-method">get</span> /addpotentialclient</code></a></li>
+  <li><a href="#delchildGet"><code><span class="http-method">get</span> /delchild</code></a></li>
+  <li><a href="#docusigninfoGet"><code><span class="http-method">get</span> /docusigninfo</code></a></li>
+  <li><a href="#docusignretrieveGet"><code><span class="http-method">get</span> /docusignretrieve</code></a></li>
+  <li><a href="#getadvisorchildrenGet"><code><span class="http-method">get</span> /getadvisorchildren</code></a></li>
+  <li><a href="#getadvisorinfoGet"><code><span class="http-method">get</span> /getadvisorinfo</code></a></li>
+  <li><a href="#getallassociatedriasGet"><code><span class="http-method">get</span> /getallassociatedrias</code></a></li>
+  <li><a href="#getmychildrenGet"><code><span class="http-method">get</span> /getmychildren</code></a></li>
+  <li><a href="#getpotentialclientsGet"><code><span class="http-method">get</span> /getpotentialclients</code></a></li>
+  <li><a href="#getriachildrenstatusGet"><code><span class="http-method">get</span> /getriachildrenstatus</code></a></li>
+  <li><a href="#isadvisorGet"><code><span class="http-method">get</span> /isadvisor</code></a></li>
+  <li><a href="#previewcontractGet"><code><span class="http-method">get</span> /previewcontract</code></a></li>
+  <li><a href="#sendcontractGet"><code><span class="http-method">get</span> /sendcontract</code></a></li>
+  <li><a href="#updatecontractstatusGet"><code><span class="http-method">get</span> /updatecontractstatus</code></a></li>
+  </ul>
+  <h4><a href="#SimulatorForPayouts">SimulatorForPayouts</a></h4>
+  <ul>
+  <li><a href="#simulateProspectPlannerGet"><code><span class="http-method">get</span> /simulate-prospect-planner</code></a></li>
+  </ul>
+  <h4><a href="#UserManagement">UserManagement</a></h4>
+  <ul>
+  <li><a href="#createuserGet"><code><span class="http-method">get</span> /createuser</code></a></li>
+  <li><a href="#emailexistsGet"><code><span class="http-method">get</span> /emailexists</code></a></li>
+  <li><a href="#getusersemailGet"><code><span class="http-method">get</span> /getusersemail</code></a></li>
+  <li><a href="#getusersinfoGet"><code><span class="http-method">get</span> /getusersinfo</code></a></li>
+  </ul>
+  <h4><a href="#Users">Users</a></h4>
+  <ul>
+  <li><a href="#activateuserGet"><code><span class="http-method">get</span> /activateuser</code></a></li>
+  <li><a href="#deactivateuserGet"><code><span class="http-method">get</span> /deactivateuser</code></a></li>
+  <li><a href="#depoistmoneyGet"><code><span class="http-method">get</span> /depoistmoney</code></a></li>
+  <li><a href="#depositcompleteGet"><code><span class="http-method">get</span> /depositcomplete</code></a></li>
+  <li><a href="#getaccountidGet"><code><span class="http-method">get</span> /getaccountid</code></a></li>
+  <li><a href="#getinfoGet"><code><span class="http-method">get</span> /getinfo</code></a></li>
+  <li><a href="#getuserpiiGet"><code><span class="http-method">get</span> /getuserpii</code></a></li>
+  <li><a href="#updateuserdataGet"><code><span class="http-method">get</span> /updateuserdata</code></a></li>
+  <li><a href="#userdataGet"><code><span class="http-method">get</span> /userdata</code></a></li>
+  <li><a href="#withdrawalcompleteGet"><code><span class="http-method">get</span> /withdrawalcomplete</code></a></li>
+  <li><a href="#withdrawalmoneyGet"><code><span class="http-method">get</span> /withdrawalmoney</code></a></li>
+  <li><a href="#withdrawalpendingGet"><code><span class="http-method">get</span> /withdrawalpending</code></a></li>
+  </ul>
+
+  <h1><a name="Admins">Admins</a></h1>
+  <div class="method"><a name="accountidsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /accountids</code></pre></div>
+    <div class="method-summary">User Account IDs (<span class="nickname">accountidsGet</span>)</div>
+    <div class="method-notes">Account IDs</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="addNewUser"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /addnewuser</code></pre></div>
+    <div class="method-summary">Add a new client (<span class="nickname">addNewUser</span>)</div>
+    <div class="method-notes">Add a New Client to the users databse. The client must have registered in
+Active Directory first.</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID (OID from Active Directory) </div>      <div class="param">userinfo (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Dictionary of information (same as addpotentialclient) </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="advisorschangefeedGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /advisorschangefeed</code></pre></div>
+    <div class="method-summary">Get the changes feed in the Advisors table from a specific date&amp;time (<span class="nickname">advisorschangefeedGet</span>)</div>
+    <div class="method-notes">Get Database changes in the Advisors table</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">start (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The start date and time in format yyyy-mm-dd hh:mm:ss (2022-08-05 12:11:10) </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="alltablenamesGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /alltablenames</code></pre></div>
+    <div class="method-summary">Get Table Names (<span class="nickname">alltablenamesGet</span>)</div>
+    <div class="method-notes">Get Table Names</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="delallkvGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /delallkv</code></pre></div>
+    <div class="method-summary">Del All KV (<span class="nickname">delallkvGet</span>)</div>
+    <div class="method-notes">Del All KV</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteuserGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /deleteuser</code></pre></div>
+    <div class="method-summary">Delete User (<span class="nickname">deleteuserGet</span>)</div>
+    <div class="method-notes">Delete User</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteusertablesGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /deleteusertables</code></pre></div>
+    <div class="method-summary">Delete All Tables (<span class="nickname">deleteusertablesGet</span>)</div>
+    <div class="method-notes">Delete All Tables</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deloldpotentialsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /deloldpotentials</code></pre></div>
+    <div class="method-summary">Delete list of potentials records by status and days threshold (<span class="nickname">deloldpotentialsGet</span>)</div>
+    <div class="method-notes">Delete the list of the potentials records by status, Retrieving records older than 'days' days.</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">status (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; status of contract for query (Draft/Sent/Signed) </div>      <div class="param">days (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; find records older or equal to &#x27;days&#x27; in days </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="environmentGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /environment</code></pre></div>
+    <div class="method-summary">Set Environment (<span class="nickname">environmentGet</span>)</div>
+    <div class="method-notes">Set Environment</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">dev (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; dev 0 or 1 </div>      <div class="param">debug (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; debug 0 or 1 </div>      <div class="param">logcmd (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; logcmd 0 or 1 </div>      <div class="param">admin (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; admin 0 or 1 </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="fmvsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /fmvs</code></pre></div>
+    <div class="method-summary">User FMVS (<span class="nickname">fmvsGet</span>)</div>
+    <div class="method-notes">User FMVS</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getallkvGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getallkv</code></pre></div>
+    <div class="method-summary">All KV (<span class="nickname">getallkvGet</span>)</div>
+    <div class="method-notes">All KV</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getoldpotentialsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getoldpotentials</code></pre></div>
+    <div class="method-summary">Get the list of the potentials records by status (<span class="nickname">getoldpotentialsGet</span>)</div>
+    <div class="method-notes">Get the list of the potentials records by status, Retrieving records older than 'days' days.</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">status (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; status of contract for query (Draft/Sent/Signed) </div>      <div class="param">days (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; find records older or equal to &#x27;days&#x27; in days </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getsignedcontractsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getsignedcontracts</code></pre></div>
+    <div class="method-summary">Get the list of the signed contracts from the clients database (<span class="nickname">getsignedcontractsGet</span>)</div>
+    <div class="method-notes">Get the list of the signed contracts from the database</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="statusesGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /statuses</code></pre></div>
+    <div class="method-summary">User Status (<span class="nickname">statusesGet</span>)</div>
+    <div class="method-notes">User Status</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updatedailydataGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /updatedailydata</code></pre></div>
+    <div class="method-summary">Update daily Data (<span class="nickname">updatedailydataGet</span>)</div>
+    <div class="method-notes"><p>Update Daily Data
+columns:</p>
+<ul>
+<li>date : The date</li>
+<li>share_cost: Share cost</li>
+<li>tot_protfolio: Total Protfolio</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">date (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Date </div>      <div class="param">data (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Data </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updateriadataGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /updateriadata</code></pre></div>
+    <div class="method-summary">Update RIA Data (<span class="nickname">updateriadataGet</span>)</div>
+    <div class="method-notes"><p>Update RIA Data
+columns:</p>
+<ul>
+<li>crd - the CRD number of the RIA</li>
+<li>associated - the associated company of the RIA</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID of the RIA </div>      <div class="param">data (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Data </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updateuserdata2Get"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /updateuserdata2</code></pre></div>
+    <div class="method-summary">Update User Data (<em>not implemented</em>) (<span class="nickname">updateuserdata2Get</span>)</div>
+    <div class="method-notes"><p>Update User Data
+columns:</p>
+<ul>
+<li>mothername : User's mother maiden name</li>
+<li>sex : User Gender (Female (F) or Male (M)</li>
+<li>parentid : User Parent ID (the parent is also a user)</li>
+<li>statusflag : Status flag
+<ul>
+<li>&quot;Active&quot;  : Active/Idle</li>
+<li>&quot;Pending&quot; : just signed up. no KYC (Know your Customer)</li>
+<li>&quot;Transfer&quot; : incoming $ pending</li>
+<li>&quot;Transfer-Complete&quot; : transfer compelete (in our bank account)</li>
+<li>&quot;Purchase-Pending&quot; : Pending to purchase  shares</li>
+<li>&quot;Withdrawal&quot; : $ leaving</li>
+<li>&quot;Withdrawal-Pending&quot; :  $ money in our bank account from a sell</li>
+<li>&quot;Deceased&quot; : dead</li>
+<li>&quot;Closed&quot; : No activity allowed</li>
+<li>&quot;Transfer-Cancel&quot; : Transfer_cancel (timeout)</li>
+</ul>
+</li>
+<li>fmv : Fair Market Value (user's assets)</li>
+<li>fund : The base fund of the user - Should be updated upon deposit/withdraw</li>
+<li>dayprofit :</li>
+<li>totprofit :</li>
+<li>numshares_inheritence : Number of shares from inheritence</li>
+<li>transferamount :</li>
+<li>transferid : The ID of the transaction done by the user</li>
+<li>numshares : Number of shares</li>
+<li>shareprice : Share price</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID of the RIA </div>      <div class="param">data (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Data </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="usersGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /users</code></pre></div>
+    <div class="method-summary">Users List (<span class="nickname">usersGet</span>)</div>
+    <div class="method-notes">Users List</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="userschangefeedGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /userschangefeed</code></pre></div>
+    <div class="method-summary">Get the changes feed in the users table from a specific date&amp;time (<span class="nickname">userschangefeedGet</span>)</div>
+    <div class="method-notes">Get Database changes in the Users table</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">start (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The start date and time in format yyyy-mm-dd hh:mm:ss (2022-08-05 12:11:10) </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="usersdataGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /usersdata</code></pre></div>
+    <div class="method-summary">All Users Data (<span class="nickname">usersdataGet</span>)</div>
+    <div class="method-notes">All Users Data</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="usertablesdiagGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /usertablesdiag</code></pre></div>
+    <div class="method-summary">Get User Tables Diag (<span class="nickname">usertablesdiagGet</span>)</div>
+    <div class="method-notes">Get User Tables Diag</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="AdminsTables">AdminsTables</a></h1>
+  <div class="method"><a name="alltablenamesGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /alltablenames</code></pre></div>
+    <div class="method-summary">Get Table Names (<span class="nickname">alltablenamesGet</span>)</div>
+    <div class="method-notes">Get Table Names</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteusertablesGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /deleteusertables</code></pre></div>
+    <div class="method-summary">Delete All Tables (<span class="nickname">deleteusertablesGet</span>)</div>
+    <div class="method-notes">Delete All Tables</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updatedailydataGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /updatedailydata</code></pre></div>
+    <div class="method-summary">Update daily Data (<span class="nickname">updatedailydataGet</span>)</div>
+    <div class="method-notes"><p>Update Daily Data
+columns:</p>
+<ul>
+<li>date : The date</li>
+<li>share_cost: Share cost</li>
+<li>tot_protfolio: Total Protfolio</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">date (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Date </div>      <div class="param">data (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Data </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updateriadataGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /updateriadata</code></pre></div>
+    <div class="method-summary">Update RIA Data (<span class="nickname">updateriadataGet</span>)</div>
+    <div class="method-notes"><p>Update RIA Data
+columns:</p>
+<ul>
+<li>crd - the CRD number of the RIA</li>
+<li>associated - the associated company of the RIA</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID of the RIA </div>      <div class="param">data (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Data </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updateuserdata2Get"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /updateuserdata2</code></pre></div>
+    <div class="method-summary">Update User Data (<em>not implemented</em>) (<span class="nickname">updateuserdata2Get</span>)</div>
+    <div class="method-notes"><p>Update User Data
+columns:</p>
+<ul>
+<li>mothername : User's mother maiden name</li>
+<li>sex : User Gender (Female (F) or Male (M)</li>
+<li>parentid : User Parent ID (the parent is also a user)</li>
+<li>statusflag : Status flag
+<ul>
+<li>&quot;Active&quot;  : Active/Idle</li>
+<li>&quot;Pending&quot; : just signed up. no KYC (Know your Customer)</li>
+<li>&quot;Transfer&quot; : incoming $ pending</li>
+<li>&quot;Transfer-Complete&quot; : transfer compelete (in our bank account)</li>
+<li>&quot;Purchase-Pending&quot; : Pending to purchase  shares</li>
+<li>&quot;Withdrawal&quot; : $ leaving</li>
+<li>&quot;Withdrawal-Pending&quot; :  $ money in our bank account from a sell</li>
+<li>&quot;Deceased&quot; : dead</li>
+<li>&quot;Closed&quot; : No activity allowed</li>
+<li>&quot;Transfer-Cancel&quot; : Transfer_cancel (timeout)</li>
+</ul>
+</li>
+<li>fmv : Fair Market Value (user's assets)</li>
+<li>fund : The base fund of the user - Should be updated upon deposit/withdraw</li>
+<li>dayprofit :</li>
+<li>totprofit :</li>
+<li>numshares_inheritence : Number of shares from inheritence</li>
+<li>transferamount :</li>
+<li>transferid : The ID of the transaction done by the user</li>
+<li>numshares : Number of shares</li>
+<li>shareprice : Share price</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID of the RIA </div>      <div class="param">data (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Data </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="All">All</a></h1>
+  <div class="method"><a name="login"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /login</code></pre></div>
+    <div class="method-summary">Login to the system (<span class="nickname">login</span>)</div>
+    <div class="method-notes">Login to the system. All users of all types (Clients, RIAs, Admins) should log in to the system prior to use any API</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="logout"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /logout</code></pre></div>
+    <div class="method-summary">Logout from the system (<span class="nickname">logout</span>)</div>
+    <div class="method-notes">Logout from the system.</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Docusign">Docusign</a></h1>
+  <div class="method"><a name="docusigninfoGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /docusigninfo</code></pre></div>
+    <div class="method-summary">Get contract info  from DocuSign (<span class="nickname">docusigninfoGet</span>)</div>
+    <div class="method-notes"><h1>Get contract info  from DocuSign</h1>
+<ul>
+<li>userid: Advisor ID</li>
+<li>contractid: Contract ID (the envelope ID of docusign)</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">contractid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Contract ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    content of contract as pdf file
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="docusignretrieveGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /docusignretrieve</code></pre></div>
+    <div class="method-summary">Preview contract of a potential client contract from DocuSign (<span class="nickname">docusignretrieveGet</span>)</div>
+    <div class="method-notes"><h1>Preview contract of a potential client contract from DocuSign</h1>
+<ul>
+<li>userid: Advisor ID</li>
+<li>contractid: Contract ID (the envelope ID of docusign)</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">contractid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Contract ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    content of contract as pdf file
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="PotentialClients">PotentialClients</a></h1>
+  <div class="method"><a name="addpotentialclientGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /addpotentialclient</code></pre></div>
+    <div class="method-summary">Add new potential client (new contract) (<span class="nickname">addpotentialclientGet</span>)</div>
+    <div class="method-notes"><h1>Add New Potential Client (new contract):</h1>
+<ul>
+<li>
+<p>userid: Advisor ID</p>
+</li>
+<li>
+<p>email: E-mail of potential client</p>
+</li>
+<li>
+<p>clientinfo: dictionary of info</p>
+<h1>mandtory</h1>
+<ul>
+<li>firstname: str</li>
+<li>lastname: str</li>
+<li>middlename: Optional[str]</li>
+<li>address: str</li>
+<li>sex: Literal['M', 'F']</li>
+<li>birthdate: date</li>
+<li>ssn: constr(regex=r'^(?!000|.+0{4})(?:\d{9}|\d{3}-\d{2}-\d{4})$')</li>
+<li>is_married: Literal['Y', 'N']</li>
+<li>is_US_citizen: Literal['Y', 'N']</li>
+<li>funding: confloat(gt=0)</li>
+<li>payout_ages: conlist(int, min_items=1)</li>
+<li>ETF: str = 'VOO Vanguard'</li>
+<li>purchaser_type: Literal['Accredited Investor', 'Qualified Purchaser']</li>
+</ul>
+<h1>optional fields</h1>
+<ul>
+<li>phone: Optional[str]  # = '+1 (000) 000-0000'</li>
+<li>zip_code: Optional[constr(regex=r'^\d{5}(?:[-\s]\d{4})?$')] = '00000'</li>
+<li>city: Optional[str]</li>
+<li>state: Optional[str]</li>
+<li>country: Optional[str]</li>
+<li>investment_start_date: Optional[date]</li>
+</ul>
+<h1>email: Optional[str]  # the email field is stored outside the dictionary,</h1>
+<h1>optional spouse</h1>
+<ul>
+<li>spouse_firstname: Optional[str]</li>
+<li>spouse_lastname: Optional[str]</li>
+<li>spouse_middlename: Optional[str]</li>
+<li>spouse_address: Optional[str]</li>
+<li>spouse_sex: Optional[Literal['F', 'M']]</li>
+<li>spouse_birthdate: Optional[date]</li>
+<li>spouse_ssn: Optional[constr(regex=r'^(?!000|.+0{4})(?:\d{9}|\d{3}-\d{2}-\d{4})$')]</li>
+<li>spouse_email: Optional[EmailStr]</li>
+<li>spouse_zip_code: Optional[constr(regex=r'^\d{5}(?:[-\s]\d{4})?$')] = '00000'</li>
+<li>spouse_city: Optional[str]</li>
+<li>spouse_state: Optional[str]</li>
+<li>spouse_country: Optional[str]</li>
+</ul>
+<h1>must in case of non US citizen</h1>
+<ul>
+<li>is_green_card: Optional[Literal['Y', 'N']]</li>
+<li>passport_data: Optional[str]</li>
+<li>passport_expiration: Optional[date]</li>
+<li>passport_country: Optional[str]</li>
+<li>alien_id_or_visa: Optional[str]</li>
+<li>alien_id_or_visa_expiration: Optional[date]</li>
+</ul>
+<h1>must in case of non US citizen</h1>
+<ul>
+<li>spouse_is_green_card: Optional[Literal['Y', 'N']]</li>
+<li>spouse_passport_data: Optional[str]</li>
+<li>spouse_passport_expiration: Optional[date]</li>
+<li>spouse_passport_country: Optional[str]</li>
+<li>spouse_alien_id_or_visa: Optional[str]</li>
+<li>spouse_alien_id_or_visa_expiration: Optional[date]</li>
+<li>spouse_is_US_citizen: Optional[Literal['Y', 'N']]</li>
+</ul>
+<h1>additional contract fields</h1>
+<ul>
+<li>advisor_fee: Optional[int] # must be between 0 and 100</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">email (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Potential Client&#x27;s E-mail </div>      <div class="param">clientinfo (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Dictionary of Client info for contract </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="docusigninfoGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /docusigninfo</code></pre></div>
+    <div class="method-summary">Get contract info  from DocuSign (<span class="nickname">docusigninfoGet</span>)</div>
+    <div class="method-notes"><h1>Get contract info  from DocuSign</h1>
+<ul>
+<li>userid: Advisor ID</li>
+<li>contractid: Contract ID (the envelope ID of docusign)</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">contractid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Contract ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    content of contract as pdf file
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="docusignretrieveGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /docusignretrieve</code></pre></div>
+    <div class="method-summary">Preview contract of a potential client contract from DocuSign (<span class="nickname">docusignretrieveGet</span>)</div>
+    <div class="method-notes"><h1>Preview contract of a potential client contract from DocuSign</h1>
+<ul>
+<li>userid: Advisor ID</li>
+<li>contractid: Contract ID (the envelope ID of docusign)</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">contractid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Contract ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    content of contract as pdf file
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getpotentialclientsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getpotentialclients</code></pre></div>
+    <div class="method-summary">Get all Contracts (Potential Clients) by Contract Status (<span class="nickname">getpotentialclientsGet</span>)</div>
+    <div class="method-notes"><h1>Get all Potential Clients by Status</h1>
+<ul>
+<li>advisorid: Advisor ID</li>
+<li>status: Status of contract
+<ul>
+<li>* : All statuses</li>
+<li>'Draft' : New Draft Contract</li>
+<li>'Sent' : Contract sent to client's email</li>
+<li>'Signed': Contract signed</li>
+<li>'Rejected': Client rejected contract</li>
+<li>'Paid': Client paid</li>
+<li>'PaymentConfirmed': Payment confirmed</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">status (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Status </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="previewcontractGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /previewcontract</code></pre></div>
+    <div class="method-summary">Preview contract of a potential client (<span class="nickname">previewcontractGet</span>)</div>
+    <div class="method-notes"><h1>preview contract  of a potential client</h1>
+<ul>
+<li>advisorid: Advisor ID</li>
+<li>email: Potential Client's Email</li>
+<li>clientinfo: client info (same as addpotentialclient)</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">email (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Potential Client&#x27;s Email </div>      <div class="param">clientinfo (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Dictionary of Client info for contract </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    content of contract as pdf file
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sendcontractGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /sendcontract</code></pre></div>
+    <div class="method-summary">Email contract to a potential client (<span class="nickname">sendcontractGet</span>)</div>
+    <div class="method-notes"><h1>Email contract to a potential client</h1>
+<ul>
+<li>advisorid: Advisor ID</li>
+<li>email: Potential Client's Email</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">email (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Potential Client&#x27;s Email </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updatecontractstatusGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /updatecontractstatus</code></pre></div>
+    <div class="method-summary">Update Potential Client's Contract Status (<span class="nickname">updatecontractstatusGet</span>)</div>
+    <div class="method-notes"><h1>Update Potential Client's Contract Status</h1>
+<ul>
+<li>advisorid: Advisor ID</li>
+<li>email: Potential Client's Email</li>
+<li>status: Status of contract
+<ul>
+<li>'Signed': Contract signed</li>
+<li>'Rejected': Client rejected contract</li>
+<li>'Paid': Client paid</li>
+<li>'PaymentConfirmed': Payment confirmed</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">email (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Potential Client&#x27;s Email </div>      <div class="param">status (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Status </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="RIA">RIA</a></h1>
+  <div class="method"><a name="addchildGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /addchild</code></pre></div>
+    <div class="method-summary">Associate a client to an advisor (<span class="nickname">addchildGet</span>)</div>
+    <div class="method-notes">Associate a client to an advisor</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; userid of the client </div>      <div class="param">advisorid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; userid of the advisor </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="addnewadvisorGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /addnewadvisor</code></pre></div>
+    <div class="method-summary">Add a New advisor to the database. The advisor must have registered in Active Directory first. (<span class="nickname">addnewadvisorGet</span>)</div>
+    <div class="method-notes">Add new Advisor
+The advisor must have at least one CRD number (individual or firm)</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">crdindvidual (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor individual CRD </div>      <div class="param">crdfirm (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor firm/company CRD </div>      <div class="param">associated (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Associated RIA </div>      <div class="param">advisorinfo (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor info </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="addpotentialclientGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /addpotentialclient</code></pre></div>
+    <div class="method-summary">Add new potential client (new contract) (<span class="nickname">addpotentialclientGet</span>)</div>
+    <div class="method-notes"><h1>Add New Potential Client (new contract):</h1>
+<ul>
+<li>
+<p>userid: Advisor ID</p>
+</li>
+<li>
+<p>email: E-mail of potential client</p>
+</li>
+<li>
+<p>clientinfo: dictionary of info</p>
+<h1>mandtory</h1>
+<ul>
+<li>firstname: str</li>
+<li>lastname: str</li>
+<li>middlename: Optional[str]</li>
+<li>address: str</li>
+<li>sex: Literal['M', 'F']</li>
+<li>birthdate: date</li>
+<li>ssn: constr(regex=r'^(?!000|.+0{4})(?:\d{9}|\d{3}-\d{2}-\d{4})$')</li>
+<li>is_married: Literal['Y', 'N']</li>
+<li>is_US_citizen: Literal['Y', 'N']</li>
+<li>funding: confloat(gt=0)</li>
+<li>payout_ages: conlist(int, min_items=1)</li>
+<li>ETF: str = 'VOO Vanguard'</li>
+<li>purchaser_type: Literal['Accredited Investor', 'Qualified Purchaser']</li>
+</ul>
+<h1>optional fields</h1>
+<ul>
+<li>phone: Optional[str]  # = '+1 (000) 000-0000'</li>
+<li>zip_code: Optional[constr(regex=r'^\d{5}(?:[-\s]\d{4})?$')] = '00000'</li>
+<li>city: Optional[str]</li>
+<li>state: Optional[str]</li>
+<li>country: Optional[str]</li>
+<li>investment_start_date: Optional[date]</li>
+</ul>
+<h1>email: Optional[str]  # the email field is stored outside the dictionary,</h1>
+<h1>optional spouse</h1>
+<ul>
+<li>spouse_firstname: Optional[str]</li>
+<li>spouse_lastname: Optional[str]</li>
+<li>spouse_middlename: Optional[str]</li>
+<li>spouse_address: Optional[str]</li>
+<li>spouse_sex: Optional[Literal['F', 'M']]</li>
+<li>spouse_birthdate: Optional[date]</li>
+<li>spouse_ssn: Optional[constr(regex=r'^(?!000|.+0{4})(?:\d{9}|\d{3}-\d{2}-\d{4})$')]</li>
+<li>spouse_email: Optional[EmailStr]</li>
+<li>spouse_zip_code: Optional[constr(regex=r'^\d{5}(?:[-\s]\d{4})?$')] = '00000'</li>
+<li>spouse_city: Optional[str]</li>
+<li>spouse_state: Optional[str]</li>
+<li>spouse_country: Optional[str]</li>
+</ul>
+<h1>must in case of non US citizen</h1>
+<ul>
+<li>is_green_card: Optional[Literal['Y', 'N']]</li>
+<li>passport_data: Optional[str]</li>
+<li>passport_expiration: Optional[date]</li>
+<li>passport_country: Optional[str]</li>
+<li>alien_id_or_visa: Optional[str]</li>
+<li>alien_id_or_visa_expiration: Optional[date]</li>
+</ul>
+<h1>must in case of non US citizen</h1>
+<ul>
+<li>spouse_is_green_card: Optional[Literal['Y', 'N']]</li>
+<li>spouse_passport_data: Optional[str]</li>
+<li>spouse_passport_expiration: Optional[date]</li>
+<li>spouse_passport_country: Optional[str]</li>
+<li>spouse_alien_id_or_visa: Optional[str]</li>
+<li>spouse_alien_id_or_visa_expiration: Optional[date]</li>
+<li>spouse_is_US_citizen: Optional[Literal['Y', 'N']]</li>
+</ul>
+<h1>additional contract fields</h1>
+<ul>
+<li>advisor_fee: Optional[int] # must be between 0 and 100</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">email (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Potential Client&#x27;s E-mail </div>      <div class="param">clientinfo (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Dictionary of Client info for contract </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="delchildGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /delchild</code></pre></div>
+    <div class="method-summary">Remove association of a client from an Advisor (<span class="nickname">delchildGet</span>)</div>
+    <div class="method-notes">Remove association of client from RIA (set client's parent to null)</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; userid of the client </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="docusigninfoGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /docusigninfo</code></pre></div>
+    <div class="method-summary">Get contract info  from DocuSign (<span class="nickname">docusigninfoGet</span>)</div>
+    <div class="method-notes"><h1>Get contract info  from DocuSign</h1>
+<ul>
+<li>userid: Advisor ID</li>
+<li>contractid: Contract ID (the envelope ID of docusign)</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">contractid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Contract ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    content of contract as pdf file
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="docusignretrieveGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /docusignretrieve</code></pre></div>
+    <div class="method-summary">Preview contract of a potential client contract from DocuSign (<span class="nickname">docusignretrieveGet</span>)</div>
+    <div class="method-notes"><h1>Preview contract of a potential client contract from DocuSign</h1>
+<ul>
+<li>userid: Advisor ID</li>
+<li>contractid: Contract ID (the envelope ID of docusign)</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">contractid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Contract ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    content of contract as pdf file
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getadvisorchildrenGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getadvisorchildren</code></pre></div>
+    <div class="method-summary">Get all clients associated with an advisor (<span class="nickname">getadvisorchildrenGet</span>)</div>
+    <div class="method-notes">Get all clients associated with an advisor</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; userid of the advisor </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getadvisorinfoGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getadvisorinfo</code></pre></div>
+    <div class="method-summary">Get Advisor Info (<span class="nickname">getadvisorinfoGet</span>)</div>
+    <div class="method-notes">Get Advisor info</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; userid of the advisor </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getallassociatedriasGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getallassociatedrias</code></pre></div>
+    <div class="method-summary">Get all advisors associated with 'associated' firm (<span class="nickname">getallassociatedriasGet</span>)</div>
+    <div class="method-notes">Get all advisors associated with 'associated' firm</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">associated (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Associated RIA, or &#x27;*&#x27; for all. </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getmychildrenGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getmychildren</code></pre></div>
+    <div class="method-summary">getmychildren (<span class="nickname">getmychildrenGet</span>)</div>
+    <div class="method-notes">This API returns the Clients (children ) of an existing RIA (advisor))</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getpotentialclientsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getpotentialclients</code></pre></div>
+    <div class="method-summary">Get all Contracts (Potential Clients) by Contract Status (<span class="nickname">getpotentialclientsGet</span>)</div>
+    <div class="method-notes"><h1>Get all Potential Clients by Status</h1>
+<ul>
+<li>advisorid: Advisor ID</li>
+<li>status: Status of contract
+<ul>
+<li>* : All statuses</li>
+<li>'Draft' : New Draft Contract</li>
+<li>'Sent' : Contract sent to client's email</li>
+<li>'Signed': Contract signed</li>
+<li>'Rejected': Client rejected contract</li>
+<li>'Paid': Client paid</li>
+<li>'PaymentConfirmed': Payment confirmed</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">status (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Status </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getriachildrenstatusGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getriachildrenstatus</code></pre></div>
+    <div class="method-summary">Remove association of a client from RIA (<span class="nickname">getriachildrenstatusGet</span>)</div>
+    <div class="method-notes">Remove association of client from advisor (set client's parent to null)</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; userid of the advisor </div>      <div class="param">status (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; status to search </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="isadvisorGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /isadvisor</code></pre></div>
+    <div class="method-summary">Check if a userid is a registered advisor (<span class="nickname">isadvisorGet</span>)</div>
+    <div class="method-notes">Check if a userid is a registered advisor</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; userid of the advisor </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="previewcontractGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /previewcontract</code></pre></div>
+    <div class="method-summary">Preview contract of a potential client (<span class="nickname">previewcontractGet</span>)</div>
+    <div class="method-notes"><h1>preview contract  of a potential client</h1>
+<ul>
+<li>advisorid: Advisor ID</li>
+<li>email: Potential Client's Email</li>
+<li>clientinfo: client info (same as addpotentialclient)</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">email (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Potential Client&#x27;s Email </div>      <div class="param">clientinfo (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Dictionary of Client info for contract </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    content of contract as pdf file
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sendcontractGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /sendcontract</code></pre></div>
+    <div class="method-summary">Email contract to a potential client (<span class="nickname">sendcontractGet</span>)</div>
+    <div class="method-notes"><h1>Email contract to a potential client</h1>
+<ul>
+<li>advisorid: Advisor ID</li>
+<li>email: Potential Client's Email</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">email (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Potential Client&#x27;s Email </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updatecontractstatusGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /updatecontractstatus</code></pre></div>
+    <div class="method-summary">Update Potential Client's Contract Status (<span class="nickname">updatecontractstatusGet</span>)</div>
+    <div class="method-notes"><h1>Update Potential Client's Contract Status</h1>
+<ul>
+<li>advisorid: Advisor ID</li>
+<li>email: Potential Client's Email</li>
+<li>status: Status of contract
+<ul>
+<li>'Signed': Contract signed</li>
+<li>'Rejected': Client rejected contract</li>
+<li>'Paid': Client paid</li>
+<li>'PaymentConfirmed': Payment confirmed</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Advisor ID </div>      <div class="param">email (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Potential Client&#x27;s Email </div>      <div class="param">status (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Status </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="SimulatorForPayouts">SimulatorForPayouts</a></h1>
+  <div class="method"><a name="simulateProspectPlannerGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /simulate-prospect-planner</code></pre></div>
+    <div class="method-summary">Simulate Payouts Calculator. (<span class="nickname">simulateProspectPlannerGet</span>)</div>
+    <div class="method-notes">Simulates payout with three fixed ages of 80,85,90.
+Based on an average return. The answer depends on the gender and age of the person, as well as their current and future age.  <br />
+returns forcast for payout with Savvly, without Savvly and the multiplier index</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">gender (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Gender (M/F) </div>      <div class="param">current_age (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Current age of client </div>      <div class="param">average_return (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Average Return Percentage </div>      <div class="param">funding_amount (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Funding amount </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="UserManagement">UserManagement</a></h1>
+  <div class="method"><a name="createuserGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /createuser</code></pre></div>
+    <div class="method-summary">Create a new user in the Active Directory (<span class="nickname">createuserGet</span>)</div>
+    <div class="method-notes">Create a new user in the Active Directory</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">firstname (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; First Name of the user </div>      <div class="param">lastname (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Last Name of the user </div>      <div class="param">email (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The email of the user. It must be inique in the system </div>      <div class="param">street (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The address (street) of the user </div>      <div class="param">city (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The city name </div>      <div class="param">zip (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The postal code of the address of the user </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="emailexistsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /emailexists</code></pre></div>
+    <div class="method-summary">Does an specified email (user) exist in the Active Directory (<span class="nickname">emailexistsGet</span>)</div>
+    <div class="method-notes">Checks if an email (user) exists in the Active Directory. Returns True or False</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getusersemailGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getusersemail</code></pre></div>
+    <div class="method-summary">Get the list of the Users with their emails (<span class="nickname">getusersemailGet</span>)</div>
+    <div class="method-notes">Returns the list of the user IDs and their emails</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getusersinfoGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getusersinfo</code></pre></div>
+    <div class="method-summary">Get the list of the Users with full inormation (<span class="nickname">getusersinfoGet</span>)</div>
+    <div class="method-notes">Returns the list of the users and full details</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Users">Users</a></h1>
+  <div class="method"><a name="activateuserGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /activateuser</code></pre></div>
+    <div class="method-summary">Activate an existing User. When an user is added, it is in pending state until this api is called (<span class="nickname">activateuserGet</span>)</div>
+    <div class="method-notes">Activate User</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deactivateuserGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /deactivateuser</code></pre></div>
+    <div class="method-summary">Deactivate an existing User (<span class="nickname">deactivateuserGet</span>)</div>
+    <div class="method-notes">Deactivate User</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="depoistmoneyGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /depoistmoney</code></pre></div>
+    <div class="method-summary">Deposit Money (<span class="nickname">depoistmoneyGet</span>)</div>
+    <div class="method-notes">Deposit Money</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>      <div class="param">amount (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Amount </div>      <div class="param">tranid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Transaction ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="depositcompleteGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /depositcomplete</code></pre></div>
+    <div class="method-summary">Deposite Complete (<span class="nickname">depositcompleteGet</span>)</div>
+    <div class="method-notes">Set Deposite Complete</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getaccountidGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getaccountid</code></pre></div>
+    <div class="method-summary">getaccountid (<span class="nickname">getaccountidGet</span>)</div>
+    <div class="method-notes">Get Account ID</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getinfoGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getinfo</code></pre></div>
+    <div class="method-summary">getinfo (<span class="nickname">getinfoGet</span>)</div>
+    <div class="method-notes">getinfo</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getuserpiiGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /getuserpii</code></pre></div>
+    <div class="method-summary">Get User Private Information (<span class="nickname">getuserpiiGet</span>)</div>
+    <div class="method-notes">Get User Private Information</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="updateuserdataGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /updateuserdata</code></pre></div>
+    <div class="method-summary">Update User Data (<span class="nickname">updateuserdataGet</span>)</div>
+    <div class="method-notes">Update User Data</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>      <div class="param">table (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Table </div>      <div class="param">data (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Data </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="userdataGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /userdata</code></pre></div>
+    <div class="method-summary">userdata (<span class="nickname">userdataGet</span>)</div>
+    <div class="method-notes">Get User Data</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="withdrawalcompleteGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /withdrawalcomplete</code></pre></div>
+    <div class="method-summary">Set Withdrawal Complete (<span class="nickname">withdrawalcompleteGet</span>)</div>
+    <div class="method-notes">Set Withdrawal Complete</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="withdrawalmoneyGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /withdrawalmoney</code></pre></div>
+    <div class="method-summary">Withdraw Money (<span class="nickname">withdrawalmoneyGet</span>)</div>
+    <div class="method-notes">Withdraw Money</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>      <div class="param">amount (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Amount </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="withdrawalpendingGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /withdrawalpending</code></pre></div>
+    <div class="method-summary">Set Withdrawal Pending (<span class="nickname">withdrawalpendingGet</span>)</div>
+    <div class="method-notes">Set Withdrawal Pending</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">userid (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; User ID </div>    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    bad input parameter
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+  </ol>
+
+  </body>
+</html>

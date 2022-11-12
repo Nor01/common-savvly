@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+$SavvlyGreen: #0e6e7b;
+$SavvlyYellow: #fbd26e;
+
+$yellow: #fbd26e;
+
+$primary: $SavvlyGreen;
+$warning: $SavvlyYellow;
+
+@import "../node_modules/bulma/bulma.sass";
+@import "./App.scss";
+@import "./Admin.scss";
+@import "./components/client/Client.css";
+@import "../node_modules/react-toastify/dist/ReactToastify.css"

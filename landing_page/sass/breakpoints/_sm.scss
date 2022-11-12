@@ -1,0 +1,12 @@
+@media all and (min-width: 768px) {
+    .hidden__sm {
+        display: none;
+    }
+    .visible__sm {
+        display: inherit;
+    }
+    @import "sm/carousel";
+    @import "sm/sidebar";
+    @import "sm/main-bg-images";
+
+}

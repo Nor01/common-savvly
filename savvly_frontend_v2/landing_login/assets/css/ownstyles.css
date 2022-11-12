@@ -1,0 +1,127 @@
+:root{
+  --verde-color:#176A78;
+  --blanco1-color:#F2F7FC;
+  --blanco2-color:#FFFFFF;
+  --amarillo-color:#F2E177;
+}
+
+/* Mines for Index Page*/
+
+.logo-login-section{
+  padding: 0 0 3rem 0;
+}
+
+.fa-lock{
+color:var(--verde-color);
+}
+
+a{
+  color:var(--verde-color);
+}
+
+.is-login-button-remember-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.is-background-white{
+  background-color: var(--blanco1-color);
+}
+
+.has-background-img-blackpattern{
+  background: url('../images/BlackPatternBlock.jpg');
+}
+
+.is-text-color-white1{
+  color:var(--blanco1-color);
+}
+
+.is-text-color-white2{
+  color:var(--blanco2-color);
+}
+
+.is-text-color-green{
+  color:var(--verde-color);
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: #808080;
+  height: 1px;
+  margin: 0 0;
+}
+
+.mysection {
+  padding: 0rem 3rem;
+}
+
+.has-background-img-airplane{
+  background: url('../images/airplane.jpg');
+  background-size:cover;
+}
+
+.is-text-absolute{
+  position: absolute;
+  bottom:5%;
+  color:#f2f7fc;
+}
+
+.is-text-color-yellow{
+  color:var(--amarillo-color);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+.has-background-img-yate{
+  background: url('../images/hero-2.png');
+  background-size:cover;
+  
+}
+
+.hero-login-button{
+  position: absolute;
+  z-index: 1;
+  right: 2%;
+  top:5%
+}
+
+.mybtn-blue {
+  color: #ffffff;
+  background: #176A78;
+  border-color: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.mybtn-blue:hover{
+  background: #ffffff;
+  color: #176A78;
+  border-color: #176A78;
+}
+
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+
+
+#app {
+  min-height: 100%;
+}
+
+.footer {
+  margin-top: -12px;
+}
+
+@media screen and (max-width: 768px) {
+  #menu-toggle:checked + .nav-menu {
+    display: block;
+  }
+}

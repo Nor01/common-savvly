@@ -1,0 +1,104 @@
+.helpLink{display:none}
+ label[for=givenName]{display:none}
+ label[for=surname]{display:none}
+ label[for=city]{display:none}
+ label[for=state]{display:none}
+ label[for=email]{display:none}
+ label[for=newPassword]{display:none}
+ label[for=reenterPassword]{display:none}
+ label[for=streetAddress]{display:none}
+ label[for=extension_crd_number]{display:none}
+ label[for=postalCode]{display:none}
+ label[for=extension_PhoneNumber]{display:none}
+ label[for=extension_company_type]{display:none}
+
+input#givenName {
+  float: left;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+input#surname {
+  float: left;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+input#streetAddress {
+  float: left;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+input#city {
+  float: left;
+  width: 50%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+input#state {
+  float: left;
+  width: 18%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  margin-left: 8px
+}
+
+input#postalCode {
+  float: left;
+  width: 28%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  margin-left: 8px
+}
+
+
+input#email {
+  float: left;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+input#newPassword {
+  float: left;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+input#reenterPassword {
+  float: left;
+  height: 6%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+ ul {
+  list-style-type: none;
+ }
+ li {
+  list-style-type: none;
+ }
+
+.intro {display:none}
+.heading {display:none}
+.heighttext{
+    display:inline-block;
+    padding:15px 10px;
+    line-height:140%;
+}
+
+#cancel { display:none; }
+
+#next,
+#continue {
+font-size: 26px;
+font-weight: 400;
+color: #ffffff;
+background: #176a78;
+border: 2px solid #176a78;
+text-align: center;
+vertical-align: middle;
+padding: 15px 32px;
+margin-left: 200px;
+}

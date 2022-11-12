@@ -1,0 +1,53 @@
+body.active-modal {
+    overflow: hidden;
+    .modal-layer {
+        overflow: hidden;
+        background: $modal-bg;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+.modal {
+    .container {
+        position: relative;
+    }
+    button.btn-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    form {
+        section {
+            width: 100%;
+        }
+        .sub-title-2 {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.modal[data-modal='false'] {
+    display: none;
+}
+.modal[data-modal='true'] {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 700px;
+    min-width: 650px;
+    height: 100%;
+    z-index: 10;
+
+    &.white-modal {
+        background-color: $white;
+    }
+
+    .default-form,
+    form {
+        height: 100%;
+    }
+}

@@ -1,0 +1,142 @@
+button {
+    cursor: pointer;
+    box-sizing: border-box;
+}
+%button {
+    padding: 12px 24px;
+    border-radius: 7px;
+    transition: all .2s;
+}
+%button-bigger {
+    padding: 16px 24px;
+    border-radius: 7px;
+    transition: all .2s;
+}
+%button-blue-color {
+    color: $blue-green;
+    background: #ffffff;
+    border-color: $blue-green;
+    border-width: 2px;
+    border-style: solid;
+}
+%button-blue-bg {
+    color: #ffffff;
+    background: $blue-green;
+    border: 2px solid $blue-green;
+}
+%button-white-bg {
+    color: $blue-green;
+    background: #ffffff;
+    border: 2px solid #ffffff;
+}
+%button-secondary {
+    background: $yellow;
+    border: 2px solid $yellow;
+    color: $black;
+}
+
+// plus sign
+.plus-sign {
+    svg {
+        margin-top: 2px;
+        margin-left: 10px;
+    }
+}
+// blue btn
+.btn-blue {
+    @extend %button-blue-color;
+
+    &:hover {
+        background: $blue-green;
+        color: $white;
+    }
+}
+.btn-blue-bg {
+    &.btn-sent {
+        color: $azure-blue;
+        text-transform: uppercase;
+        &:hover {
+            color: $blue-green;
+        }
+    }
+    @extend %button-blue-bg;
+    box-sizing: border-box;
+
+    &:hover {
+        background: #ffffff;
+        color: $blue-green;
+
+        .plus-sign svg path {
+            fill: $blue-green;
+        }
+    }
+
+    &.inactive {
+        background: $white-3;
+        color: $light_gray;
+        pointer-events: none;
+        border: none;
+    }
+
+}
+// !blue btn
+
+.secondary-btn {
+    @extend %button-secondary;
+    &:hover {
+        color: $black;
+    }
+}
+// white bg buttons
+.btn-white-bg {
+    @extend %button-white-bg;
+    padding-right: 15px;
+
+    span.arrow-right {
+        svg path {
+            fill: $blue-green;
+        }
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+
+    &:hover {
+        background: $blue-green;
+        color: #ffffff;
+    }
+    &:hover a span svg path {
+        fill: $white;
+    }
+}
+// !white bg buttons
+
+.button-regular {
+    @extend %button;
+    font-size: $text-small;
+}
+.button-normal {
+    @extend %button;
+    font-size: $text-normal;
+    font-weight: 400;
+}
+
+.buttons {
+
+    button {
+        // width: 100%;
+
+        &:nth-child(2) {
+            margin-top: 20px;
+        }
+    }
+}
+.go-back {
+    width: $big-dot;
+    height: $big-dot;
+    background-color: $black-2;
+    border-radius: 50%;
+    svg {
+        transform: rotate(180deg);
+        margin-right: 3px;
+    }
+}

@@ -1,0 +1,24 @@
+.what-we-do {
+
+    .grid--6:nth-child(2n) {
+
+        .grid-item-6:nth-child(1) {
+            order: 1;
+            margin-bottom: 0;
+        }
+        .grid-item-6:nth-child(2) {
+            order: 2;
+        }
+    }
+
+    .grid--6:nth-child(1) {
+
+        .grid-item-6:nth-child(1) {
+            order: unset;
+        }
+    }
+
+    .grid-item-6.img-container {
+        // aspect-ratio: 16/9;
+    }
+}

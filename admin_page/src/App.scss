@@ -1,0 +1,47 @@
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+#root,
+.App {
+  height: 100%;
+}
+
+.is-rounded {
+  border-radius: 10px;
+}
+
+.sidebar .active {
+  color: $SavvlyGreen;
+  font-weight: 700;
+}
+
+a.navbar-item:focus {
+  background-color: transparent;
+}
+
+.main-navbar .active {
+  background-color: #f2f2f2;
+}
+
+.datepicker {
+  width: 100%;
+  padding: 8px 5px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+}
+
+.menu-list-title {
+  pointer-events: none;
+}
+
+.pagination-list .active a{
+  background: $SavvlyGreen;
+  color: white;
+}

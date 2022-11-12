@@ -1,0 +1,141 @@
+.helpLink{display:none}
+ label[for=givenName]{display:none}
+ label[for=surname]{display:none}
+ label[for=city]{display:none}
+ label[for=state]{display:none}
+ label[for=email]{display:none}
+ label[for=newPassword]{display:none}
+ label[for=reenterPassword]{display:none}
+ label[for=streetAddress]{display:none}
+ label[for=extension_crd_number]{display:none}
+ label[for=postalCode]{display:none}
+ label[for=extension_PhoneNumber]{display:none}
+ label[for=extension_company_type]{display:none}
+ /*label[for=givenName] {
+  float: left;
+  margin-right: 1%;
+}*/
+input#givenName {
+  float: left;
+  //height: 6%;
+  //width: 70%;
+  //margin-right: 5%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+/*label[for=surname] {
+  float: left;
+  margin-right: 1%;
+}*/
+input#surname {
+  float: left;
+  //height: 6%;
+  //width: 70%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+streetAddress
+/*label[for=streetAddress] {
+  float: left;
+  margin-right: 1%;
+}*/
+input#streetAddress {
+  float: left;
+  //height: 6%;
+  //width: 50%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+/*label[for=city] {
+  float: left;
+  margin-right: 1%;
+}*/
+input#city {
+  float: left;
+  //height: 6%;
+  width: 50%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+/*label[for=state] {
+  float: left;
+  margin-right: 1%;
+}*/
+input#state {
+  float: left;
+  //height: 6%;
+  width: 18%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  margin-left: 5px
+}
+/*label[for=postalCode] {
+  float: left;
+  margin-right: 1%;
+}*/
+input#postalCode {
+  float: left;
+  //height: 6%;
+  width: 28%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  margin-left: 5px
+}
+
+/*label[for=email] {
+  float: left;
+  margin-right: 1%;
+}*/
+input#email {
+  float: left;
+  //height: 6%;
+  //width: 70%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+/*label[for=newPassword] {
+  float: left;
+  margin-right: 1%;
+}*/
+input#newPassword {
+  float: left;
+  //height: 6%;
+  //width: 70%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+/*label[for=reenterPassword] {
+  float: left;
+  margin-right: 1%;
+}*/
+input#reenterPassword {
+  float: left;
+  height: 6%;
+  //width: 70%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+ ul {
+  list-style-type: none;
+ }
+ li {
+  list-style-type: none;
+ }
+
+.intro {display:none}
+.heading {display:none}
+.heighttext{
+    display:inline-block;
+    padding:15px 10px;
+    line-height:140%;
+}
+
+/*.buttons {
+         padding: 12px 24px;
+         border-radius: 7px;
+         transition: all 0.2s;
+         color: #ffffff;
+         background: #176a78;
+         border: 2px solid #176a78;
+         }*/

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<script>
+    //-------------------------------------------------------
+    // Global Variables
+    //-------------------------------------------------------
+	//let g_new_userid;
+	let g_userid = '2228ae6c-c9cd-43a2-bd52-00abfd86ccd4';
+	let g_parentid = '?';
+
+    //function UserAction() {
+    //    const url='http://localhost:5000/getinfo';
+    //    var xhttp = new XMLHttpRequest();
+    //    xhttp.onreadystatechange = function() {
+    //        if (this.readyState == 4 && this.status == 200) {
+	//		   console.log(xhttp.response);
+    //           // Typical action to be performed when the document is ready:
+    //           document.getElementById("outputarea").innerHTML = xhttp.responseText;
+    //           alert(xmlhttp.responseXML)
+    //        }
+    //    };
+    //    xhttp.open("GET", url, true);
+    //    xhttp.send();
+    //    //alert(xmlhttp.responseStatus)
+    //}
+    //--------------------------------------------
+    // Add Style
+    //--------------------------------------------
+	function add_style() {
+		document.write('<title>W3.CSS</title>');
+		document.write('<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">');
+		document.write('<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">');
+		document.write('<style>');
+		document.write('table {font-family: arial, sans-serif; border-collapse: collapse; width: 100%;}');
+		document.write('td, th {border: 2px solid #dddddd; text-align: left; padding: 6px; }');
+		document.write('tr:nth-child(even) {background-color: #dddddd; }');
+		document.write('body {background-color: lightblue;}');
+		document.write('h1 {color: white;text-align: center;}');
+		document.write('p {font-family: verdana; font-size: 20px;}');
+		//document.write('div button{display:inline-block;}');
+		document.write('p,label {font: 1rem \'Fira Sans\', sans-serif;}');
+		document.write('input {margin: .4rem;}');
+		document.write('#buttonbox1{width: auto;height: auto; display:inline-block; background-color: red;}');
+		document.write('#buttonbox2{width: auto;height: auto;display:inline-block;background-color: green;}');
+		document.write('</style>');
+	}
+
+	//--------------------------------------------
+    // Prevent Favicon.ico request
+    //--------------------------------------------
+	function block_favicon() {
+	    //document.write('<link rel="icon" href="data:,">');
+	    //document.write('<link rel="shortcut icon" href="#" />');
+	    document.write('<link rel=\"icon\" href=\"data:,\">');
+	}
+
+    //--------------------------------------------
+    // Select Server: Local or Azure
+    //--------------------------------------------
+	function server_selection() {
+		//document.write('<p>Select the Server:</p>');
+		document.write('<div>');
+		document.write('<input type="radio" id="server" name="Server" value="Local"checked>');
+		document.write('<label for="contactChoice1">Local Machine</label>');
+		document.write('<input type="radio" id="server" name="Server" value="Azure">');
+		document.write('<label for="contactChoice1">Azure Cloud</label>');
+		document.write('</div>');
+		document.write('<br />');
+		//document.write('<br />');
+	}
+	
+	//--------------------------------------------
+    // Get Selected Server
+    //--------------------------------------------
+	function get_server_url(whichone) {
+		let gLocalServer = "http://localhost:5000/";
+		let gAzureServer = "https://savvly-dev-api.azurewebsites.net/";
+		var selected_server = gLocalServer 
+        if (whichone === undefined) {
+			var radios = document.getElementsByName('Server');
+			if (radios[0].checked){
+				selected_server = gLocalServer;
+			}
+			else
+			{
+				selected_server = gAzureServer;
+			}
+		}
+		else if (whichone === 'Azure') {
+			selected_server = gAzureServer;
+		}
+		
+		return selected_server;
+	}
+
+	//--------------------------------------------
+    // Add Half Row
+    //--------------------------------------------	
+	function BuildUrl(baseurl, apiname, parameter) {
+	   var url;
+	   url = '<td><a href=\"' + baseurl + apiname;
+	   if (parameter != null){
+	       url = url + '?' + parameter;
+	   }
+	   url = url + '\">' + apiname + '</a></td>';
+	   return url;
+	}
+	
+    //--------------------------------------------
+    // Add Half Row of type href
+    //--------------------------------------------	
+	function AddHalfRowHRef(title, apiname, parameter) {
+	  document.write('  <td>' + title + '</td>');
+	  document.write(BuildUrl(get_server_url(), apiname, parameter));
+	  document.write(BuildUrl(get_server_url(), apiname, parameter));
+	  //document.write(BuildUrl("http://localhost:5000/"                   , apiname, parameter));
+	  //document.write(BuildUrl("https://unveil-dev-api.azurewebsites.net/", apiname, parameter));
+	  //document.write(BuildUrl("http://localhost:5000/"                  , apiname, parameter));
+	}
+
+    //--------------------------------------------
+    // Add Row of type href
+    //--------------------------------------------	
+	function AddRowHRef(title1, apiname1, parameter1, title2, apiname2, parameter2) {
+	  document.write('<tr>');
+	  AddHalfRowHRef(title1, apiname1, parameter1);
+	  document.write('<td></td>');
+	  AddHalfRowHRef(title2, apiname2, parameter2)
+	  document.write('</tr>');
+	  //alert('Added');
+	}
+
+    //--------------------------------------------
+    // Add Half Row of type click
+    //--------------------------------------------	
+	function AddHalfRowClick(title, apiname) {
+	  document.write('  <td>' + title + '</td>');
+	  button_line = '<input type=\"submit\" class="button" onclick=\"' + apiname + '()\">apiname</>';
+	  document.write(button_line);
+	  
+	  //<td><input type="submit" class="button" value="Add another line" onclick="addField(this);" /></td>
+	}
+
+    //--------------------------------------------
+    // Add Row of type click
+    //--------------------------------------------	
+	function AddRowClick(title1, apiname1, title2, apiname2) {
+	  document.write('<tr>');
+	  AddHalfRowClick(title1, apiname1);
+	  document.write('<td></td>');
+	  AddHalfRowClick(title2, apiname2);
+	  document.write('</tr>');
+	}
+
+	//--------------------------------------------
+    // Generate String
+    //--------------------------------------------
+	function generate_string(length) {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+       }
+       return result;
+    }
+	
+    //--------------------------------------------
+    // Generate a random number
+    //--------------------------------------------
+	function get_random_num(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min) + min);
+	}
+
+    //---------------------------------------------------
+    // start a update query
+    //---------------------------------------------------
+	function _start_update_query(query, tablename, userid) {
+	    query = 'userid=' + userid;
+	    query = query + '&';
+	    query = query + 'table=' + tablename;
+	    query = query + '&';
+	    query = query + 'data={';
+	    return query;
+	};
+	//---------------------------------------------------
+    // End a update query
+    //---------------------------------------------------
+	function _end_update_query(query) {
+	    query = query + '}';
+	    //console.log(query);
+	    return query;
+	};
+    //---------------------------------------------------
+    // append a column name & value to the update query
+    //---------------------------------------------------
+	function _append_col_to_update_query(query, col_name, userid, is_last) {
+	    suffix = userid.slice(-4)
+	    value = col_name + '-' + suffix;
+	    query = query + '\'' + col_name + '\''   + ':' + '\'' + value + '\'';
+	    if (is_last == false) {
+	        query = query + ', ';
+	    };
+	    return query;
+	};
+
+    //--------------------------------------------
+    // Create an 'Update' query for a table
+    //--------------------------------------------
+	function create_update_query(tablename, col_names, userid) {
+	    var query;
+        var num_cols = col_names.length;
+        query = _start_update_query(query, tablename, userid);
+        for (var inx = 0; inx < num_cols; inx++) {
+            col_name = col_names[inx];
+            var is_last = false;
+            if (inx == num_cols - 1) {
+                is_last = true;
+                };
+            query = _append_col_to_update_query(query, col_name, userid, is_last);
+        };
+        query = _end_update_query(query);
+	    return query;
+	};
+
+    //--------------------------------------------
+    // Create an 'Update' query: userdata
+    //--------------------------------------------
+	function create_update_query_userdata(userid) {
+	    var query;
+	    var tablename = 'userdata';
+	    var col_names = ["statusflag",
+	                     "transferamount",
+						 ];
+		query = create_update_query(tablename, col_names, userid);
+	    return query;
+	};
+	
+    //--------------------------------------------
+    // Create an 'Update' query: transactions
+    //--------------------------------------------
+	function create_update_query_transactions(userid) {
+	    var query;
+	    var tablename = 'transactions';
+	    var col_names = ["depositedamount",
+	                     "numshares",
+	                     "shareprice",
+						 ];
+		query = create_update_query(tablename, col_names, userid);
+	    return query;
+    }
+
+    //--------------------------------------------
+    // Create an 'Update' query: inherited
+    //--------------------------------------------
+	function create_update_query_inherited(userid) {
+	    var query;
+	    var tablename = 'inherited';
+	    var col_names = ["redistributedamount",
+	                     "numshares",
+	                     "shareprice",
+						 ];
+		query = create_update_query(tablename, col_names, userid);
+	    return query;
+    }
+	
+    //--------------------------------------------
+    // Add the upload form
+    //--------------------------------------------	
+	function add_upload_image_form(url, label) {
+		document.write('<form action = \"' + url + 'uploadimage\" method = \"POST\"  enctype = \"multipart/form-data\">');
+		document.write('<input type = \"file\" name = \"file\" />');
+		document.write('<input type = \"submit\" value=\"' + label + '\"/>');
+		document.write('</form>');
+	}
+	
+	//----------------------------------------------------
+    // Get Existing User-ID
+    //----------------------------------------------------
+	function get_user_id() {
+		return g_userid
+	}
+
+    //--------------------------------------------
+    // Update the user ID field
+    //--------------------------------------------
+	function update_user_id_input(user_id) {
+		document.getElementById("userid_input").value = user_id
+	}
+
+	//--------------------------------------------
+    // Change user ID
+    //--------------------------------------------	
+	function set_user_id() {
+		g_userid = document.getElementById("userid_input").value;
+		console.log(g_userid);
+	}
+
+    //--------------------------------------------
+    // Set Parent ID
+    //--------------------------------------------
+	function set_parent_id() {
+		g_parentid = document.getElementById("parentid_input").value;
+		console.log(g_parentid);
+	}
+
+	//----------------------------------------------------
+    // Get Parent ID
+    //----------------------------------------------------
+	function get_parent_id() {
+		return g_parentid
+	}
+	
+	//----------------------------------------------------
+    // Get new User-ID
+    //----------------------------------------------------
+	//function get_new_userid() {
+	//	return g_new_userid
+	//}
+	
+	//----------------------------------------------------
+    // Get new User-ID
+    //----------------------------------------------------
+	function create_new_userid() {
+		new_userid = generate_string(32)
+		update_user_id_input(new_userid)
+		set_user_id()
+		return new_userid
+	}
+		
+	//----------------------------------------------------
+    // Do a transaction, Send a URL and get reponse back
+    //----------------------------------------------------
+	function _do_transaction(url, callback) {
+	  console.log(url);
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+		  //console.log(xhr.response);
+		  callback(xhr.response);
+		}
+	  }
+	  xhr.open('GET', url, true);
+	  xhr.send();
+	}
+	function do_transaction(apiname) {
+		var parameter = null;
+		switch (apiname) {
+			case 'getaccountid':
+			case 'getuserpii':
+			case 'userdata':
+			case 'deleteuser':
+			case 'activateuser':
+			case 'deactivateuser':
+			case 'getmychildren':
+			case 'depositcomplete':
+			case 'withdrawalpending':
+			case 'withdrawalcomplete':
+				parameter = 'userid=' + get_user_id();
+				break;
+			case 'setparent':
+				parameter = 'userid=' + get_user_id() + "&" + 'parentid=' + get_parent_id();
+				break;
+			case 'createuserhandle':
+				parameter = 'userid=' + get_user_id() + "&" + 'userhandle=' + 'danny';
+				break;
+			case 'updateuserdata':
+				parameter = create_update_query_userdata(get_user_id());
+				break;
+			case 'addnewuser':
+				//parameter = 'userid=' + create_new_userid() + '&social=' + get_random_num(100000, 999999) + '&dob=' + '2/7/1963' + '&address=' + 'Rishon' + '&sex=' + 'M'  + '&mother=' + 'Robin';
+				parameter = 'userid=' + get_user_id() + '&social=' + get_random_num(100000, 999999) + '&dob=' + '2/7/1963' + '&address=' + 'Rishon' + '&sex=' + 'M'  + '&mother=' + 'Robin';
+				break;
+			case 'depoistmoney':
+			    parameter = 'userid=' + get_user_id() + "&" + 'amount=' + '100.0' + "&" + 'tranid=' + 'book_11h68d999t7bez';
+				break;	
+			case 'withdrawalmoney':
+				parameter = 'userid=' + get_user_id() + "&" + 'amount=' + '-100.0';
+				break;	
+			case 'environment':
+				parameter = "dev=1&debug=1&logcmd=0&admin=1";
+				break;
+			case '_updateallusertables':  // Internal api - not related to the Proxy API
+				update_all_user_tables();
+				return
+		  default:
+			console.log(`No parameter for ${apiname}.`);
+		}
+	    url = get_server_url() + apiname;
+	    if (parameter != null){
+	       url = url + '?' + parameter;
+	    }
+	    _do_transaction(url, transaction_callback);
+	}
+	//----------------------------------------------------
+    // A callback function after transaction
+    //----------------------------------------------------
+	function transaction_callback(response){
+		console.log(response);
+        var jsonPretty = JSON.stringify(JSON.parse(response),null,'\t');
+		document.getElementById("outputarea").innerHTML = jsonPretty;
+	}	
+		
+	//----------------------------------------------------
+    // Update all the btables of the user
+    //----------------------------------------------------
+	function update_all_user_tables(){
+		userid = get_user_id();
+		base_url = get_server_url() + 'updateuserdata';
+		
+	    parameter = create_update_query_userdata(userid);
+		url = base_url + '?' + parameter;
+		_do_transaction(url, transaction_callback);
+		
+	    parameter = create_update_query_transactions(userid);
+		url = base_url + '?' + parameter;
+		_do_transaction(url, transaction_callback);
+
+	    parameter = create_update_query_inherited(userid);
+		url = base_url + '?' + parameter;
+		_do_transaction(url, transaction_callback);
+	}
+	
+	//--------------------------------------------
+    // Create Login and Logout
+    //--------------------------------------------	
+	function create_login_logout() {	
+		document.write('<div class="w3-show-inline-block">');
+		document.write('<a style=\"margin:5px\"; href=\"' + get_server_url('Local') + 'login'  + '\">' + 'Login (Local)'  + '</a>');
+		document.write('<a style=\"margin:6px\"; href=\"' + get_server_url('Azure') + 'login'  + '\">' + 'Login (Azure)'  + '</a>');
+		document.write('<a style=\"margin:5px\"; href=\"' + get_server_url('Local') + 'logout' + '\">' + 'Logout (Local)' + '</a>');
+		document.write('<a style=\"margin:5px\"; href=\"' + get_server_url('Azure') + 'logout' + '\">' + 'Logout (Azure)' + '</a>');
+		document.write('<a style=\"margin:5px\"; href=\"' + get_server_url('Local') + 'downloadlogfile' + '\">' + 'Download Log (Local)' + '</a>');
+		document.write('<a style=\"margin:5px\"; href=\"' + get_server_url('Azure') + 'downloadlogfile' + '\">' + 'Download Log (Azure)' + '</a>');
+		//document.write('<br />');
+		//document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"login\")>Login</button>');
+		//document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"logout\")>Logout</button>');
+		document.write('</div>');
+		document.write('<br />');
+	}
+	
+	
+	//--------------------------------------------
+    // Create the buttons
+    //--------------------------------------------	
+	function create_buttons() {	
+		document.write('<div class="w3-show-inline-block">');
+	    document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"addnewuser\")>Add New UserID</button>');
+	    document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"getuserpii\")>Get User PII</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"activateuser\")>Activate User</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"deactivateuser\")>Deactivate User (dead)</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"getmychildren\")>My Users</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"getinfo\")>GetInfo</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"getaccountid\")>Get AccountID</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"userdata\")>User Data</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"setparent\")>Set Advisor</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"updateuserdata\")>Update Data</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"_updateallusertables\")>Update All User Tables</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"depoistmoney\")>Deposit Money</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"withdrawalmoney\")>Withdrawal Money</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"depositcomplete\")>Set Deposit Complete</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"withdrawalpending\")>Set Withdrawal Pending</button>');
+		document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"withdrawalcomplete\")>Set Withdrawal Complete</button>');
+		//document.write('<button class="w3-btn w3-blue"; style=\"margin:5px\"; onClick=do_transaction(\"createuserhandle\")>Create User Handles</button>');
+		document.write('</div>');
+		document.write('<br />');
+		
+		document.write('<div class="w3-show-inline-block">');
+		//document.write('<div class="w3-bar"; id=buttonbox2>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"usertablesdiag\")>Get User Tables Diag</button>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"alltablenames\")>Get Table Names</button>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"deleteusertables\")>Delete all tables</button>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"deleteuser\")>Delete User</button>');
+		//document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"schema\")>Get DB Schema</button>');
+		//document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"schemascope\")>Get Scopes</button>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"users\")>Users List</button>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"accountids\")>Users Account ID</button>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"statuses\")>Users Status</button>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"fmvs\")>Users FMV</button>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"usersdata\")>All Users Data</button>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"environment\")>Set Debug Environment</button>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"getallkv\")>All KV</button>');
+		document.write('<button class="w3-btn w3-teal"; style=\"margin:5px\"; onClick=do_transaction(\"delallkv\")>Delete all KV</button>');
+		document.write('</div>');
+	}
+		
+	//--------------------------------------------
+    // Add the upload forms
+    //--------------------------------------------	
+	function add_upload_image_forms() {
+		add_upload_image_form(get_server_url(), 'Local');
+		add_upload_image_form(get_server_url(), 'AzureDev');
+		//add_upload_image_form('https://localhost:5000/', 'AzureProd');
+	}
+	
+	//--------------------------------------------
+    // Create output area
+    //--------------------------------------------	
+	function create_output_area() {
+	    //document.write('<input type="text" id="outputarea" value="Some text...">');
+		document.write('<p id="outputarea"></p>');
+		//document.write('<div id=\'outputarea\'>');
+	}
+	
+	//--------------------------------------------
+    // Create User-ID input
+    //--------------------------------------------	
+	function create_userid_input() {
+		document.write('<button class=\"w3-btn w3-black\"; style=\"margin:5px\"; onClick=set_user_id()>Change User ID</button>');
+		document.write('<input type=\"text\" id=\"userid_input\" name=\"userid_input\" size=\"40\" value=\"' + get_user_id() +'\"');
+		document.write('<br />');
+		document.write('<br />');
+	}
+
+    //--------------------------------------------
+    // Create Parent-ID input
+    //--------------------------------------------
+	function create_parentid_input() {
+		document.write('<button class=\"w3-btn w3-black\"; style=\"margin:5px\"; onClick=set_parent_id()>Change Parent ID</button>');
+		document.write('<input type=\"text\" id=\"parentid_input\" name=\"parentid_input\" size=\"40\" value=\"' + get_parent_id() +'\"');
+		document.write('<br />');
+		document.write('<br />');
+	}
+	
+    //--------------------------------------------
+    // Create entire HTML
+    //--------------------------------------------	
+	function create_document() {
+	    document.write('<html><head>');
+		//();
+		block_favicon();
+     	add_style();
+		server_selection();
+		create_login_logout();
+		create_userid_input();
+		create_parentid_input();
+		create_buttons();
+		create_output_area();
+		//add_upload_image_forms();
+		
+		document.write('</html></head>');
+	}
+</script>
+<body onload="create_document()">
+
+

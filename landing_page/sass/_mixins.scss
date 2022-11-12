@@ -1,0 +1,25 @@
+// create sidebar, if you want one sidebar give your sidebar the class "sidebar", else if you want 2 sidebars give your sidabars "sidebar-left", "sidebar-right"
+// $sidebarWidth must be a number who shows how much smaller is it from the total width, example: sidebar 300px, total width 900px, the $sidebarWidth is 900/300 = 3
+@mixin sidebar( $sidebarCount, $minSidebarWidth, $sidebarWidth:4 ) {
+    @if( $sidebarCount == 1) {
+        .sidebar {
+            min-width: $minSidebarWidth;
+            width: 100vw / $sidebarWidth;
+        }
+    }
+};
+
+// create flex elements, with default center alignment
+// usage @include flex( space-between, center, column)
+@mixin flex( $justify: center, $align: center, $direction: row ) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+// create columns based on parents width 
+// usage @include columns(  )
+@mixin columns( $columns_count ) {
+    width: 100% / $columns_count;
+}

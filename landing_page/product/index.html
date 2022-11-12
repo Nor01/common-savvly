@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>SAVVLY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Savvly, more money for retirement." />
+    <meta name="keywords" content="Application, Clean, Dashboard, Bootstrap4" />
+    <meta content="Mainor Aguilar | Nor01" name="author" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/product/images/favicon.ico">
+    <!-- Bootstrap css -->
+    <link href="/product/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons -->
+    <link href="/product/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+    <!-- Icons -->
+    <link href="/product/css/magnific-popup.css" rel="stylesheet" type="text/css" />
+    <!-- Date picker -->
+    <link rel="stylesheet" href="/product/css/flatpickr.min.css">
+    <!-- Slider -->
+    <link rel="stylesheet" href="/product/css/flickity.css" />
+    <!-- Main css File -->
+    <link href="/product/css/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- for fontawesome icons -->
+    <script src="https://kit.fontawesome.com/9e8a9ed3e4.js" crossorigin="anonymous"></script>
+
+    <!-- for canvas chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+
+</head>
+
+<body>
+    <!-- Loader Start -->
+    <div id="preloader">
+        <div id="status">
+            <div class="logo">
+                <img src="/product/images/l-icon.png" height="100" class="d-block mx-auto" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Loader End -->
+
+    <!-- Navbar STart -->
+    <header id="topnav" class="defaultscroll sticky myHeader">
+        <div class="container">
+            <!-- Logo container-->
+            <div>
+                <a class="logo" href="#" class="scroll-down">
+                    <img src="/product/images/savvly_logo.png" class="l-dark" height="80" alt="">
+                    <img src="/product/images/savvly_logo.png" class="l-light" height="100" alt="">
+                </a>
+
+            </div>
+            <div class="buy-button">
+                <!-- <a href="javascript:void(0)" class="text-dark login login-light mr-md-2" data-toggle="modal"
+                    data-target="#LoginForm"><i data-feather="user" class="fea icon-ex-md"></i></a> -->
+                <a href="javascript:void(0)" class="btn btn-primary book-seat" style="display:none;">See how it
+                    works</a>
+            </div>
+
+            <!-- Formulario en Modal -->
+
+            <!-- Button trigger modal -->
+            <!-- <a href="javascript:void(0)" class="text-dark login login-light mr-md-2" data-toggle="modal" data-target="#LoginForm"><i data-feather="user" class="fea icon-ex-md"></i></a> -->
+
+            <!--end login button-->
+            <!-- End Logo container-->
+            <div class="menu-extras">
+                <div class="menu-item">
+                    <!-- Mobile menu toggle-->
+                    <a class="navbar-toggle">
+                        <div class="lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+                    <!-- End mobile menu toggle-->
+                </div>
+            </div>
+
+            <div id="navigation">
+                <!-- Navigation Menu-->
+                <div class="container contactInfo">
+                    <div class="row">
+
+                        <div class="col-3 phonenumberHeader">
+                            <!-- <i class="uil uil-phone"></i> <a href="tel:+1800-550-7770"
+                                style="color:#3c4858">+1 (800) 550-7770</a>  -->
+                            <i class="uil uil-envelope"></i> <a href="mailto:info@savvly.com"
+                                style="color:#3c4858">info@savvly.com</a>
+                        </div>
+
+                        <div class="col-3 emailHeader">
+                            <!-- <i class="uil uil-envelope"></i> <a href="mailto:info@savvly.com"
+                                style="color:#3c4858">info@savvly.com</a>  -->
+                        </div>
+
+                        <div class="col-1"></div>
+                        <div class="col-5 positionLogout">
+
+
+                            <a class="btn btn-primary" href="javascript:void(0);" data-toggle="modal"
+                                data-target="#LoginForm" style="font-size: 20px;">Join today.
+                                Start now!</a>
+
+                        </div>
+
+
+
+                    </div>
+                    <!-- <hr class="hrHeader"> -->
+                </div>
+
+                <ul class="navigation-menu nav-light">
+                    <li class="has-submenu">
+                        <a href="#hiw" class="scroll-down">How it works</a>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="#preparenow" class="scroll-down">Prepare now</a>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="#benefitsfeatures" class="scroll-down">Benefits & Features</a>
+                    </li>
+
+                    <li class="has-submenu">
+                        <a href="#case_example" class="scroll-down">Case Examples</a>
+                    </li>
+                </ul>
+                <!--end navigation menu-->
+                <div class="buy-menu-btn d-none">
+                    <a href="javascript:void(0);" data-toggle="modal" data-target="#LoginForm"
+                        class="btn btn-primary myButtonHeader scroll-down">Join today. Start
+                        now!</a>
+                </div>
+                <!--end login button-->
+            </div>
+            <!--end navigation-->
+        </div>
+        <!--end container-->
+    </header>
+    <!--end header-->
+    <!-- Navbar End -->
+
+    <div class="topSlider">
+
+        <div class="containerSpaceTop"></div>
+    </div>
+    <section class="marginSlider">
+
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3800"
+            data-pause="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider1.png"
+                            class="sliderDesktop w-100" alt="..."></a>
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider1Movil.png"
+                            class="sliderMobile w-100" alt="..."></a>
+                </div>
+
+                <div class="carousel-item">
+
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider2.1.png"
+                            class="sliderDesktop w-100" alt="..."></a>
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider2.1Movil.png"
+                            class="sliderMobile w-100" alt="..."></a>
+                </div>
+
+                <div class="carousel-item">
+
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider2.png"
+                            class="sliderDesktop w-100" alt="..."></a>
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider2Movil.png"
+                            class="sliderMobile w-100" alt="..."></a>
+                </div>
+                <div class="carousel-item">
+
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider3.png"
+                            class="sliderDesktop w-100" alt="..."></a>
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider3Movil.png"
+                            class="sliderMobile w-100" alt="..."></a>
+                </div>
+
+                <div class="carousel-item">
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider4.png"
+                            class="sliderDesktop w-100" alt="..."></a>
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider4Movil.png"
+                            class="sliderMobile w-100" alt="..."></a>
+                </div>
+
+                <div class="carousel-item">
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider5.png"
+                            class="sliderDesktop w-100" alt="..."></a>
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider5Movil.png"
+                            class="sliderMobile w-100" alt="..."></a>
+                </div>
+
+                <div class="carousel-item">
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider6.png"
+                            class="sliderDesktop w-100" alt="..."></a>
+                    <a href="#hiw" class="scroll-down"><img src="/product/revolution/assets/slider-01/slider6Movil.png"
+                            class="sliderMobile w-100" alt="..."></a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="bottomSlider">
+        <div class="containerSpaceBottom" style="text-align:center;font-size:3vw;padding-top:88px">
+            More money for retirement
+        </div>
+    </div>
+
+    <section class="section hiwSection sectionhiw" style="background-color:#fed67e " id="hiw">
+        <div class="container">
+            <div class="row align-items-end mb-4 pb-4">
+                <div class="col-md-7">
+                    <div class="section-title text-center text-md-left">
+                        <h4 class="title mb-4" style="color:#0b6e79">How Savvly Works</h4>
+                        <p class="text-muted mb-0 para-desc hiwItem">
+                            <span class="font-weight-bold ">
+                                <div class="vl"> <span class="hiw1" style="color:#0b6e79;font-weight:bold">Select
+                                        your</span>
+                                    <br> <span class="hiw1" style="color:#0b6e79;font-weight:bold">Age and
+                                        Gender</span>
+                                </div>
+                                </i>
+                            </span>
+                        </p>
+                        <br>
+                        <p class="text-muted mb-0 para-desc hiwItem">
+                            <span class="font-weight-bold">
+
+                                <div class="vl"> <span class="hiw1" style="color:#0b6e79;font-weight:bold">Choose your
+                                        Funding</span> <br> <span class="hiw1"
+                                        style="color:#0b6e79;font-weight:bold">Amount
+                                        and Payout Age</span> </div>
+                                </i>
+                            </span>
+                        </p>
+                        <br>
+                        <p class="text-muted mb-0 para-desc hiwItem">
+                            <span class="font-weight-bold">
+
+                                <div class="vl"> <span class="hiw1" style="color:#0b6e79;font-weight:bold">Decide
+                                        your</span>
+                                    <br> <span class="hiw1" style="color:#0b6e79;font-weight:bold">investment
+                                        allocation</span>
+                                </div>
+                                </i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+            </div>
+        </div>
+    </section>
+
+    <!--end section-->
+    <section class="section bg-white">
+        <div class="container">
+            <p class="gainItem">
+                GAIN THE FINANCIAL <br>
+                SECURITY YOU DESERVE IN <br>
+                YOUR GOLDEN YEARS!
+            </p>
+
+            <div class="row justify-content-end">
+                <div class="col-lg-10 col-12">
+                    <div class="card feature-top border-0 shadow-md rounded overflow-hidden myForm">
+                        <form class="paddingForm p-4 shadow bg-white rounded">
+                            <div class="row text-left">
+                                <div class="col-lg-12 col-md-11 colspaceForm">
+                                    <div class="myRow row align-items-center">
+                                        <div class="col-6">
+                                            <div class="form-group mb-4 mb-md-0 marginBottomGroup">
+                                                <label>Your Age <span class="text-danger"></span></label>
+                                                <select class="form-control custom-select" name="current_age"
+                                                    id="current_ageI">
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                    <option value="24">24</option>
+                                                    <option value="25">25</option>
+                                                    <option value="25">26</option>
+                                                    <option value="27">27</option>
+                                                    <option value="28">28</option>
+                                                    <option value="29">29</option>
+                                                    <option value="30">30</option>
+                                                    <option value="31">31</option>
+                                                    <option value="32">32</option>
+                                                    <option value="33">33</option>
+                                                    <option value="34">34</option>
+                                                    <option value="35">35</option>
+                                                    <option value="36">36</option>
+                                                    <option value="37">37</option>
+                                                    <option value="38">38</option>
+                                                    <option value="39">39</option>
+                                                    <option value="40">40</option>
+                                                    <option value="41">41</option>
+                                                    <option value="42">42</option>
+                                                    <option value="43">43</option>
+                                                    <option value="44">44</option>
+
+                                                    <option selected value="45">45</option>
+
+                                                    <option value="46">46</option>
+                                                    <option value="47">47</option>
+                                                    <option value="48">48</optio4>
+                                                    <option value="49">49</option>
+                                                    <option value="50">50</option>
+                                                    <option value="51">51</option>
+                                                    <option value="52">52</option>
+                                                    <option value="53">53</option>
+                                                    <option value="54">54</option>
+                                                    <option value="55">55</option>
+                                                    <option value="56">56</option>
+                                                    <option value="57">57</option>
+                                                    <option value="58">58</option>
+                                                    <option value="59">59</option>
+                                                    <option value="60">60</option>
+                                                    <option value="61">61</option>
+                                                    <option value="62">62</option>
+                                                    <option value="63">63</option>
+                                                    <option value="64">64</option>
+                                                    <option value="65">65</option>
+                                                    <option value="66">66</option>
+                                                    <option value="67">67</option>
+                                                    <option value="68">68</option>
+                                                    <option value="69">69</option>
+                                                    <option value="70">70</option>
+                                                    <option value="71">71</option>
+                                                    <option value="72">72</option>
+                                                    <option value="73">73</option>
+                                                    <option value="74">74</option>
+                                                    <option value="75">75</option>
+                                                    <option value="76">76</option>
+                                                    <option value="77">77</option>
+                                                    <option value="78">78</option>
+                                                    <option value="79">79</option>
+                                                    <option value="80">80</option>
+                                                    <option value="81">81</option>
+                                                    <option value="82">82</option>
+                                                    <option value="83">83</option>
+                                                    <option value="84">84</option>
+                                                    <option value="85">85</option>
+                                                    <option value="86">86</option>
+                                                    <option value="87">87</option>
+                                                    <option value="88">88</option>
+                                                    <option value="89">89</option>
+                                                    <option value="90">90</option>
+                                                    <option value="91">91</option>
+                                                    <option value="92">92</option>
+                                                    <option value="93">93</option>
+                                                    <option value="94">94</option>
+                                                    <option value="95">95</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group mb-4 mb-md-0 marginBottomGroup">
+                                                <label>Your Gender <span class="text-danger"></span></label>
+                                                <select class="form-control custom-select" name="current_gender"
+                                                    id="current_genderI">
+                                                    <option selected value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group colspaceForm">
+                                <label for="formControlRange">Funding Amount : <strong style="text-align:left">$ <span
+                                            id="demo"></span></strong></label>
+                                <input type="range" class="form-control-range" id="current_fundingamountI" min="0"
+                                    max="100000" value="20000" step="500" name="current_fund">
+                            </div>
+                            <div class="form-group colspaceForm">
+                                <label for="formControlRange">Payout Age : <strong style="text-align:left"><span
+                                            id="demo2"></strong></span></label>
+                                <input type="range" class="form-control-range" id="current_payoutI" min="75" max="100"
+                                    value="85" name="current_payout">
+                            </div>
+                            <div class="form-group colspaceForm">
+                                <label for="formControlRange">Monthly installments (till age of 65): <strong
+                                        style="text-align:left">$
+                                        <span id="demo3"></strong></span></label>
+                                <input type="range" class="form-control-range" id="current_minstallmentI" min="0"
+                                    max="500" value="0" step="10" name="current_minstallment">
+                            </div>
+                            <div class="form-group mb-4 mb-md-0 marginBottomGroup" style="display:none">
+                                <label>Retirement Age <span class="text-danger"></span></label>
+                                <select class="form-control custom-select" name="current_retirementAge"
+                                    id="current_retirementAgeI">
+                                    <option selected value="65">65</option>
+                                    <option value="66">66</option>
+                                    <option value="67">67</option>
+                                    <option value="68">68</option>
+                                    <option value="69">69</option>
+                                    <option value="70">70</option>
+                                    <option value="71">71</option>
+                                    <option value="72">72</option>
+                                    <option value="73">73</option>
+                                    <option value="74">74</option>
+                                    <option value="75">75</option>
+                                    <option value="76">76</option>
+                                    <option value="77">77</option>
+                                    <option value="78">78</option>
+                                    <option value="79">79</option>
+                                    <option value="80">80</option>
+                                    <option value="81">81</option>
+                                    <option value="82">82</option>
+                                    <option value="83">83</option>
+                                    <option value="84">84</option>
+                                    <option value="85">85</option>
+                                    <option value="86">86</option>
+                                    <option value="87">87</option>
+                                    <option value="88">88</option>
+                                    <option value="89">89</option>
+                                    <option value="90">90</option>
+                                    <option value="91">91</option>
+                                    <option value="92">92</option>
+                                    <option value="93">93</option>
+                                    <option value="94">94</option>
+                                    <option value="95">95</option>
+                                </select>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 colspaceForm">
+                                    <div class="form-group mb-4 mb-md-0 marginBottomGroup">
+                                        <label>Fund Selection <span class="text-danger"></span></label>
+                                        <select class="form-control custom-select">
+                                            <option selected value="6">Vanguard S&P500 ETF</option>
+                                            <option value="6">Fidelity Target Date Freedom Fund</option>
+                                            <option value="6">IShare Nasdaq 100 UCITS</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 colspaceForm">
+                                    <div class="form-group mb-4 mb-md-0 marginBottomGroup">
+                                        <label>Avg Annual Return <span class="text-danger"></span></label>
+                                        <div class="input-group-prepend">
+
+                                            <select class="form-control custom-select" name="current_averageReturn"
+                                                id="current_averageReturnI">
+                                                <option value="1">1</option>
+                                                <option value="1.5">1.5</option>
+                                                <option value="2">2</option>
+                                                <option value="2.5">2.5</option>
+                                                <option value="3">3</option>
+                                                <option value="3.5">3.5</option>
+                                                <option value="4">4</option>
+                                                <option value="4.5">4.5</option>
+                                                <option value="5">5</option>
+                                                <option value="5.5">5.5</option>
+                                                <option selected value="6">6</option>
+                                                <option value="6">6.5</option>
+                                                <option value="7">7</option>
+                                                <option value="7.5">7.5</option>
+                                                <option value="8">8</option>
+                                                <option value="8.5">8.5</option>
+                                                <option value="9">9</option>
+                                                <option value="9.5">9.5</option>
+                                                <option value="10">10</option>
+                                            </select>
+
+                                            <span class="input-group-text" id="basic-addon1">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="row multiplierLabelPayout">
+                                <div class="col-md-4">
+                                    <br class="br"><br class="br">
+
+                                    <div class="container" style="text-align:center">
+                                        <!-- <span style="color:#000;font-weight:bold;font-size:17px;"> Savvly Multiple of <b
+                                                style="color:#0b6e79" id="multiValue"></b> at payout age
+                                        </span> -->
+                                        <span style="color:#000;font-weight:bold;font-size:14px;"> Savvly payout at <b
+                                                style="color:#0b6e79" id="currentAgeSelected"></b> <br class="br">years
+                                            of age
+                                        </span>
+                                        <br class="br">
+                                        <br>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-8">
+                                    <canvas id="myChart" style="width:100%;max-width:700px;margin-top:10%"></canvas>
+                                </div>
+                                <!-- <div id="multiValue" class="mmultiplierVal" style=""> </div> -->
+                                <br>
+
+                                <br class="br"><br>
+
+                                <div class="col-lg-12 col-md-8 mt-md-8 pt-md-4">
+                                    <!-- <input type="submit" id="search" name="search"
+                                        class="searchbtn btn btn-primary btn-block p"
+                                        value="Start now for as low as $10"> -->
+
+                                    <a class="searchbtn btn btn-primary btn-block p" href="javascript:void(0);"
+                                        data-toggle="modal" data-target="#LoginForm">Start now for as low as $10</a>
+                                </div>
+                                <br>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+
+        <div class="container mt-100 mt-60" id="preparenow">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="section-title text-center mb-4 pb-2 marginPrepare">
+                            <br>
+                            <p style="color:#0b6e79 ;font-size:35px;font-weight:bold">
+                                PREPARE NOW
+                            </p>
+                            <p class="text-muted mb-0 para-desc mx-auto">Ensure financial security so you can make the
+                                most of
+                                your retirement experience.<br>
+                                Savvly can give you the high investment returns you need to live the<br>
+                                last stage of life with financial certainty </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4=6 col-md-6 col-12 mb-4 pb-2">
+                        <div class="card blog-post border-0 rounded shadow overflow-hidden">
+                            <div class="container floating">
+                                <img src="/product/images/allocate.png" class="img-fluid" width="50" alt=""
+                                    style="margin-top: 1rem;">
+                            </div>
+                            <div class="card-body content" style="padding:2.1rem!important">
+                                <a href="javascript:void(0)" class="title text-dark h5"
+                                    style="color:#0b6e79 !important;font-weight:bold!important">#1 Allocate</a>
+                                <p>Allocate up to 10% of your retirement
+                                    funds or contributions into Savvly.
+                                </p>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4=6 col-md-6 col-12 mb-4 pb-2">
+                        <div class="card blog-post border-0 rounded shadow overflow-hidden">
+                            <div class="container floating">
+                                <img src="/product/images/gradually.png" class="img-fluid" width="50" alt=""
+                                    style="margin-top: 1rem;">
+                            </div>
+                            <div class="card-body content p-4">
+                                <a href="javascript:void(0)" class="title text-dark h5"
+                                    style="color:#0b6e79 !important;font-weight:bold!important">#2 Select how much and
+                                    when</a>
+                                <p>
+
+                                    Put money in Savvly
+                                    gradually or in lump sums – whichever
+                                    best fits your situation. You can draw on
+                                    your existing retirement accounts (401k, IRA, etc.).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4=6 col-md-6 col-12 mb-4 pb-2">
+                        <div class="card blog-post border-0 rounded shadow overflow-hidden">
+                            <div class="container floating">
+                                <img src="/product/images/investmenttype.png" class="img-fluid" width="50" alt=""
+                                    style="margin-top: 1rem;">
+                            </div>
+
+                            <div class="card-body content p-4">
+                                <a href="javascript:void(0)" class="title text-dark h5"
+                                    style="color:#0b6e79 !important;font-weight:bold!important">#3 Select the investment
+                                    type</a>
+                                <p>Choose an investment type, or let our
+                                    automated tool recommend the best fit
+                                    for you.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-12 mb-4 pb-2">
+                        <div class="card blog-post border-0 rounded shadow overflow-hidden">
+                            <div class="container floating">
+                                <img src="/product/images/vestingdate.png" class="img-fluid" width="50" alt=""
+                                    style="margin-top: 1rem;">
+                            </div>
+
+                            <div class="card-body content p-4">
+                                <a href="javascript:void(0)" class="title text-dark h5"
+                                    style="color:#0b6e79 !important;font-weight:bold!important">#4 Choose the payout
+                                    date</a>
+                                <p>Choose when you would like to get access
+                                    to your investment by selecting your
+                                    payout date.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-6 col-12 mb-4 pb-2">
+                        <div class="card blog-post border-0 rounded shadow overflow-hidden">
+                            <div class="card-body content p-4">
+                                <a href="javascript:void(0)" class="title text-dark h5"
+                                    style="color:#0b6e79 !important;font-weight:bold!important">That's it!</a>
+                                <p>Your funds are turbo-boosted by a “multiple" that increases in proportion
+                                    to the length of time before your payout date.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12" style="text-align:center">
+                        <!-- <button class="btn btn-primary">Start now for as low as $10</button> -->
+                        <a class="btn btn-primary" href="javascript:void(0);" data-toggle="modal"
+                            data-target="#LoginForm">Start now for as low as $10</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end container-->
+
+
+    </section>
+    <!--end section-->
+    <!-- Hero End -->
+
+    <!-- Start -->
+    <section class="section sectionBenefits bg-light" id="benefitsfeatures">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="section-title text-center mb-4 pb-2">
+                        <p style="color:#0b6e79  ;font-size:35px;font-weight:bold">
+                            BENEFITS & FEATURES
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-6 mt-4 pt-2 floating2">
+                    <img src="/product/images/home/1.jpg" class="img-fluid rounded shadow-md" alt="">
+                </div>
+
+                <div class="col-lg-7 col-md-6 mt-4 pt-2">
+                    <div class="section-title ml-lg-5">
+
+                        <ul class="list-unstyled feature-list text-muted">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-check-circle fea icon-sm text-success mr-2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg><b>You decide</b> when you can get access to your
+                                Savvly funds by selecting your ideal
+                                payout date age.
+                            </li>
+                            <li class="mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-check-circle fea icon-sm text-success mr-2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg><b>No minimum investments:</b> Invest $10 or $1m or
+                                more.</li>
+                            <li class="mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-check-circle fea icon-sm text-success mr-2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg><b>Flexible funding:</b> choose monthly installments or
+                                one-time deposits whichever best fits your situation. You can
+                                draw on your existing retirement accounts (401k, IRA, etc.).</li>
+                            <li class="mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-check-circle fea icon-sm text-success mr-2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg><b>Powered by the sharing economy:</b> yielding
+                                unprecedented returns by combining asset sharing
+                                with the concept of longevity risk.</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-100 mt-60">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-6 order-1 order-md-2 floating2">
+                    <img src="/product/images/home/2.jpg" class="img-fluid rounded shadow-md" alt="">
+                </div>
+                <div class="col-lg-7 col-md-6 order-2 order-md-1 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                    <div class="section-title mr-lg-5">
+                        <ul class="list-unstyled feature-list text-muted">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-check-circle fea icon-sm text-success mr-2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg><b>Protection</b> against unstable financial markets caused by Savvly’s
+                                long-term nature.</li>
+                            <li class="mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-check-circle fea icon-sm text-success mr-2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg><b>Higher quality of life during retirement </b> because you know that your
+                                savings
+                                are turbo-boosted and will be available for you when you get older.</li>
+                            <li class="mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-check-circle fea icon-sm text-success mr-2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg><b>Transparency:</b> 24/7 access to the value of your
+                                account.</li>
+                            <li class="mt-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-check-circle fea icon-sm text-success mr-2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg><b>Fully compliant</b> with the Setting Every Community Up for Retirement
+                                Enhancements
+                                (SECURE) Act, the 2019 bill designed to improve US retirement prospects and help
+                                Americans
+                                save enough for the last years of retirement.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12" style="text-align:center">
+                    <!-- <button class="btn btn-primary">Start now for as low as $10</button> -->
+                    <a class="btn btn-primary" href="javascript:void(0);" data-toggle="modal"
+                        data-target="#LoginForm">Start now for as low as $10</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end section-->
+    <!-- End -->
+
+    <!-- Start -->
+    <section class="section bg-white sectionCase" id="case_example">
+        <div class="container ">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="section-title text-center mb-4 pb-2">
+                        <p style="color:#0b6e79  ;font-size:35px;font-weight:bold">
+                            IDEAL FOR ALL KINDS OF CLIENTS
+                        </p>
+
+                        <p class="text-muted para-desc mx-auto mb-0">Three clients signing in, three funding approaches,
+                            one platform.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                    <div class="pricing text-center rounded overflow-hidden shadow">
+                        <div class="bg-light shadow py-4">
+                            <div class="d-flex text-primary justify-content-center">
+                                <span class="price h2 font-weight-bold mb-0 ml-1"
+                                    style="color:#0b6e79 !important">Jessica</span>
+                            </div>
+                            <span class="h6 align-self-end mb-1">44 Years Old</span>
+                        </div>
+                        <div class="pricing-features" style="text-align:center">
+                            <p>
+                                <br>
+                                <strong>Professional</strong><br>
+                                Jessica allocates 10% of <br>
+                                her 401K contributions <br>
+                                to Savvly. <br>
+                                <strong>She will retire 7 years earlier!</strong> <br>
+                            </p>
+                            <img src="/product/images/client/jessica.png"
+                                class="avatar avatar-small rounded-circle shadow-lg testi-img" alt="">
+                            <br> <br>
+                            <div class="bg-light shadow text-center py-4 floating2">
+                                <a href="#hiw" class="btn btn-primary scroll-down">See how it works</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                    <div class="pricing text-center rounded overflow-hidden shadow">
+                        <div class="bg-light shadow py-4">
+                            <div class="d-flex text-primary justify-content-center">
+
+                                <span class="price h2 font-weight-bold mb-0 ml-1"
+                                    style="color:#0b6e79 !important">Michael</span>
+                            </div>
+                            <span class="h6 align-self-end mb-1">70 Years Old</span>
+                        </div>
+                        <div class="pricing-features" style="text-align:center">
+                            <p>
+                                <br>
+                                <strong>Retiree</strong><br>
+                                Michael reallocates a <br>
+                                portion of his funded IRA <br>
+                                into Savvly. <br>
+                                <strong>He can play golf more often!</strong> <br>
+                            </p>
+                            <img src="/product/images/client/michael.png"
+                                class="avatar avatar-small rounded-circle shadow-lg testi-img" alt="">
+                            <br> <br>
+                            <div class="bg-light shadow text-center py-4 floating2">
+                                <a href="#hiw" class="btn btn-primary scroll-down">See how it works</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                    <div class="pricing text-center rounded overflow-hidden shadow">
+                        <div class="bg-light shadow py-4">
+                            <div class="d-flex text-primary justify-content-center">
+                                <span class="price h2 font-weight-bold mb-0 ml-1"
+                                    style="color:#0b6e79 !important">Carlos</span>
+                            </div>
+                            <span class="h6 align-self-end mb-1">40 Years Old</span>
+                        </div>
+                        <div class="pricing-features" style="text-align:center">
+                            <p>
+                                <br>
+                                <strong>Entrepreneur</strong><br>
+                                Carlos invests when he <br>
+                                receives large amounts of <br>
+                                money from his businesses. <br>
+                                <strong>He will maintain his lifestyle!</strong> <br>
+                            </p>
+                            <img src="/product/images/client/carlos.png"
+                                class="avatar avatar-small rounded-circle shadow-lg testi-img" alt="">
+                            <br> <br>
+                            <div class="bg-light shadow text-center py-4 floating2">
+                                <a href="#hiw" class="btn btn-primary scroll-down">See how it works</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end section-->
+    <!-- End -->
+
+    <!-- Start -->
+    <section class="section pt-100" style="background-color:#fff">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="section-title text-center mb-4 pb-2">
+                        <p style="color:#0b6e79  ;font-size:35px;font-weight:bold">
+                            WHY THIS IS BETTER THAN AN ANNUITY
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset1.png"
+                                    class="l_prefooterIM" height="90" alt=""> </div>
+                            <p class="text-muted mb-0">Significantly higher
+                                payouts than
+                                annuities</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset2.png"
+                                    class="l_prefooterIM" height="90" alt=""> </div>
+                            <p class="text-muted mb-0">Can start investing
+                                at any age</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset3.png"
+                                    class="l_prefooterIM" height="90" alt=""> </div>
+                            <p class="text-muted mb-0">No future
+                                commitments</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset4.png"
+                                    class="l_prefooterIM" height="90" alt=""> </div>
+                            <p class="text-muted mb-0">Fund once or as
+                                many times as you
+                                want!</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset5.png"
+                                    class="l_prefooterIM" height="90" alt=""> </div>
+                            <p class="text-muted mb-0">No minimum
+                                funding
+                                requirements</p>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset6.png"
+                                    class="l_prefooterIM" height="90" alt=""> </div>
+                            <p class="text-muted mb-0">See your expected
+                                payout based on
+                                your payout age</p>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset7.png"
+                                    class="l_prefooterIM" height="90" alt=""> </div>
+                            <p class="text-muted mb-0">No
+                                commissions</p>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset8.png"
+                                    class="l_prefooterIM" height="90" alt=""> </div>
+                            <p class="text-muted mb-0">Choose your
+                                preferred investment
+                                allocation</p>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset9.png"
+                                    class="l_prefooterIM" height="90" alt=""> </div>
+                            <p class="text-muted mb-0">No profit sharing
+                                with insurance
+                                company</p>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset10.png"
+                                    class="l_prefooterIM" height="90" alt=""></div>
+
+                            <p class="text-muted mb-0">No risk of losing a
+                                stream of payments
+                                after payout date</p>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset11.png"
+                                    class="l_prefooterIM" height="90" alt=""></div>
+
+                            <p class="text-muted mb-0">Simple to understand</p>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card feature border-0 bg-transparent p-4 text-center floating">
+                            <div class="container" style="text-align:center"> <img src="/product/images/prefooter/asset12.png"
+                                    class="l_prefooterIM" height="90" alt=""></div>
+
+                            <p class="text-muted mb-0">Multiply the return of your investment</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-100 mt-60">
+
+            <div class="row align-items-center">
+                <div class="col-md-5 col-12">
+                    <div class="positon-relative">
+                        <img src="/product/images/home/prefooter.png" class="img-fluid rounded-md shadow-md" alt="">
+                        <div class="play-icon">
+                            <a href="javascript:void(0)" class="play-btn video-play-icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                    <div class="section-title ml-lg-5">
+                        <p style="color:#0b6e79  ;font-size:25px;font-weight:bold">
+                            MICHAEL, 70 Y.O. RETIREE
+                            INVESTS $100,000
+                        </p>
+                        <p>
+                            Michael, a 70 y.o. retiree, invests $100,000 of his IRA in Savvly with a payout
+                            age of 85.
+                            <br> <br>
+                            <span class="text-muted">Depending on market performance, he's expected to receive the
+                                following
+                                payouts:</span>
+                        </p>
+
+                        <div class="mt-4">
+
+                            <img class="img-fluid" src="/product/images/home/prefooterValues.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end section-->
+    <!-- End -->
+
+
+    <!-- Footer Start -->
+    <footer class="footer bg-footer">
+        <div class="container" style="text-align:center">
+            <a href="#" class="logo-footer text-white"><img src="/product/images/icon-footer.png" class="" height="90"
+                    alt=""></a>
+        </div>
+    </footer>
+    <!--end footer-->
+    <footer class="footer bg-footer footer-bar">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <p class="mb-0">© 2021 Savvly. All rights reserved.
+
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+    <!--end footer-->
+    <!-- Footer End -->
+
+    <!-- Back to top -->
+    <a href="#" class="btn btn-icon btn-primary back-to-top"><i data-feather="arrow-up" class="icons"></i></a>
+
+
+    <!-- Back to top -->
+
+
+    <!-- Login Modal Content Start -->
+    <div class="modal fade" id="LoginForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content rounded shadow border-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Register Now </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- <p> We are currently overwhelmed with interest!<br>
+                        Please sign-up to join our waiting list which is currently 6 months out.</p> -->
+
+
+                    <p>
+                        We are currently overwhelmed by people with interested in our product. We are so grateful for
+                        the intense demand for what Savvly offers. <br> Please register here to be put on our waiting
+                        list (which is presently six months out).
+                    </p>
+                    <form class="login-form" action="javascript:void(0)" method="post" id="registerForm"
+                        enctype="multipart/form-data" novalidate="novalidate">
+                        <div class="row">
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Your Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="name" id="name" required=""
+                                        placeholder="Name :">
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Your Last Name </label>
+                                    <input type="text" class="form-control" name="lastname" id="lastname"
+                                        placeholder="Last Name :">
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Your Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" name="email" id="email" required=""
+                                        placeholder="Email :">
+                                </div>
+                            </div>
+
+                            <div class="container" style="text-align:center">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>Additional Comments </label>
+                                        <!-- <input type="password" class="form-control"  required="" placeholder="Password :"> -->
+                                        <textarea name="comments" id="comments" cols="35" rows="10"
+                                            placeholder="Write your message"></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- <div class="col-12">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">I Accept <a href="#" class="text-primary">Terms And Condition</a></label>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-block" id="submit">Send
+                                    Message</button>
+                            </div>
+                            <!-- <div class="col-12 text-center">
+                                    <p class="mb-0 mt-3"><small class="text-dark mr-2">Already have an account ?</small> <a href="page-login.html" class="text-dark font-weight-bold">Sign in</a></p>
+                                </div> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- javascript -->
+    <script src="/product/js/jquery-3.5.1.min.js"></script>
+    <script src="/product/js/bootstrap.bundle.min.js"></script>
+    <script src="/product/js/jquery.easing.min.js"></script>
+    <script src="/product/js/scrollspy.min.js"></script>
+    <!-- Magnific popup -->
+    <script src="/product/js/jquery.magnific-popup.min.js"></script>
+    <script src="/product/js/isotope.js"></script>
+    <script src="/product/js/portfolio.init.js"></script>
+    <script src="/product/js/magnific.init.js"></script>
+    <!-- Icon -->
+    <script src="/product/js/feather.min.js"></script>
+    <!-- SLIDER -->
+    <script src="/product/js/jquery.backstretch.min.js"></script>
+    <script src="/product/js/flickity.pkgd.min.js"></script>
+    <script src="/product/js/flickity.init.js "></script>
+    <!-- Datepicker -->
+    <script src="/product/js/flatpickr.min.js"></script>
+    <script src="/product/js/flatpickr.init.js"></script>
+    <!-- Main Js -->
+    <script src="/product/js/app.js"></script>
+    <script>
+    $.backstretch(["/product/images/home/bg1.jpg", "/product/images/home/bg2.jpg", "/product/images/home/bg3.jpg"], {
+        duration: 3000,
+        fade: 1000,
+    });
+    </script>
+
+    <script type="text/javascript" src="/product/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/product/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="/product/revolution/js/revolution-custom.js"></script>
+
+    <script src="/product/js/peticiones.js"></script>
+
+    <script>
+    $('#submit').click(function() {
+        event.preventDefault();
+        let name = document.getElementById("name").value;
+        let lastname = document.getElementById("lastname").value;
+        let email = document.getElementById("email").value;
+
+
+        if (name == '' || email == '') {
+            alert('Please complete the required values');
+            return;
+        }
+
+
+        let myForm = document.getElementById('registerForm');
+        let formData = new FormData(myForm);
+
+        $.ajax({
+            dataType: "JSON",
+            url: "bat/registerEmail.php",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            cache: false,
+            beforeSend: function(xhr) {
+                $("#submit").html('Sending... Please wait');
+            },
+            success: function(response) {
+                if (response) {
+                    if (response['signal'] == 'ok') {
+                        alert(response['msg']);
+                        window.location.href = 'index.php';
+                        $('#name, #lastname, #email, #comments')
+                            .val(function() {
+                                //para vaciar los campos
+                                return this.defaulValue;
+                            });
+                        $("#submit").html('Send Message');
+                    } else {
+                        alert(response['msg']);
+                        $("#submit").html('Send Message');
+                    }
+                }
+            },
+            error: function() {
+                $('#msgE').html('<div class="mailFailE">Error</div>');
+            },
+            complete: function() {
+                $("#enviarE").html('Send Message');
+                $("#submit").html('Send Message');
+            }
+        });
+    });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+{
+  "table_thruput": "500",
+  "dns_name": "savvly-dev-api.azurewebsites.net",
+  "app_service_name": "savvly-dev-api.azurewebsites.net",
+  "kv_clientId": "bcc09509-f8b2-46e8-834c-49125c7a763f",
+  "kv_clientSecret": "Igo7Q~3JtU~VDRXU2p20dR3LCy6~kVlg2dEZu",
+  "kv_tenantId": "3e1414dc-cb91-42fe-8f78-976df10b4ebe",
+  "kv_subscriptionId": "6684ee99-767f-433f-a086-89cf2dafbaea",
+  "keyVault": "https://savvly-kv-dev-eastus.vault.azure.net/",
+  "b2c_tenantName": "savvlyb2c",
+  "b2c_domainName_template": "{tenant}.onmicrosoft.com",
+  "b2c_clientId": "e41831ff-9f6c-466d-bb12-e1f39cba16b8",
+  "__comment_b2c_clientId": "0984e165-6270-4caf-b5a1-06124ca123f0",
+  "__comment1_b2c_clientSecret": "O~57Q~qU7Bp9txhmw5zM2r~.4P6UHyKYp2XKu",
+  "b2c_clientSecret": "x_98Q~HwEufkGYfeZ2t~d7hV4GGvkPgofOQO0btX",
+  "__comment2_b2c_clientSecret": "KiY8Q~.1WkyqXPXMCdZod9hFh815Qz.1SbNhBbNW",
+  "b2c_tenantId": "7d9e372e-1567-4212-8abb-f5395ba779f7",
+  "b2c_subscriptionId": "6684ee99-767f-433f-a086-89cf2dafbaea",
+  "b2c_signupsignin_user_flow": "B2C_1_Savvly_signup_signin",
+  "b2c_signup_user_flow": "B2C_1_Savvly_user_signup",
+  "b2c_signup_ria_flow": "B2C_1_Savvly_ria_signup",
+  "b2c_signin_flow": "B2C_1_Savvly_signin",
+  "_comment_b2c_signupsignin_user_flow_mfa": "B2C_1_Savvly_signup_signin",
+  "_comment_b2c_editprofile_user_flow": "B2C_1_Savvly_edit_profile",
+  "_comment_b2c_resetpassword_user_flow": "B2C_1_Savvly_password_reset",
+  "b2c_scope_template": [
+    "https://{tenant}.onmicrosoft.com/api/Accounts.Read",
+    "https://{tenant}.onmicrosoft.com/api/Accounts.Write"
+  ],
+  "b2c_authority_template": "https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/{user_flow}",
+  "b2c_ad_issuer_template": "https://{tenant}.b2clogin.com/{tenantid}/v2.0/",
+  "b2c_ad_jwks_uri_template": "https://{tenant}.b2clogin.com/{tenant}.onmicrosoft.com/B2C_1_Savvly_signin/discovery/v2.0/keys",
+  "b2c_redirectPath": "getAToken",
+  "b2c_redirectPathMFA": "getATokenMFA",
+  "b2c_microsoft_graph_recource": "https://graph.windows.net",
+  "b2c_new_user_password": "SavvlyUser$",
+  "is_dev_mode": "True",
+  "is_debug_mode": "True",
+  "log_cql_commands": "False",
+  "log_cql_results": "False",
+  "admin_mode": "True",
+  "log_took_time": "False",
+  "log_requset": "False",
+  "log_session": "False",
+  "__outgoing_email_server": "smtp.gmail.com",
+  "__outgoing_email_user": "savvly.emailer@gmail.com",
+  "__outgoing_email_password": "Savvly$Emailer",
+  "outgoing_email_server": "smtp.sendgrid.net",
+  "outgoing_email_server_port": "465",
+  "outgoing_email_sender": "danny@savvly.com",
+  "outgoing_email_user": "apikey",
+  "outgoing_email_password": "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",
+  "contract": {
+    "docusign_service_url": "http://docusign-integration.2f0d5af8eca54c96b6ae.eastus.aksapp.io/signup/senddoc",
+    "docusign_service_retrieve_url": "http://docusign-integration.2f0d5af8eca54c96b6ae.eastus.aksapp.io/docusign/{envelope}/retrieve/combined",
+    "docusign_service_info_url": "http://docusign-integration.2f0d5af8eca54c96b6ae.eastus.aksapp.io/docusign/{envelope}/info",
+    "template_service_url": "http://docusign-integration.2f0d5af8eca54c96b6ae.eastus.aksapp.io/documents/template/required-vars/NEW_SUBSCRIBER_CONTRACT",
+    "template_service_render_url": "http://docusign-integration.2f0d5af8eca54c96b6ae.eastus.aksapp.io/documents/template/NEW_SUBSCRIBER_CONTRACT/render",
+    "savvly_signer": {
+      "signer_email": "tony@savvly.com",
+      "signer_name": "Savvly Signer",
+      "sign_here_marker": "SAVVLY_SIGN_HERE",
+      "sign_date_marker": "SAVVLY_DATE_SIGNED"
+    },
+    "cc": [
+        {
+            "cc_email": "yuval+contractcc@savvly.com",
+            "cc_name": "Yuval  (CC)"
+        }
+    ]
+  }
+}

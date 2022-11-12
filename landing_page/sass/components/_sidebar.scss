@@ -1,0 +1,96 @@
+// sidebar on the pages without header
+body.no-header {
+    .divider {
+        min-height: 100vh;
+    }
+}
+
+.main-sidebar-header-wrapper {
+    padding-top: 2em;
+    padding-left: 2em;
+}
+.divider {
+
+    display: flex;
+    @include sidebar( 1, 100%, 1);
+    .sidebar {
+        min-height: unset;
+        flex-direction: column;
+        position: sticky;
+        top: 0;
+        height: auto;
+        order: 2;
+        flex: 1;
+        display: flex;
+
+        .sidebar-header-wrapper {
+            padding: 2em 2em 0 2em;
+        }
+
+        // main sidebar
+        &.main-sidebar {
+            min-width: unset;
+            width: 340px;
+
+            .sidebar-header {
+                padding-bottom: 28px;
+                border-bottom: 1px solid $gray-2;
+            }
+            .sidebar-footer {
+                min-height: 100px;
+                display: flex;
+                align-items: center;
+                padding-left: 2em;
+                padding-right: 2em;
+                background-color: $black;
+                p {
+                    margin: 0;
+                }
+            }
+            .sidebar-footer-wrapper {
+                border-top: unset;
+                justify-content: space-between;
+                flex: 1;
+            }
+        }
+
+        // .container {
+        //     @include flex( space-between, flex-start, column );
+        //     flex: 1;
+        // }
+    }
+    .sidebar-container {
+        @include flex( space-between, flex-start, column);
+        // height: 100%;
+        flex: 1;
+    }
+}
+.sidebar {
+    &.sidebar-black {
+        color: $white;
+        background: url("../images/sidebar-bg.jpg") no-repeat center center;
+        background-size: cover;
+        font-size: $text-normal;
+    }
+    &.sidebar-white {
+        color: $black;
+        background-color: unset;
+        background: #fff;
+    }
+
+    .sidebar-footer {
+        width: 100%;
+    }
+    .sidebar-footer-wrapper {
+        @include flex( flex-start, center, row );
+    
+        border-top: 1px solid $gray-2;
+    }
+
+    &.sidebar-signup {
+        margin-top: -90px;
+        border-top-right-radius: 7px;
+        min-height: unset;
+        position: inherit;
+    }
+}

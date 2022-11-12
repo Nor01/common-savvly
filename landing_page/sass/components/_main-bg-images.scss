@@ -1,0 +1,92 @@
+%bg-container {
+    width: 100%;
+    aspect-ratio: 7/6;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+body {
+    .main-sub-title {
+        color: $black-gray;
+        margin-top: 0;
+        font-size: $text-small;
+        font-weight: 700;
+    }
+    .sign-up-main-container {
+        .site.site-bg {
+            .bg-container {
+                background: url(../images/signup-bg.jpg) no-repeat center top;
+                background-size: cover;
+                @extend %bg-container;
+            }
+        }
+    }
+    .sign-up-main-container.advisor {
+        .site.site-bg {
+            .bg-container {
+                background: url(../images/signup-bg-advisor.jpg) no-repeat center bottom;
+                background-size: cover;
+                @extend %bg-container;
+            }
+        }
+    }
+    .site {
+        width: 100%;
+
+        &.site-bg {
+            position: relative;
+            // min-height: 100vh;
+            // height: 100vh;
+            // width: 100%;
+            @include flex( left, flex-end, row );
+
+            .bg-container {
+                background: url(../images/airplane.jpg) no-repeat right center;
+                @extend %bg-container;
+                width: 100%;
+                aspect-ratio: 7/6;
+                background-size: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }
+            .bottom-caption-container {
+                @include flex( flex-start, flex-end, row );
+                height: 100%;
+                .bottom-caption {
+                    @include flex( space-between, center, row );
+                    flex: 1;
+
+                    p {
+                        font-size: $text-huge-sm;
+                        color: $white;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// background image on main --advisor_home--
+.bg-wrapper {
+    position: relative;
+}
+.--main-bg-container {
+    background: url(../images/PatternVector.png) no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}

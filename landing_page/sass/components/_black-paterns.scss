@@ -1,0 +1,30 @@
+.black-patern-1 {
+    background: url(../images/BlackPatternBlock.jpg) no-repeat;
+    background-size: cover;
+    // aspect-ratio: 15 / 4;
+
+    .buttons {
+        margin-top: 50px;
+    }
+}
+.black-patern-2 {
+    background: url(../images/BlackPatternBlock.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    .grid-item-4 {
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .slogan {
+        padding-left: 3em;
+        padding-right: 3em;
+        max-width: 240px !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+}
+.black {
+    color: #ffffff;
+}

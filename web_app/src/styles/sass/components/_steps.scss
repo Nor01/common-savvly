@@ -1,0 +1,86 @@
+%steps-container {
+    display: flex;
+    color: $white;
+    text-transform: uppercase;
+}
+.step-title {
+    font-size: $text-small;
+    font-weight: 800;
+}
+.steps-container {
+    @extend %steps-container;
+
+    .step {
+        // margin-left: 50px;
+        min-width: 110px;
+        flex: 1 1 0px;
+        text-align: center;
+        position: relative;
+        .step-dot {
+            width: $step-dot;
+            height: $step-dot;
+            background-color: $white;
+            display: block;
+            border-radius: 50%;
+            text-align: center;
+            margin: auto;
+
+        }
+        &:nth-child(1) {
+            z-index: 10;
+            margin-left: 50px;
+        }
+        &:nth-child(2) {
+            z-index: 9;
+        }
+        &:last-child {
+            z-index: 1;
+        }
+        &.active {
+            .step-dot {
+                background-color: $yellow;
+                z-index: 1;
+            }
+            .step-title {
+                color: $yellow;
+            }
+        }
+        &.completed {
+            .step-dot {
+                background-color: $yellow;
+            }
+            .step-title {
+                color: $yellow;
+            }
+        }
+        &:not(:nth-child(1)) {
+            .step-dot {
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    height: 1px;
+                    background-color: $white-2;
+                    top: ( $step-dot / 2 );
+                    left: -50%;
+                    z-index: 0;
+                }
+            }
+        }
+        &.active:not(:nth-child(1)) {
+            .step-dot {
+                &::before {
+                    background-color: $yellow;
+                }
+            }
+        }
+        &.completed {
+            .step-dot {
+                &::before {
+                    background-color: $yellow;
+                }
+            }
+        }
+    }
+}

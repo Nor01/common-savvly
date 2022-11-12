@@ -1,0 +1,17 @@
+.customers-slider .carousel-cell {
+    width: 20%;
+}
+.customers-slider::after {
+    content: '';
+}
+.customers-slider {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.customers-slider .carousel-cell{
+    width: 33.333%;
+    padding: 0;
+}
